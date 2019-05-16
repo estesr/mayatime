@@ -1,0 +1,270 @@
+/* *
+ * 17.INTERACTIVES
+ * ==================================================
+ *
+   ================================================== */
+
+#calendar-converter-intro{
+	float:left;
+	display:inline;
+	width:275px;
+	margin-right:10px;
+}
+
+#calendar-converter-intro p,
+#calendar-converter-intro-top{
+	margin-bottom:20px;
+}
+#calendar-converter-intro p{
+	width:250px;
+}
+#calendar-converter-intro h4{
+	color:#ae390e !important;
+	font-size:18px;
+	font-weight:normal;
+}
+
+#calendar-converter-main{
+	float:left;
+	display:inline;
+	width:620px;
+}
+
+#calendar-converter-icon{
+	float:left;
+	display:inline;
+	height:96px;
+	width:97px;
+	margin-right:3px;
+	background: url('../img/calendar-converter/calendar-converter-icon.png') top center no-repeat;
+}
+#calendar-converter-header{
+	float:left;
+	display:inline;
+	width:168px;
+	font-family:'Lora';
+	font-size:24px;
+	color:#552911;
+	line-height:26px;
+}
+
+#converter-wrap{
+	margin-top:35px;
+}
+
+p#calendar-quote{
+	width:492px;
+	margin-top:20px;
+	margin-left:60px;
+}
+
+div#monument, #conveter-main{
+	width:315px;
+}
+
+#conveter-main{
+	margin-right:50px;
+	float:left;
+	display:inline;
+}
+#conveter-main p{
+	width:75%;
+}
+#converter-aside{
+	width:240px;
+	display:inline;
+	float:left;
+}
+#intro-glyph{
+	background:url('../img/calendar-converter/calendar-capstone.png') no-repeat top center;
+	height:180px;
+	width:308px;
+	margin-bottom:20px;
+}
+div#monument div.calendar-glyph{
+	height:90px;
+	width:145px;
+	display:inline-block;
+	background-repeat:no-repeat;
+	background-position:center right;
+	background-color:transparent;
+	margin:0 auto;
+}
+div#monument div.calendar-glyph.even{
+	margin-right:3px;
+}
+div#monument div.calendar-glyph.odd{
+	margin-left:3px;
+}
+div#monument div.calendar-glyph div.numeral{
+	width:54px;
+	height:90px;
+	background-position:center right;
+	background-repeat: no-repeat;
+	background-color:transparent;
+}
+#baktuns{
+	background-image: url('../img/calendar-converter/long/long0.png');
+}
+#katuns{
+	background-image: url('../img/calendar-converter/long/long1.png');
+}
+#tuns{
+	background-image: url('../img/calendar-converter/long/long2.png');
+}
+#uinals{
+	background-image: url('../img/calendar-converter/long/long3.png');
+}
+#kins{
+	background-image: url('../img/calendar-converter/long/long4.png');
+}
+
+#details h3{
+	color:#552911;
+	font-size:21px;
+	margin-bottom:0px;
+}
+#details > div{
+	margin-bottom:15px;
+}
+
+#select-date{
+	margin-bottom:45px;
+}
+#select-date table{
+	margin-bottom:5px;
+}
+#select-date table tr td{
+	padding-bottom:5px;
+}
+#select-date table tr td.bold{
+	font-size:18px;
+}
+#select-date input, #select-date select, #select-date option{
+	color:#381A05;
+	font-weight:bold;
+}
+#select-date table tr td:hover{
+	background-color:transparent;
+}
+#select-date button{
+	color:#381A05;
+}
+
+
+.block-block-5,
+.block-block-7{
+	border:3px solid #552911;
+	padding:20px;
+	-moz-box-shadow: inset 0 0 2px 2px #7e6c62;
+	-webkit-box-shadow: inset 0 0 2px 2px #7e6c62;
+	box-shadow: inset 0 0 2px 2px #7e6c62;
+	background-color:#efd9b8;
+}
+
+
+
+
+.block-main article .field-name-field-page-glyph-image{
+	display:none;
+}
+.block-main aside .field-name-field-page-glyph-image{
+	width:241px !important;
+	height:420px !important;
+	float: none !important;
+	margin:0 auto!important;
+}
+
+
+#calendar-abstract,#calendar-abstract table{
+	margin-bottom:10px;
+}
+
+#calendar-abstract2 {
+	margin-bottom:15px;
+}
+
+#calendar-abstract3 div{
+	float:left;
+	display:inline;
+	width:290px;
+}
+#calendar-abstract3 div.left{
+	margin-right:35px;
+}
+
+#calendar-abstract3 table td.numeral{
+	width:25px;
+}
+
+p.number{
+	padding-left:30px;
+	margin-bottom:8px;
+}
+p.number-1{
+	background: url('../img/calendar-converter/round-numbers/1.png') top left no-repeat;
+}
+p.number-2{
+	background: url('../img/calendar-converter/round-numbers/2.png') top left no-repeat;
+}
+p.number-3{
+	background: url('../img/calendar-converter/round-numbers/3.png') top left no-repeat;
+}
+p.number-4{
+	background: url('../img/calendar-converter/round-numbers/4.png') top left no-repeat;
+}
+p.number-5{
+	background: url('../img/calendar-converter/round-numbers/5.png') top left no-repeat;
+}
+p.number-6{
+	background: url('../img/calendar-converter/round-numbers/6.png') top left no-repeat;
+}
+p.number-7{
+	background: url('../img/calendar-converter/round-numbers/7.png') top left no-repeat;
+}
+p.number-8{
+	background: url('../img/calendar-converter/round-numbers/8.png') top left no-repeat;
+}
+p.number-9{
+	background: url('../img/calendar-converter/round-numbers/9.png') top left no-repeat;
+}
+
+
+
+#block-system-main{
+	margin-top:20px;
+}
+
+button{
+	padding:4px 2px;
+	border:2px solid #552911 !important;
+	color:#552911;
+	background:#f3c885;
+	border-radius:8px !important;
+	-moz-border-radius:8px !important;
+	-webkit-border-radius:8px !important;
+	behavior: url(/sites/all/themes/mayatime/css/PIE.htc);
+	font-family: 'Lora' !important;
+}
+button#convert{
+	background:#a13315 !important;
+	color:#f1c485;
+	text-transform:uppercase;
+	font-weight:normal;
+	text-shadow:none;
+}
+button span{
+	font-weight:bold;
+}
+
+input,select{
+	background-color:#f4e5d2;
+	border:2px solid #552911 !important;
+}
+
+
+.template-3a-small-aside .field-name-field-page-glyph-image img{
+	box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+}

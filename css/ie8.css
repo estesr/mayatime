@@ -1,0 +1,131 @@
+
+/*#block-menu-menu-menu-footer-secondary-menu {
+	width: 73%;
+}*/
+ul#main-menu li.active a, ul#main-menu li.active-trail a, ul#main-menu li a:hover {
+	background: transparent url('../img/icon_nav_arrow_down.png') no-repeat 44% 25px;
+}
+
+/** Landing page menu blocks **/
+
+.block-menu-block-2 li.creation-story-of-the-maya,
+.block-menu-block-2 li.el-mito-de-la-creacin-de-los-mayas{
+	background: url('../img/menu-block-3-li-bg-the-creation-story-of-the-maya.jpg') no-repeat 0 -7px scroll transparent !important; 
+}
+
+.block-menu-block-2 li.the-maya-people,
+.block-menu-block-2 li.los-mayas{
+	background: url('../img/menu-block-3-li-bg-the-maya-people.jpg') no-repeat 0 -8px scroll transparent;
+}
+.block-menu-block-2 li.the-maya-world,
+.block-menu-block-2 li.el-mundo-maya{
+	background: url('../img/menu-block-3-li-bg-the-maya-world.jpg') no-repeat -1px -8px scroll transparent;
+}
+.block-menu-block-2 li.el-mundo-maya{
+	background: url('../img/menu-block-3-li-bg-the-maya-world-es.jpg') no-repeat -1px -8px scroll transparent;
+}
+.block-menu-block-2 li.connecting-earth-and-sky,
+.block-menu-block-2 li.conectando-el-cielo-y-la-tierra{
+	background: url('../img/menu-block-3-li-bg-connecting-earth-and-sky.jpg') no-repeat -1px -8px scroll transparent;
+}
+
+
+/*Maya Sun*/
+.block-menu-block-2 li.the-maya-and-the-sun,
+.block-menu-block-2 li.los-mayas-y-el-sol{
+	background: url('../img/menu-block-3-li-bg-the-maya-and-the-sun.jpg') no-repeat 0 -8px scroll transparent;
+}
+
+.block-menu-block-2 li.maya-math-game,
+.block-menu-block-2 li.juego-de-matemtica-maya{
+	background: url('../img/menu-block-3-li-bg-maya-math-game.jpg') no-repeat -1px -8px scroll transparent;
+}
+
+.block-menu-block-2 li.sun-corn-and-the-calendar,
+.block-menu-block-2 li.el-sol-el-maz-y-el-calendario{
+	background: url('../img/menu-block-3-li-bg-sun-corn-and-the-calendar.jpg') no-repeat -1px -8px scroll transparent;
+}
+
+
+/*Calendar*/
+.block-menu-block-2 li.the-calendar-system,
+.block-menu-block-2 li.el-sistema-de-calendario{
+	background: url('../img/menu-block-3-li-bg-calendar-system.jpg') no-repeat 0 -7px scroll transparent;
+}
+
+.block-menu-block-2 li.reading-the-calendar-glyphs,
+.block-menu-block-2 li.leyendo-los-glifos-del-calendario-maya
+{
+	background: url('../img/menu-block-3-li-bg-reading-the-calendar-glyphs.jpg') no-repeat 0 -8px scroll transparent;
+}
+
+.block-menu-block-2 li.maya-calendar-converter,
+.block-menu-block-2 li.convertidor-al-calendario-maya{
+	background: url('../img/menu-block-3-li-bg-maya-calendar-converter.jpg') no-repeat -1px -7px scroll transparent;
+}
+
+
+/*Corn and Maya Time*/
+.block-menu-block-2 li.corn-and-calendar-traditions,
+.block-menu-block-2 li.tradiciones-de-maz-y-calendario{
+	background: url('../img/menu-block-3-li-bg-corn-and-calendar-traditions.jpg') no-repeat -1px -8px scroll transparent;
+	height:530px !important;
+}
+
+.block-menu-block-2 li.the-sun-above-the-sun-below,
+.block-menu-block-2 li.el-sol-arriba-el-sol-abajo{
+	background: url('../img/menu-block-3-li-bg-sun-above-sun-below.jpg') no-repeat -1px -8px scroll transparent;
+	height:530px !important;
+}
+.block-menu-block-2 li.maya-opinions-on-,
+.block-menu-block-2 li.opiniones-de-los-mayas-sobre-el-{
+	background: url('../img/menu-block-3-li-bg-maya-opinions-on-2012.jpg') no-repeat -1px -8px scroll transparent;
+	height:530px !important;
+}
+.block-menu-block-2 li.the-meaning-of-,
+.block-menu-block-2 li.el-significado-del-
+{
+	background: url('../img/menu-block-3-li-bg-the-meaning-of-2012.jpg') no-repeat -1px -8px scroll transparent;
+	height:530px !important;
+}
+
+/** Homepage **/
+
+.viewer img {
+	left:-6px;
+}
+/* The Maya */
+.front-menu.front-menu-the-maya{
+	width:262px;
+}
+
+
+/* Maya Sun */
+.front-menu.front-menu-maya-sun{
+	height:305px;
+	width:236px;
+}
+
+
+/* Calendar */
+.front-menu.front-menu-calendar{
+	height:219px;
+	width:377px;
+}
+
+
+/* Corn & Maya Time */
+.front-menu.front-menu-corn-and-maya-time{
+	height:259px;
+	width:391px;
+}
+
+.front-menu.front-menu-2012-resetting{
+	height:255px;
+	width:458px;
+}
+
+
+.grid-8 .view-video-sidebar .views-row{
+	height:265px;
+}

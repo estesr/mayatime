@@ -1,0 +1,1815 @@
+/* * Living Maya Time - Created by Interactive Knowledge
+ * ------------------------------------------------
+ * [Table of contents]
+ *
+ *  0.Reset
+ *  1.Global
+ *  2.Page Layout
+ *  3.Main
+ *  4.Sidebars
+ *  5.Header
+ *  6.Navigation
+ *  7.Nodes
+ *  8.Comments
+ *  9.Blocks
+ * 10.Footer
+ * 11.CSS Support
+ * 13.Console
+ * 14.Misc
+ * 15.System
+ * 16.Views
+ * 17.Interactives
+ *
+ * [Font sizes - based on 75%/12px body font-size]
+ * 36px = 3em
+ * 33px = 2.75em
+ * 30px = 2.5em
+ * 27px = 2.25em
+ * 24px = 2em
+ * 23px = 1.916em
+ * 22px = 1.833333em
+ * 21px = 1.75em
+ * 20px = 1.666666em
+ * 19px = 1.583333em
+ * 18px = 1.5em
+ * 17px = 1.416666em
+ * 16px = 1.333333em
+ * 15px = 1.2em
+ * 14px = 1.1667em
+ * 13px = 1.083333em
+ * 12px = 1em
+ * 11px = .9167em
+ * 10px = .8333em
+ *
+ * Equation for font sizing:
+ * -Desired px ÷ Default (or parent) px = em size
+ * ------------------------------------------------
+   ================================================== */
+
+/* *
+ * 0.RESET
+ * ==================================================
+ *
+   ================================================== */
+
+@import "reset.css";
+
+/* *
+ * 1.GLOBAL
+ * ==================================================
+ *
+   ================================================== */
+
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lora Bold'), local('Lora-Bold'), url('//themes.googleusercontent.com/static/fonts/lora/v5/-riKkMjQB-Tz3xXCw54paQLUuEpTyoUstqEm5AMlJo4.woff') format('woff');
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lora'), url('//themes.googleusercontent.com/static/fonts/lora/v5/nAKwuw6_dIh5kwvpj3ShNfesZW2xOQ-xsNqO47m55DA.woff') format('woff');
+}
+
+
+
+body {
+  background: url('../img/header-bg-2.jpg') no-repeat scroll 0 0 transparent;
+  color: #381a05;
+  /*font-family: 'Lora', "Times New Roman";*/
+  font-family: "Times New Roman";
+  font-size: 75%;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+ul.inline li, ul.menu li{
+	display:inline;
+}
+
+ul.main-menu li{
+	margin: 0em !important;
+	margin-right:4px !important;
+}
+.block-menu-footer-main-menu ul.menu{
+	margin:0 auto;
+	text-align:center;
+}
+.block-menu-footer-main-menu ul.menu li{
+	margin: 0px !important;
+}
+ul.inline li {
+	padding:0px !important;
+}
+li.expanded, li.collapsed, li.leaf {
+	padding: 0px !important;
+}
+
+.bold{font-weight:bold}
+/*override omega-visuals.css rule*/
+/*tr:hover td,
+tr.even:hover td.active,
+tr.odd:hover td.active {
+	background: inherit !important;
+}*/
+
+/*hide spanish content in english and vice-versa*/
+body.i18n-en .es-content{display:none;}
+body.i18n-es .en-content{display:none;}
+
+/* Misc visuals
+----------------------------------*/
+
+/* Corner radius */
+.corner-all, .corner-top, .corner-left, .corner-tl { -moz-border-radius-topleft: 6px; -webkit-border-top-left-radius: 6px; -khtml-border-top-left-radius: 6px; border-top-left-radius: 6px; }
+.corner-all, .corner-top, .corner-right, .corner-tr { -moz-border-radius-topright: 6px; -webkit-border-top-right-radius: 6px; -khtml-border-top-right-radius: 6px; border-top-right-radius: 6px; }
+.corner-all, .corner-bottom, .corner-left, .corner-bl { -moz-border-radius-bottomleft: 6px; -webkit-border-bottom-left-radius: 6px; -khtml-border-bottom-left-radius: 6px; border-bottom-left-radius: 6px; }
+.corner-all, .corner-bottom, .corner-right, .corner-br { -moz-border-radius-bottomright: 6px; -webkit-border-bottom-right-radius: 6px; -khtml-border-bottom-right-radius: 6px; border-bottom-right-radius: 6px; }
+
+.corner-med-all, .corner-med-top, .corner-med-left, .corner-med-tl { -moz-border-radius-topleft: 11px; -webkit-border-top-left-radius: 11px; -khtml-border-top-left-radius: 11px; border-top-left-radius: 11px;  }
+.corner-med-all, .corner-med-top, .corner-med-right, .corner-med-tr { -moz-border-radius-topright: 11px; -webkit-border-top-right-radius: 11px; -khtml-border-top-right-radius: 11px; border-top-right-radius: 11px; }
+.corner-med-all, .corner-med-bottom, .corner-med-left, .corner-med-bl { -moz-border-radius-bottomleft: 11px; -webkit-border-bottom-left-radius: 11px; -khtml-border-bottom-left-radius: 11px; border-bottom-left-radius: 11px; }
+.corner-med-all, .corner-med-bottom, .corner-med-right, .corner-med-br { -moz-border-radius-bottomright: 11px; -webkit-border-bottom-right-radius: 11px; -khtml-border-bottom-right-radius: 11px; border-bottom-right-radius: 11px; }
+
+.corner-big-all, .corner-big-top, .corner-big-left, .corner-big-tl { -moz-border-radius-topleft: 13px; -webkit-border-top-left-radius: 13px; -khtml-border-top-left-radius: 13px; border-top-left-radius: 13px; }
+.corner-big-all, .corner-big-top, .corner-big-right, .corner-big-tr { -moz-border-radius-topright: 13px; -webkit-border-top-right-radius: 13px; -khtml-border-top-right-radius: 13px; border-top-right-radius: 13px; }
+.corner-big-all, .corner-big-bottom, .corner-big-left, .corner-big-bl { -moz-border-radius-bottomleft: 13px; -webkit-border-bottom-left-radius: 13px; -khtml-border-bottom-left-radius: 13px; border-bottom-left-radius: 13px; }
+.corner-big-all, .corner-big-bottom, .corner-big-right, .corner-big-br { -moz-border-radius-bottomright: 13px; -webkit-border-bottom-right-radius: 13px; -khtml-border-bottom-right-radius: 13px; border-bottom-right-radius: 13px; }
+
+
+.main-menu { -moz-border-radius-topleft: 4px; -webkit-border-top-left-radius: 4px; -khtml-border-top-left-radius: 4px; border-top-left-radius: 4px; }
+.main-menu { -moz-border-radius-topright: 4px; -webkit-border-top-right-radius: 4px; -khtml-border-top-right-radius: 4px; border-top-right-radius: 4px; }
+.main-menu { -moz-border-radius-bottomleft: 4px; -webkit-border-bottom-left-radius: 4px; -khtml-border-bottom-left-radius: 4px; border-bottom-left-radius: 4px; }
+.main-menu { -moz-border-radius-bottomright: 4px; -webkit-border-bottom-right-radius: 4px; -khtml-border-bottom-right-radius: 4px; border-bottom-right-radius: 4px; }
+
+/* *
+ * 2. PAGE LAYOUT
+ * ==================================================
+ *
+   ================================================== */
+
+/*Main page content area*/
+#section-content{
+	background: url('../img/page-bg.png') repeat;
+	font-size:15.5px;
+	font-family: Times;
+}
+#section-content a,
+#section-content a:visited{
+	color:#C30;
+	text-decoration: none;
+}
+
+#zone-content-wrapper{
+	min-height:876px;
+	background: url('../img/zone-content-wrapper.jpg') top center transparent repeat-y;
+}
+#zone-content-wrapper-front{
+	background: url('../img/zone-content-wrapper-front.jpg') top center transparent no-repeat;
+}
+#zone-content{
+	padding-top:20px;
+}
+
+#zone-menu-wrapper{
+	padding-top:40px;
+}
+
+/*hide main navigation on front page*/
+body.front #zone-menu-wrapper {
+
+	display:none;
+}
+
+body.front #zone-content-wrapper-front{
+	min-height:1878px !important;
+}
+body.front #zone-content {
+	padding-top: 0px !important;
+}
+
+body.front #zone-branding-wrapper{
+	padding-bottom:75px
+}
+/*Posititing the main logo*/
+.branding-region-negative-margin-left{
+	margin-top:36px;
+	padding-left:139px;
+	width:590px !important;
+}
+
+.branding-wrapper-negative-margin-top{
+	/*margin-top:-54px;*/
+}
+.snapshots-negative-margin-top{
+	margin-top:2px;
+	margin-left:-15px !important;
+}
+
+
+/*secondary menu*/
+#region-secondary-menu{
+	margin-top:172px;
+	width:180px !important;
+	position:relative;
+	left:5px;
+}
+.secondary-menu-region-margin-top{
+	left:-15px;
+}
+#block-menu-menu-secondary-menu ul{
+	line-height:1.2 !important;
+}
+#block-menu-menu-secondary-menu ul li{
+	display:block !important;
+	text-transform:uppercase;
+	text-align:right;
+}
+#block-menu-menu-secondary-menu ul li a{
+	color:#552911;
+	text-decoration:none;
+	font-weight:bold;
+	font-size:1.5em;
+}
+.i18n-es #block-menu-menu-secondary-menu ul li a{
+	color:#552911;
+	text-decoration:none;
+	font-weight:bold;
+	font-size:1.3em;
+}
+#block-menu-menu-secondary-menu ul li a.active,
+#block-menu-menu-secondary-menu ul li a:hover
+{
+	color:#cc3300;
+}
+
+#block-menu-menu-secondary-menu ul li.leaf{
+	list-style-image:none !important;
+	list-style-type:none !important;
+}
+
+
+
+
+
+
+/*Header logo image*/
+.logo-img{
+	width:612px;
+	margin:0 auto;
+}
+
+/* This is our fix for content that needs to be 960 instead of 940*/
+.container-12 .grid-12.alpha.omega{
+	width:960px !important;
+}
+
+
+/*This allows us to tweak the grid for our content area since it doesnt
+always align with grid increments*/
+#zone-content.container-12 .grid-8.alpha.omega {
+	width: 660px !important;
+}
+#zone-content.container-12 .grid-4.alpha.omega {
+	width: 295px !important;
+	padding-right:5px;
+}
+
+
+/*******************************
+*** Page Template 2
+*/
+.zip-archive-link{
+	min-height:55px;
+	line-height:1.2;
+}
+.zip-archive-link a{
+	color:#CC3300;
+	padding-top:15px;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+
+/*******************************
+*** Page Template 3
+*/
+.template-3-small-aside strong{
+	color:#CC3300;
+}
+
+.template-3-small-aside em{
+	font-weight:bold;
+}
+
+#block-system-main .node .content .field-name-field-page-instructions{
+	display:none;
+}
+
+
+
+/*******************************
+***Basic Page Layouts
+*/
+#page-title,
+.node-title,
+h1.page-title{
+	font-size:34px;
+	line-height:30px;
+	margin-bottom:15px;
+	width:700px !important;
+	color:#552813 !important;
+	font-family:"Times New Roman";
+}
+
+
+.block-system-main .node-page .node-links{
+	display:none;
+}
+
+.field-name-field-page-quote{
+	margin-top:20px;
+}
+.template-2 .field-name-field-page-quote{
+	width:300px;
+	float:left;
+}
+
+.template-2 .node-page .content > div.field-name-body{
+	width:300px;
+}
+.template-2 .node-page .content article.node-photo-gallery div.field-name-body{
+	width:200px !important;
+	position: relative;
+	top: 20px;
+}
+
+.template-2 .node-page .content article.node-photo-gallery div.photo-gallery-teaser-preview{
+	position: relative;
+	top: -50px;
+}
+.i18n-es .template-2 .node-page .content article.node-photo-gallery div.photo-gallery-teaser-preview{
+	position: relative;
+	top: -75px;
+}
+
+.template-3 .field-name-field-page-quote{
+	width:auto !important;
+}
+
+/* corn and calendar traditions */
+.page-node-43 .field-name-field-page-quote,
+.page-node-45 .field-name-field-page-quote{
+	display:none;
+}
+
+
+.grid-9 .region-inner{
+	padding-right:25px;
+}
+
+.field-name-field-page-glyph-image{
+	height:150px;
+	width:151px;
+	float:left;
+	margin:0 10px 2px 0;
+}
+.field-name-field-page-glyph-image img{
+	box-shadow: 2px 2px 7px 1px #7E6C62;
+	-moz-box-shadow: 2px 2px 7px 1px #7E6C62;
+	-webkit-box-shadow: 2px 2px 7px 1px #7E6C62;
+}
+.page-node-39.field-name-field-page-glyph-image img,
+.page-node-40 .field-name-field-page-glyph-image img{
+	box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+}
+
+
+
+.page-glyph-image-tooltips{
+	width: 200;
+	padding: 5px;
+	background-color: #e79223;
+	color: #552911;
+	font-size: 125%;
+	font-weight: bold;
+	border: 1px solid #552911;
+}
+
+
+
+/*pages with primary and secondary media*/
+.field-name-field-page-primary-node-ref.float-right{
+	margin-left:20px;
+}
+.template-2 .field-name-field-page-secondary-node-ref{
+	position: absolute;
+	top: 525px;
+	left: 310px;
+}
+
+
+
+
+/*******************************
+*** Photo Gallery modal
+*/
+.node-type-photo-gallery #zone-content-wrapper{
+	min-height:0px;
+}
+
+.node-type-photo-gallery  #page-title{
+	display:none;
+}
+
+#cboxBottomCenter {
+
+}
+.galleria-container {
+	height: 550px!important;
+}
+.galleria-stage {
+	height:100%;
+}
+.galleria-thumbnails-container {
+    bottom: 118px !important;
+    height: 50px;
+    left: 10px;
+    padding-left: 0;
+    position: absolute;
+    right: 10px;
+    z-index: 2;
+}
+.galleria-info {
+    bottom: -20px !important;
+    color: #401F0D;
+    left: 0;
+    min-height: 150px;
+    position: absolute;
+    right: 0;
+    vertical-align: bottom;
+    width: 100%;
+    z-index: 1;
+}
+.galleria-info-text {
+    padding: 0;
+    margin-left:10px;
+}
+
+
+/*region sidebar-second*/
+.region-sidebar-second{
+	margin-top:20px;
+}
+
+.node-type-photo-gallery .block-system-main .view-photo-galleries4.view-id-photo_galleries4.view-display-id-entity_view_1{
+	width:620px;
+	display:inline;
+	float:left;
+	margin:0 0 0 5px;
+}
+
+.node-links .translation-link{
+	display:none;
+}
+
+
+/* *
+ * 5.HEADERS
+ * ==================================================
+ *
+   ================================================== */
+
+
+#section-header{
+	background: url('../img/header-inside-bg-8.jpg') no-repeat center top scroll ;
+	/*height:259px;*/
+}
+body.front #section-header{
+	height:261px !important;
+}
+
+#block-block-2 h4{ /* SI-NMAI HEADER */
+	text-align:center;
+	color:#e2f2f2;
+	font-weight:normal !important;
+	font-size:1.666666em;
+	margin-top:5px;
+	letter-spacing:.5px;
+}
+
+#zone-user-wrapper div{
+	height:0px;
+	overflow:visible;
+}
+
+
+
+/* *
+ * 6.NAVIGATION
+ * ==================================================
+ *
+   ================================================== */
+
+
+/* Primary Navigation */
+ul#main-menu{
+	font-family:'Lora-Bold';
+	background-color:#e79223;
+	border:2px solid #6e4429;
+	/*padding:1px;*/
+	-webkit-box-shadow:0 0 10px #888;
+	-moz-box-shadow: 0 0 10px #888;
+	box-shadow:0 0 10px #888;
+	z-index:99;
+	position:relative;
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+}
+.i18n-es ul#main-menu{
+	padding:3px 0; /*account for smaller menu item font size en espanol*/
+}
+ul#main-menu li {
+}
+
+ul#main-menu li a{
+	text-decoration:none;
+	color:#552911;
+	text-transform:uppercase;
+	font-size:20px; /* UPDATE FONT SIZE TO EM */
+
+}
+.i18n-es ul#main-menu li a{
+	font-size:18px; /* UPDATE FONT SIZE TO EM */
+}
+ul#main-menu li.active a, ul#main-menu li.active-trail a, ul#main-menu li a:hover{
+	color:#f9eee0;
+	background: transparent url('../img/icon_nav_arrow_down.png') no-repeat 45% 28px;
+	padding-bottom:20px;
+}
+
+
+ul#main-menu li a:after{
+	padding:0 2px;
+	margin-left:4px;
+	content:'\2022';
+	color:#552911;
+}
+ul#main-menu li.last a:after{
+	content:'';
+}
+
+
+
+
+
+/*Secondary Navigation*/
+#block-menu-block-1{
+	padding:25px 8px 5px 8px;
+	position:relative;
+	top:-10px;
+	z-index:98;
+}
+/*temporary fix to hide secondary menu items that are apeparing for both language*/
+body.i18n-en .block-menu-secondary-menu a[href='/node/20'],
+body.i18n-en .block-menu-secondary-menu a[href='/node/16'],
+body.i18n-en .block-menu-secondary-menu a[href='/node/18']{
+	display:none;
+}
+
+body.i18n-es .block-menu-secondary-menu a[href='/es/node/15'],
+body.i18n-es .block-menu-secondary-menu a[href='/es/node/17'],
+body.i18n-es .block-menu-secondary-menu a[href='/es/node/19']{
+	display:none;
+}
+
+
+#block-menu-block-1.green{
+	background: url('../img/block-menu-block-1-background-green.png') transparent repeat top left;
+}
+#block-menu-block-1.gold{
+	background: url('../img/block-menu-block-1-background-gold.png') transparent repeat top left;
+}
+#block-menu-block-1.blue{
+	background: url('../img/block-menu-block-1-background-blue.png') transparent repeat top left;
+}
+#block-menu-block-1.tan{
+	background: url('../img/block-menu-block-1-background-tan.png') transparent repeat top left;
+}
+#block-menu-block-1.dark-gold{
+	background: url('../img/block-menu-block-1-background-dark-gold.png') transparent repeat top left;
+}
+
+.menu span.desc{
+	display:block;
+}
+
+
+#block-menu-block-1 ul li{
+	float:left;
+	padding-left:15px;
+	width:195px;
+	font-size:13px; /* UPDATE FONT SIZE TO EM */
+	color:#552911;
+}
+
+/*spanish version, we need more room for titles and descriptions*/
+.i18n-es #block-menu-block-1 ul li{
+	width:221px;
+}
+
+#block-menu-block-1 ul li a{
+	text-decoration:none;
+	color:#552911;
+	font-weight:bold;
+}
+#block-menu-block-1 ul li a:hover{
+	color:#f9eee0;
+}
+
+#block-menu-block-1 li a.learn-more{
+	color:#cc3300;
+	text-transform:uppercase;
+
+}
+#block-menu-block-1 ul li.active-trail a{
+	/*color:#f9eee0;*/
+}
+#block-menu-block-1 ul li.active-trail a.learn-more{
+	color:#552911;
+}
+
+#block-menu-block-1 ul li div.menu-block-1-desc{
+	float:left;
+	width:105px;
+	margin-top:-4px;
+}
+
+/*spanish version, we need more room for titles and descriptions*/
+.i18n-es #block-menu-block-1 ul li div.menu-block-1-desc{
+	width:131px;
+}
+
+
+#block-menu-block-1 ul li div.memu-block-1-glyph-icon{
+	float:left;
+	margin-right:10px;
+	height:83px;
+	width:80px;
+	background-image: url('../img/block-menu-block-1-glyph-sprite.gif');
+	background-repeat:no-repeat;
+	background-position:0px -83px;
+}
+#block-menu-block-1 ul li div.memu-block-1-glyph-icon a{
+	height:83px;
+	width:80px;
+	display:block;
+}
+
+#zone-menu ul#main-menu{
+	width:956px; /*account for add'l 4 px of border*/
+	margin:0 auto;
+	text-align:center;
+	position:relative;
+}
+
+/*****************
+MENU ICONS
+******************/
+
+/** THE MAYA **/
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_23,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_30{ /* Creation story */
+	background-position:0 -83px;
+}
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_24,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_29{ /* Maya People */
+	background-position:-82px -83px;
+}
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_25,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_28{ /* Maya World */
+	background-position:-164px -83px;
+}
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_26,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_27{ /* Connecting earth, sky*/
+	background-position:-246px -83px;
+}
+
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_23.active,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_30.active{ /* Creation story */
+	background-position:0 0px;
+}
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_24.active,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_29.active{ /* Maya People */
+	background-position:-82px 0px;
+}
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_25.active,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_28.active{ /* Maya World */
+	background-position:-164px 0px;
+}
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_26.active,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_27.active{ /* Connecting earth, sky*/
+	background-position:-246px 0px;
+}
+
+
+/** MAYA SUN **/
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_31,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_36
+{ /* Maya and the Sun */
+	background-position:0 -248px;
+}
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_32,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_35{ /* Corn Sun and the Calendar */
+	background-position:-82px -248px;
+}
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_33,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_34
+{ /* Maya Math Game */
+	background-position:-164px -248px;
+}
+
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_31.active,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_36.active{ /* Maya and the Sun */
+	background-position:0 -166px;
+}
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_32.active,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_35.active{ /* Corn Sun and the Calendar */
+	background-position:-82px -166px;
+}
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_33.active,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_34.active
+{ /* Maya Math Game */
+	background-position:-164px -166px;
+}
+
+
+/** MAYA CALENDAR **/
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_39,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_40{ /* Calendar Interactive */
+	/*background-position:0 -332px;*/
+	background-position:-82px -332px;
+}
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_37,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_38{ /* Reading Glyphs */
+	/*background-position:-82px -332px;*/
+	background-position:0px -332px
+}
+
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_41,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_42{ /* Calendar System*/
+	background-position:-164px -332px;
+}
+
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_39.active,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_40.active{ /* Calendar Interactive */
+	/*background-position:0 -415px;*/
+	background-position:-82px -415px;
+}
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_37.active,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_38.active{ /* Reading Glyphs */
+	/*background-position:-82px -415px;*/
+	background-position:0px -415px;
+}
+
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_41.active,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_42.active{ /* Calenar System */
+	/*background-position:-164px -415px;*/
+	background-position:-164px -415px;
+}
+
+
+
+/** CORN AND MAYA TIME  **/
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_43,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_45{ /* Corn and calendar tradtions */
+	background-position:0 -498px;
+}
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_44,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_46{ /* Sun above sun below */
+	background-position:-82px -498px;
+}
+
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_43.active,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_45.active{ /* Corn and calendar tradtions */
+	background-position:0 -581px;
+}
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_44.active,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_46.active{ /* Sun above sun below */
+	background-position:-82px -581px;
+}
+
+
+/** CORN AND MAYA TIME  **/
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_48,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_49{ /* Meaning of 2012 */
+
+	background-position:-82px -664px;
+}
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_47,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_50{ /* Maya Opinions on 2012 */
+	background-position:0 -664px;
+}
+
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_48.active,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_49.active{ /*  Meaning of 2012 */
+	background-position:-82px -747px;
+}
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_47.active,
+#block-menu-block-1 ul li div#memu-block-1-glyph-icon--node_50.active{ /* Maya Opinions on 2012 */
+
+	background-position:0 -747px;
+}
+
+
+/******************************
+*** LANDING PAGE MENU BLOCKS
+**/
+
+.block-menu-block-2{
+	padding-top:55px;
+}
+.block-menu-block-2 li{
+	width:309px;
+	-webkit-box-shadow:0 0 10px #888;
+	-moz-box-shadow: 0 0 10px #888;
+	box-shadow:0 0 10px #888;
+	height:336px !important;
+	display:inline-block !important;
+	margin:0 0 15px 15px !important;
+	padding:0 !important;
+	line-height:1.2;
+	float:left;
+	border:3px solid #552911;
+}
+.block-menu-block-2 li:hover{
+	cursor:pointer;
+}
+.block-menu-block-2 li div.menu-item-desc{
+	border: 3px solid #552911;
+	min-height: 135px;
+	width: 279px;
+	top: 190px;
+	left:-3px;
+	position: relative;
+	text-align: center;
+	padding: 8px 15px 0px 15px !important;
+}
+
+.block-menu-block-2 li div.menu-item-desc{ /*dark gold*/
+	background-color: #f0a542;
+}
+.block-menu-block-2 li div.menu-item-desc.maya,
+.block-menu-block-2 li div.menu-item-desc.los-mayas{ /*green*/
+	background-color: #BBB354;
+}
+.block-menu-block-2 li div.menu-item-desc.maya-sun,
+.block-menu-block-2 li div.menu-item-desc.el-sol-maya{ /*gold*/
+	background-color: #f9bc55;
+}
+.block-menu-block-2 li div.menu-item-desc.calendar,
+.block-menu-block-2 li div.menu-item-desc.calendario{ /*blue*/
+	background-color: #75c3c3;
+}
+.block-menu-block-2 li div.menu-item-desc.corn-and-maya-time,
+.block-menu-block-2 li div.menu-item-desc.el-maiz-y-el-tiempo-maya{ /*tan*/
+	background-color: #b3936a;
+	top: 490px !important;
+}
+.block-menu-block-2 li div.menu-item-desc.resetting-count,
+.block-menu-block-2 li div.menu-item-desc.la-cuenta-reinicia{ /*brown*/
+	background-color: #f0a542;
+	top: 490px !important;
+}
+
+.i18n-es .block-menu-block-2 li div.menu-item-desc.la-cuenta-reinicia{
+	min-height: 160px;
+}
+
+
+
+
+
+.block-menu-block-2 li div.menu-item-desc p{
+	font-size:14px;
+	margin:5px 0;
+}
+.block-menu-block-2 li div.menu-item-desc a.learn-more{
+	display:block;
+	text-decoration:none;
+	color:#cc3300;
+	font-size:18px;
+}
+.block-menu-block-2 li div.menu-item-desc a.learn-more:hover{
+	color:#552911;
+}
+.block-menu-block-2 li div.menu-item-desc h4{
+	font-size:19px;
+	color:#381a05;
+	text-transform:uppercase;
+}
+
+.block-menu-block-2 li.creation-story-of-the-maya,
+.block-menu-block-2 li.el-mito-de-la-creacin-de-los-mayas{
+	background: url('../img/menu-block-3-li-bg-the-creation-story-of-the-maya.jpg') no-repeat 0 -1px scroll transparent !important;
+}
+
+.block-menu-block-2 li.the-maya-people,
+.block-menu-block-2 li.los-mayas{
+	background: url('../img/menu-block-3-li-bg-the-maya-people.jpg') no-repeat 0 -2px scroll transparent;
+}
+.block-menu-block-2 li.the-maya-world,
+.block-menu-block-2 li.el-mundo-maya{
+	background: url('../img/menu-block-3-li-bg-the-maya-world.jpg') no-repeat -1px -2px scroll transparent;
+}
+.block-menu-block-2 li.el-mundo-maya{
+	background: url('../img/menu-block-3-li-bg-the-maya-world-es.jpg') no-repeat -1px -2px scroll transparent;
+}
+.block-menu-block-2 li.connecting-earth-and-sky,
+.block-menu-block-2 li.conectando-el-cielo-y-la-tierra{
+	background: url('../img/menu-block-3-li-bg-connecting-earth-and-sky.jpg') no-repeat -1px -2px scroll transparent;
+}
+
+
+/*Maya Sun*/
+.block-menu-block-2 li.the-maya-and-the-sun,
+.block-menu-block-2 li.los-mayas-y-el-sol{
+	background: url('../img/menu-block-3-li-bg-the-maya-and-the-sun.jpg') no-repeat 0 -2px scroll transparent;
+}
+
+.block-menu-block-2 li.maya-math-game,
+.block-menu-block-2 li.juego-de-matemtica-maya{
+	background: url('../img/menu-block-3-li-bg-maya-math-game.jpg') no-repeat -1px -2px scroll transparent;
+}
+
+.block-menu-block-2 li.sun-corn-and-the-calendar,
+.block-menu-block-2 li.el-sol-el-maz-y-el-calendario{
+	background: url('../img/menu-block-3-li-bg-sun-corn-and-the-calendar.jpg') no-repeat -1px -2px scroll transparent;
+}
+
+
+/*Calendar*/
+.block-menu-block-2 li.the-calendar-system,
+.block-menu-block-2 li.el-sistema-de-calendario{
+	background: url('../img/menu-block-3-li-bg-calendar-system.jpg') no-repeat 0 -1px scroll transparent;
+}
+
+.block-menu-block-2 li.reading-the-calendar-glyphs,
+.block-menu-block-2 li.leyendo-los-glifos-del-calendario-maya
+{
+	background: url('../img/menu-block-3-li-bg-reading-the-calendar-glyphs.jpg') no-repeat 0 -2px scroll transparent;
+}
+
+.block-menu-block-2 li.maya-calendar-converter,
+.block-menu-block-2 li.convertidor-al-calendario-maya{
+	background: url('../img/menu-block-3-li-bg-maya-calendar-converter.jpg') no-repeat -1px -1px scroll transparent;
+}
+
+
+/*Corn and Maya Time*/
+.block-menu-block-2 li.corn-and-calendar-traditions,
+.block-menu-block-2 li.tradiciones-de-maz-y-calendario{
+	background: url('../img/menu-block-3-li-bg-corn-and-calendar-traditions.jpg') no-repeat -1px -2px scroll transparent;
+	height:530px !important;
+}
+
+.block-menu-block-2 li.the-sun-above-the-sun-below,
+.block-menu-block-2 li.el-sol-arriba-el-sol-abajo{
+	background: url('../img/menu-block-3-li-bg-sun-above-sun-below.jpg') no-repeat -1px -2px scroll transparent;
+	height:530px !important;
+}
+.block-menu-block-2 li.maya-opinions-on-,
+.block-menu-block-2 li.opiniones-de-los-mayas-sobre-el-{
+	background: url('../img/menu-block-3-li-bg-maya-opinions-on-2012.jpg') no-repeat -1px -2px scroll transparent;
+	height:530px !important;
+}
+.block-menu-block-2 li.the-meaning-of-,
+.block-menu-block-2 li.el-significado-del-
+{
+	background: url('../img/menu-block-3-li-bg-the-meaning-of-2012.jpg') no-repeat -1px -2px scroll transparent;
+	height:530px !important;
+}
+
+
+
+
+/*2012 resetting the calendar*/
+
+
+
+/**** LANGUAGE SWITCHER *****/
+#block-locale-language ul.language-switcher-locale-url{
+	width:169px;
+	height:57px;
+	float:right;
+	clear:right;
+	margin-top:34px;
+}
+#block-locale-language ul.language-switcher-locale-url li{
+	height:56px;
+	float:left;
+	display:inline;
+}
+#block-locale-language ul.language-switcher-locale-url li a{
+	height:53px;
+	display:block;
+	text-decoration:none;
+	font-family:"Lora-Bold";
+	text-transform:uppercase;
+	font-size:1.20em;
+	color:#005549;
+	padding-left:10px;
+	padding-top:3px;
+	font-weight:bold;
+}
+#block-locale-language ul.language-switcher-locale-url li a.active{
+	color:#542105;
+}
+#block-locale-language ul.language-switcher-locale-url li.en{
+	width:83px;
+}
+#block-locale-language ul.language-switcher-locale-url li.es{
+	width:86px;
+
+}
+#block-locale-language ul.language-switcher-locale-url li.en a{
+	background:url('../img/living-maya-time-lang-switcher-en.png') 0 -57px no-repeat;
+}
+
+
+#block-locale-language ul.language-switcher-locale-url li.en.active a,
+#block-locale-language ul.language-switcher-locale-url li.en a:hover{
+	background-position:0 0px;
+	color:#542105;
+
+}
+
+#block-locale-language ul.language-switcher-locale-url li.es a{
+	background:url('../img/living-maya-time-lang-switcher-es.png') 0 0 no-repeat;
+	padding-left:4px;
+}
+#block-locale-language ul.language-switcher-locale-url li.es.active a,
+#block-locale-language ul.language-switcher-locale-url li.es a:hover{
+	background-position:0 -57px;
+	color:#005549;
+}
+
+
+
+
+
+
+
+
+/*
+
+
+
+/* *
+ * 10.FOOTER
+ * ==================================================
+ *
+   ================================================== */
+
+footer#section-footer{
+	min-height:320px;
+	background: url('../img/footer-bg-1.jpg') no-repeat 0 0 scroll;
+}
+#zone-footer-wrapper{
+	min-height:320px;
+	background: url('../img/inside-footer-bg-1.jpg') no-repeat top center scroll;
+}
+
+#zone-footer{
+	padding-top:127px;
+}
+
+
+#block-menu-menu-footer-main-menu ul li a,
+#block-menu-menu-menu-footer-secondary-menu ul li a{
+	text-decoration:none;
+	color:#e79324;
+	text-transform:uppercase;
+}
+#block-menu-menu-footer-main-menu ul li a{
+	font-size:1.666666em;
+}
+.i18n-es #block-menu-menu-footer-main-menu ul li a{
+	font-size:1.55em;
+}
+#block-menu-menu-menu-footer-secondary-menu ul li a{
+	font-size:1.333333em;
+}
+.i18n-es #block-menu-menu-menu-footer-secondary-menu ul li a{
+	font-size:1.30em;
+}
+#block-menu-menu-footer-main-menu ul li a.active,
+#block-menu-menu-footer-main-menu ul li a:hover,
+#block-menu-menu-menu-footer-secondary-menu ul li a.active,
+#block-menu-menu-menu-footer-secondary-menu ul li a:hover
+{
+	color:#f5dab5;
+}
+
+#block-menu-menu-footer-main-menu ul li a:after,
+#block-menu-menu-menu-footer-secondary-menu ul li a:after{
+	padding:0 2px;
+	margin-left:4px;
+	content:'\2022';
+	color:#e79324;
+}
+#block-menu-menu-footer-main-menu li.last a:after,
+#block-menu-menu-menu-footer-secondary-menu ul li.last a:after{
+	content:'';
+}
+
+#block-menu-menu-menu-footer-secondary-menu {
+  width:65%;
+  margin:0 auto;
+}
+
+.i18n-es #block-menu-menu-menu-footer-secondary-menu {
+  width:75%;
+}
+/*footer secondary menu*/
+
+
+
+
+/*footer tertiary menu*/
+.region-footer-second-inner div.block{
+
+}
+.menu-name-menu-tertiary-menu ul,
+.block-menu-tertiary-menu ul
+{
+	text-align:right;
+}
+
+.menu-name-menu-tertiary-menu ul li a,
+.block-menu-tertiary-menu ul li a{
+	color:#e79324;
+	text-decoration:none;
+	border-right:1px solid #e79324;
+	padding-right:3px;
+	text-transform:uppercase;
+}
+.menu-name-menu-tertiary-menu ul li a.active,
+.block-menu-tertiary-menu ul li a.active,
+.menu-name-menu-tertiary-menu ul li a:hover,
+.block-menu-tertiary-menu ul li a:hover{
+	color:#f5dab5;
+}
+.menu-name-menu-tertiary-menu ul li,
+.block-menu-tertiary-menu ul li{
+	margin:0 0 0 .25em !important;
+	padding-right:1px;
+}
+.menu-name-menu-tertiary-menu ul li.last,
+.block-menu-tertiary-menu ul li.last{
+padding-right:0px !important;
+margin-right:0px !important;
+}
+.menu-name-menu-tertiary-menu ul li.last a,
+.block-menu-tertiary-menu ul li.last a{
+	border-right:0px solid;
+}
+
+
+
+/* *
+ * 11.CSS SUPPORT
+ * ==================================================
+ *
+   ================================================== */
+.pad-top-30{
+	padding-top:30px;
+}
+.pad-top-40{
+	padding-top:40px;
+}
+.pad-top-50{
+	padding-top:50px;
+}
+.align-right{
+	text-align:right;
+}
+.align-left{
+	text-align:left;
+}
+.align-center{
+	text-align:center;
+}
+.site-copyright{
+	color:#e79324;
+}
+.float-right{
+	float:right;
+}
+.float-left{
+	float:left;
+}
+.clear{
+	clear:both;
+}
+.italic{
+	font-style: italic;
+}
+.text-regular{
+	font-style: normal !important;
+	font-weight:normal !important;
+}
+.bold, .strong{
+	font-weight:bold;
+}
+.small{
+	font-size:75%;
+}
+.black{
+	color: #000 !important;
+}
+.border-left-brown{
+	border-left:2px solid #381A05;
+	padding-left:15px;
+}
+.display-block{
+	display:block;
+}
+small{
+	font-size:85% !important;
+}
+
+.qtip{
+	-webkit-box-shadow:0 0 10px #888;
+	-moz-box-shadow: 0 0 10px #888;
+	box-shadow:0 0 10px #888;
+	line-height: 1.3;
+	font-weight:normal !important;
+}
+
+a.glossary-tip,
+.site-red{
+	color:#C30 !important;
+	text-decoration: none;
+}
+
+
+.block-block-4{
+	margin-bottom:20px;
+}
+.block-block-4 img, .block-block-4 canvas{
+	display:inline !important;
+	float:left !important;
+}
+
+
+
+
+/*HOME PAGE*/
+.front-menu h2{
+	position:relative;
+	top:60px;
+	background-color:#e79324;
+	padding:0 3px;
+	text-align:center;
+	border:2px solid black;
+	border-radius:6px;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+
+	z-index:99;
+	left:-7px;
+	font-family:'Lora';
+	font-size:28px;
+	-moz-box-shadow: 0 0 8px #000;
+	-webkit-box-shadow: 0 0 8px #000;
+	box-shadow: 0 0 8px #000;
+}
+.front-menu h2 a{
+	color:#381A05 !important;
+}
+.viewer {
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  -webkit-box-shadow: 1px 1px 2px #e6e6e6;
+  -moz-box-shadow: 1px 1px 2px #e6e6e6;
+  box-shadow: 1px 1px 2px #e6e6e6;
+  cursor: default;
+  background: #f8eadc;
+	border:2px solid #000;
+	border-radius:19px;
+	moz-border-radius:19px;
+	-webkit-border-radius:19px;
+
+	-moz-box-shadow: 0 0 8px #000;
+	-webkit-box-shadow: 0 0 8px #000;
+	box-shadow: 0 0 8px #000;
+}
+.viewer .mask{
+  position: absolute;
+  overflow: hidden;
+  top: 70px;
+  left: -400px;
+	font-size:16.0px;
+}
+.viewer img {
+   display: block;
+   position: relative;
+   border-radius:15px;
+   moz-border-radius:15px;
+	-webkit-border-radius:15px;
+}
+
+.viewer a.display-block{
+	display: block;
+	text-decoration: none;
+	color: #C30;
+	font-size: 18px;
+}
+
+.viewer a.display-block:hover{
+	color:#552911
+}
+
+.front-menu-calendar .viewer{
+	height:230px !important;
+}
+
+.mask-inner{
+	padding: 0 15px;
+}
+
+.front-menu-right h2{
+	left:109px !important;
+}
+.front-menu-right h2.long{
+	left:120px !important;
+}
+.front-menu h2.short{
+	width:50% !important;
+}
+
+/* The Maya */
+.front-menu.front-menu-the-maya{
+	height:310px;
+	width:272px;
+	margin-left: 30px;
+}
+
+.front-menu.front-menu-the-maya .mask{
+	width:273px;
+  	height: 200px;
+}
+
+.front-menu.front-menu-the-maya h2{
+	width:55%;
+}
+
+
+/* Maya Sun */
+.front-menu.front-menu-maya-sun{
+	height:311px;
+	width:246px;
+	float:right;
+}
+
+.front-menu.front-menu-maya-sun .mask{
+	width:246px;
+}
+
+.front-menu.front-menu-maya-sun h2{
+	width:55%;
+}
+.i18n-es .front-menu.front-menu-maya-sun h2{
+	width:63%;
+}
+
+.i18n-es .front-menu.front-menu-corn-and-maya-time h2 {
+	width: 85%;
+}
+
+/* Calendar */
+.front-menu.front-menu-calendar{
+	height:235px;
+	width:387px;
+	top:224px;
+	position:relative;
+}
+
+.front-menu.front-menu-calendar .mask{
+	width:387px;
+}
+
+.front-menu.front-menu-calendar h2{
+	width:75%;
+}
+
+/* Corn & Maya Time */
+.front-menu.front-menu-corn-and-maya-time{
+	height:269px;
+	width:401px;
+	float:right;
+	top:213px;
+	position:relative;
+}
+
+.front-menu.front-menu-corn-and-maya-time .mask{
+	width:387px;
+}
+
+.front-menu.front-menu-corn-and-maya-time h2{
+	width:70%;
+}
+
+
+
+.front-menu.front-menu-2012-resetting{
+	top:419px;
+	position:relative;
+	height:260px;
+	width:468px;
+	float:right;
+}
+.front-menu.front-menu-2012-resetting .mask{
+	width:387px;
+}
+
+.front-menu.front-menu-2012-resetting h2{
+	width:75%;
+}
+
+
+
+
+
+/*Grid hack for front page, make things align*/
+body.front .region-content .grid-6.prefix-1.alpha.omega{
+	width:580px !important;
+	top:522px;
+}
+
+#front-menu-main, #front-menu-main-bottom{width:260px}
+#front-menu-main p.home-open{
+	margin-bottom:10px;
+	font-size:120%;
+}
+#front-menu-main-bottom{
+	position:relative;
+	top:409px;
+	font-size:120%;
+}
+#front-menu-main-bottom p{
+	padding-left:20px;
+}
+
+/* *
+ * 7.NODES
+ * ==================================================
+ *
+   ================================================== */
+
+/*Calendar System*/
+.calendar-system-image{
+	width:190px;
+	margin-right:15px;
+}
+.calendar-system-copy{
+	width:450px;
+}
+.calendar-system-image,
+.calendar-system-copy{
+	display:inline;
+	float:left;
+}
+
+/*video sidebar view in template 4*/
+/*the calendar system page*/
+.grid-3 .view-video-sidebar .view-header{
+	margin-bottom:15px;
+	display:block;
+}
+.grid-3 .view-video-sidebar .views-row{
+	margin-bottom:15px;
+	line-height:1.2;
+}
+.grid-3 .view-video-sidebar .views-row img{
+	margin-bottom:10px;
+}
+.grid-3 .block-views-video-sidebar-block{
+	padding-left:25px;
+}
+
+/*other pages*/
+.view-video-sidebar .views-field-colorbox,
+.view-horizontal-video-sidebar .views-field-colorbox{
+	height:115px;
+}
+
+.view-video-sidebar .views-field-colorbox span.video-play-button,
+.view-horizontal-video-sidebar .views-field-colorbox span.video-play-button{
+	background: url('../img/play.png') no-repeat;
+	display: block;
+	height: 54px;
+	width: 54px;
+	position: relative;
+	left: 72px;
+	top: -92px;
+}
+
+.view-video-sidebar .views-field-colorbox img,
+.view-horizontal-video-sidebar .views-field-colorbox img{
+	border: 2px solid #3F1D0E;
+	margin-bottom:5px;
+}
+
+.grid-8 .view-video-sidebar .views-row,
+.grid-9 .view-horizontal-video-sidebar .views-row{
+	display:inline-block;
+	float:left;
+	width:190px;
+	margin:25px 15px;
+}
+.grid-8 .view-video-sidebar .view-header,
+.grid-9 .view-horizontal-video-sidebar .view-header{
+	display:none;
+}
+
+.template-4.grid-9{
+	border-right:2px solid #421D0E;
+}
+.template-4.region-sidebar-second.grid-3.alpha.omega{
+	width:255px;
+}
+
+
+/*Meaning of 2012*/
+.h4-emphasis{
+	text-transform: uppercase;
+	font-weight:bold;
+	font-size:120%;
+}
+#node-page-47 p,
+#node-page-49 p{
+	margin-bottom:15px;
+}
+#node-page-47 .clearfix,
+#node-page-49 .clearfix{
+	margin-bottom:10px;
+}
+#node-page-47 .image-float-left,
+#node-page-49 .image-float-left{
+	display:inline;
+	float:left;
+	width:220px;
+}
+#node-page-47 .image-float-left img,
+#node-page-49 .image-float-left img{
+	margin-top:5px;
+	margin-bottom:20px;
+}
+#node-page-47 .copy-float-left,
+#node-page-49 .copy-float-left{
+	display:inline;
+	float:left;
+	width:700px;
+}
+
+
+
+
+/*calendar converter*/
+
+
+
+
+/*Corn and Calendar tradiitons horizontal_video_sidebar*/
+.block-corn-cal-trads-quote-sidebar{
+	padding-left:25px;
+}
+.grid-9 .view-horizontal-video-sidebar .views-row{
+	margin-left:30px;
+}
+.grid-9 .view-horizontal-video-sidebar .views-row.views-row-first{
+	margin-left:0px;
+}
+
+
+
+/*The sun Above, the Sun Below*/
+.template-2 .field-name-field-page-secondary-node-ref > .field-items > .field-item{
+	display: inline;
+	float: left;
+	position: relative;
+	margin-left: 10px;
+	margin-right: 10px;
+	width:300px;
+}
+
+.template-2 .node-photo-gallery.node-teaser .field-name-field-pg-preview{
+	width:195px;
+}
+.template-2 .node-photo-gallery.node-teaser .field-name-field-pg-preview img{
+	border: 2px solid #3F1D0E;
+	margin-bottom:5px;
+}
+
+/* *
+ * Glossary page
+ * ==================================================
+ *
+   ================================================== */
+.view-id-glossary_terms{
+	padding-bottom:35px;
+}
+.block-glossary-terms-block{
+	margin-left:15px;
+}
+.view-id-glossary_terms.view-display-id-block .views-row{
+	margin-bottom:10px;
+	font-weight:bold;
+}
+.view-id-glossary_terms.view-display-id-page .views-row{
+	padding-bottom:10px;
+	margin-bottom:10px;
+	border-bottom:1px dotted #381A05;
+}
+.view-id-glossary_terms.view-display-id-page .views-row-last{
+	border-bottom:0px;
+}
+/* *
+ * 17.INTERACTIVES
+ * ==================================================
+ *
+   ================================================== */
+
+/*Maya world map tooltips*/
+.maya-world-map-tooltips{
+	background: #F7E2C3;
+	color: #381A05;
+	font-size:120%;
+	padding:4px;
+	text-align: left;
+	font-weight: bold;
+	border: 1px solid #552911;
+
+}
+#block-block-6{
+	margin-bottom:15px;
+}
+
+
+/* *
+ * STATIC PAGES
+ * ==================================================
+ *
+   ================================================== */
+/*contact us page*/
+#node-page-19.node-page p,
+#node-page-20.node-page p{
+	margin:15px 0;
+}
+
+
+
+/*resources and mas informacion*/
+#node-page-17.node-page ul li,
+#node-page-18.node-page ul li{
+	margin:0 0 15px 0;
+}
+#node-page-17.node-page strong,
+#node-page-18.node-page strong{
+	font-size:19px;
+	margin:10px 0;
+	display:block;
+	border-bottom:2px dotted #381A05;
+}
+#node-page-17.node-page strong,
+#node-page-18.node-page strong{
+
+}
+
+#node-page-17.node-page em,
+#node-page-18.node-page em{
+	font-weight:bold;
+	font-variant: normal !important;
+}
+
+#node-page-17.node-page dl,
+#node-page-18.node-page dl{
+	margin-bottom:15px;
+}
+#node-page-17.node-page dl dt,
+#node-page-18.node-page dl dt{
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+	border-bottom: 1px dotted #381A05;
+}
+#node-page-17.node-page dl dt.last,
+#node-page-18.node-page dl dt.last{
+	border-bottom:0px;
+}
+
+#block-views-glossary-terms-preview-block{
+	padding-right:5px;
+}
+#block-views-glossary-terms-preview-block .block-title{
+	display:none;
+}
+#block-views-glossary-terms-preview-block .content{
+	height: 1000px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding-left:15px;
+}
+#block-views-glossary-terms-preview-block .content .views-row{
+	margin-bottom:15px;
+}
+#block-block-22 .content{
+	padding-left:15px;
+	margin-bottom:15px;
+}
+#block-block-22 h2 {
+	font-size:26px;
+	font-weight:normal;
+}
+
+
+
+/*for teachers*/
+
+#for-teachers-main{
+	border-bottom:2px solid #381A05;
+	padding-bottom:20px;
+	margin-bottom:20px;
+}
+#for-teachers-main img{
+	margin-bottom:10px;
+}
+
+#for-teachers-aside ol{
+	list-style-type:decimal;
+	padding-left:20px;
+}
+
+#for-teachers-aside ul{
+	list-style-type:disc;
+	padding-left:20px;
+}
+#for-teachers-aside em{
+	font-weight:bold;
+	font-variant: normal;
+	font-size:16px;
+}
+#for-teachers-aside,
+#node-page-21,
+#node-page-22{
+	margin-bottom:35px;
+}
+
+/*site credits*/
+#node-page-22 h1.page-title,
+#node-page-21 h1.page-title{
+	text-align: center !important;
+	width:auto !important;
+}
+
+
+/*Site Map*/
+#site-map h2.title{
+  display:none;
+}
+
+#cboxLoadedContent
+	overflow: auto;
+	-webkit-overflow-scrolling:touch;
+}
+
+
+/* iPads (landscape) ----------- */
+@media only screen  and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+	.template-2 .node-page .content article.node-photo-gallery div.photo-gallery-teaser-preview {
+		position: relative;
+		top: -75px;
+	}
+	.galleria-info-text {
+		padding-right: 45px;
+	}
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+	.template-2 .node-page .content article.node-photo-gallery div.photo-gallery-teaser-preview {
+		position: relative;
+		top: -75px;
+	}
+	.galleria-info-text {
+		padding-right: 45px;
+	}
+}

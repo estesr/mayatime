@@ -1,0 +1,607 @@
+/* *
+ * 1.LANDING AND ROUND 1
+ * ==================================================
+ *
+   ================================================== */
+
+.practice .math-game-practice-god {
+  display:inline;
+  float:left;
+  width:270px;
+  height:360px;
+  padding-bottom:10px;
+  margin-right:10px;
+}
+
+.practice .math-game-practice-god h2{
+  font-size:24px;
+  font-weight:normal;
+  text-align:center;
+}
+
+.practice .math-game-landing-copy{
+  display:inline;
+  float:left;
+  width:655px;
+  line-height: 1.3
+}
+.god-logo-practice{
+  height:214px;
+  background: url('../img/math-game/practice/math-game-god-practice.png') no-repeat top center;
+  margin-bottom:25px;
+}
+
+table.practice{
+  width:540px;
+  margin-left:55px;
+  margin-bottom:30px;
+}
+table.practice td{
+  width:100px;
+  padding-right:10px;
+  line-height: 1.4;
+}
+
+table.practice td.symbol{
+  width:45px;
+  padding-right:0px;
+}
+
+.round-instructions{
+  font-size:22px;
+  margin-bottom:15px;
+}
+
+#show-numbers{
+  text-transform: uppercase;
+}
+
+.maya-math-game-wrapper hr{
+  width: 900px;
+  background: #552911;
+  margin: 0 auto;
+}
+
+
+
+
+
+.practice-menu{
+  border-top:2px solid #552911;
+  background-color:transparent;
+}
+.practice-menu ul li{
+  display:inline !important;
+  float:left !important;
+  background-color:#599695 !important;
+  text-align:center !important;
+  width:157px !important;
+  border-right:1px solid #552911 !important;
+  height:50px !important;
+  margin-left:0px !important;
+  padding-top:0px !important;
+}
+.practice .practice-menu ul li:hover{
+  background-color:#552911 !important;
+}
+.practice-menu ul li.last{
+  width:161px;
+}
+.practice-menu ul li a{
+  color:#efd9b8 !important;
+  font-size:24px;
+  text-decoration:none;
+  margin-top:10px;
+  display:block;
+}
+.practice-menu ul li.active{
+  background-color:#552911 !important;
+  padding-right:4px;
+}
+
+.practice-menu ul li.last{
+  text-align: left;
+  background-color:#A63715 !important;
+  /*background: url('../img/math-game/practice/math-game-practice-menu-arrow.png') center 95% #a63715 no-repeat;*/
+}
+.practice-menu ul li.last a{
+  font-size:18px;
+  padding-left:15px;
+  padding-top:4px;
+}
+
+body.i18n-es .practice-menu ul li.last a{
+  margin-top: 5px;
+  line-height: 1.2;
+  padding-left:0px;
+  padding-top:0px;
+}
+
+#cardSlots {
+  margin: 50px auto 0 auto;
+  background: #ddf;
+}
+
+#practice-content{
+  margin-top:35px;
+}
+
+#practice-content > div.float{
+  display:inline;
+  float:left;
+}
+
+#answer-pane{
+  width:189px;
+  margin-right:80px;
+}
+
+#symbols-left{
+  width:200px;
+  margin-left:40px;
+  margin-right:20px;
+}
+#directions{
+  width:340px;
+}
+
+#directions button{
+  margin-top:40px;
+
+}
+
+#number-instructions{
+  display:inline;
+  float:left;
+  width:164px;
+  font-style: italic;
+  line-height:1.1;
+}
+#number{
+  display:inline;
+  float:left;
+  font-size:24px;
+  color:#d33201;
+}
+#your-number{
+  display: inline;
+  float: left;
+  width: 164px;
+  font-style: italic;
+  margin-top:10px;
+}
+
+#user-number{
+  text-align:right;
+  display:inline;
+  float:left;
+  font-size:24px;
+  margin-top:5px;
+  display:none;
+}
+.total{
+  text-align: center;
+  background-color:#552911;
+  color:#efd9b8;
+  margin-top:5px;
+}
+
+#cardPile {
+  margin: 0 auto;
+  background: #ffd;
+}
+
+#numberSlot{
+  border:1px solid #000;
+  background-color: #f9eada;
+  width:187px;
+  height:130px;
+}
+#numberSlot div.ui-droppable{
+  width:187px;
+  height:130px;
+}
+#numberSlot div.ui-droppable div{
+	height:40px;
+	width:40px;
+	margin:0 auto;
+  border:1px solid #552911;
+  padding:1px 2px 0px 2px;
+}
+#symbolBox {
+	width:150px;
+}
+
+
+
+#symbolBox div {
+  float: left;
+  width: 58px;
+  height: 78px;
+  padding: 10px;
+  padding-top: 40px;
+  padding-bottom: 0;
+  border: 2px solid #333;
+  margin: 0 0 0 10px;
+  background: #fff;
+}
+
+
+
+/* "You did it!" message */
+#successMessage,#endofgame {
+  position: absolute;
+  left: 560px;
+  bottom: 185px;
+  width: 0;
+  height: 0;
+  z-index: 100;
+  background: url('../img/math-game/practice/math-game-god-practice-feedback.png') #ded577 center right no-repeat;
+  border: 2px solid #552911;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  padding: 20px;
+  display: none;
+}
+#successMessage p,#tryAgain p{
+  width:65%;
+}
+
+/* "Try Again" message */
+#tryAgain {
+  position: absolute;
+  left: 580px;
+  top: 250px;
+  width: 0;
+  height: 0;
+  z-index: 100;
+  background: url('../img/math-game/practice/math-game-god-practice-feedback.png') #a63715 center right no-repeat;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  padding: 20px;
+  color:#EFD9B8;
+}
+
+#number span{
+	font-size:2.9em;
+}
+
+span.symbol{
+	display:block;
+	height:45px;
+	width:45px;
+	margin:0 auto;
+  border:2px solid #552911;
+  padding:10px;
+  margin-bottom:10px;
+}
+span.symbol.shell, span.symbol.concha{
+	background: url('../img/math-game-landing-shell.png') no-repeat center center #e89423;
+}
+span.symbol.dot, span.symbol.frijol{
+	background: url('../img/math-game-landing-dot.gif') no-repeat center center #e89423;
+}
+span.symbol.bar, span.symbol.palito{
+	background: url('../img/math-game-landing-stick.gif') no-repeat center center #e89423;
+}
+
+.wrong{
+	background: url('../img/math-game/practice/trash-stripe-wrong.png') repeat center center transparent !important;
+}
+.correct{
+	background: url('../img/math-game/practice/trash-stripe-correct.png') repeat center center transparent !important;
+}
+/*
+.wrong{
+  background: #A63715!important;
+}
+.correct{
+  background: #DED577!important;
+}
+*/
+.ui-droppable .symbol{
+	height:20px;
+	width:20px;
+}
+
+.number-symbol-0,#cloned-symbol-0, #cloned-total-symbol-0, #final-answer-cloned-symbol-0{
+	background: url('../img/math-game/practice/numerals/0.png') #E89423 no-repeat center bottom;
+}
+.number-symbol-1,#cloned-symbol-1, #cloned-total-symbol-1, #final-answer-cloned-symbol-1{
+	background: url('../img/math-game/practice/numerals/1.png') #E89423 no-repeat center bottom;
+}
+.number-symbol-2,#cloned-symbol-2, #cloned-total-symbol-2, #final-answer-cloned-symbol-2{
+	background: url('../img/math-game/practice/numerals/2.png') #E89423 no-repeat center bottom;
+}
+.number-symbol-3,#cloned-symbol-3, #cloned-total-symbol-3, #final-answer-cloned-symbol-3{
+	background: url('../img/math-game/practice/numerals/3.png') #E89423 no-repeat center bottom;
+}
+.number-symbol-4,#cloned-symbol-4, #cloned-total-symbol-4, #final-answer-cloned-symbol-4{
+	background: url('../img/math-game/practice/numerals/4.png') #E89423 no-repeat center bottom;
+}
+.number-symbol-5,#cloned-symbol-5, #cloned-total-symbol-5, #final-answer-cloned-symbol-5{
+	background: url('../img/math-game/practice/numerals/5.png') #E89423 no-repeat center bottom;
+}
+.number-symbol-6,#cloned-symbol-6, #cloned-total-symbol-6, #final-answer-cloned-symbol-6{
+	background: url('../img/math-game/practice/numerals/6.png') #E89423 no-repeat center bottom;
+}
+.number-symbol-7,#cloned-symbol-7, #cloned-total-symbol-7, #final-answer-cloned-symbol-7{
+	background: url('../img/math-game/practice/numerals/7.png') #E89423 no-repeat center bottom;
+}
+.number-symbol-8,#cloned-symbol-8, #cloned-total-symbol-8, #final-answer-cloned-symbol-8{
+	background: url('../img/math-game/practice/numerals/8.png') #E89423 no-repeat center bottom;
+}
+.number-symbol-9,#cloned-symbol-9, #cloned-total-symbol-9, #final-answer-cloned-symbol-9{
+	background: url('../img/math-game/practice/numerals/9.png') #E89423 no-repeat center bottom;
+}
+.number-symbol-10,#cloned-symbol-10, #cloned-total-symbol-10, #final-answer-cloned-symbol-10{
+	background: url('../img/math-game/practice/numerals/10.png') #E89423 no-repeat center bottom;
+}
+.number-symbol-11,#cloned-symbol-11, #cloned-total-symbol-11, #final-answer-cloned-symbol-11{
+	background: url('../img/math-game/practice/numerals/11.png') #E89423 no-repeat center bottom;
+}
+.number-symbol-12,#cloned-symbol-12, #cloned-total-symbol-12, #final-answer-cloned-symbol-12{
+	background: url('../img/math-game/practice/numerals/12.png') #E89423 no-repeat center bottom;
+}
+.number-symbol-13,#cloned-symbol-13, #cloned-total-symbol-13, #final-answer-cloned-symbol-13{
+	background: url('../img/math-game/practice/numerals/13.png') #E89423 no-repeat center bottom;
+}
+.number-symbol-14,#cloned-symbol-14, #cloned-total-symbol-14, #final-answer-cloned-symbol-14{
+	background: url('../img/math-game/practice/numerals/14.png') #E89423 no-repeat center bottom;
+}
+.number-symbol-15,#cloned-symbol-15, #cloned-total-symbol-15, #final-answer-cloned-symbol-15{
+	background: url('../img/math-game/practice/numerals/15.png') #E89423 no-repeat center bottom;
+}
+.number-symbol-16,#cloned-symbol-16, #cloned-total-symbol-16, #final-answer-cloned-symbol-16{
+	background: url('../img/math-game/practice/numerals/16.png') #E89423 no-repeat center bottom;
+}
+.number-symbol-17,#cloned-symbol-17, #cloned-total-symbol-17, #final-answer-cloned-symbol-17{
+	background: url('../img/math-game/practice/numerals/17.png') #E89423 no-repeat center bottom;
+}
+.number-symbol-18,#cloned-symbol-18, #cloned-total-symbol-18, #final-answer-cloned-symbol-18{
+	background: url('../img/math-game/practice/numerals/18.png') #E89423 no-repeat center bottom;
+}
+.number-symbol-19,#cloned-symbol-19, #cloned-total-symbol-19, #final-answer-cloned-symbol-19{
+	background: url('../img/math-game/practice/numerals/19.png') #E89423 no-repeat center bottom;
+}
+.hide-symbol{display:none;}
+.ui-droppable span{
+	display:block;
+	height:40px;
+	width:40px;
+	margin:auto;
+	text-align:center;
+}
+#top-wrap div.float{
+	display:inline;
+	float:left;
+	width:300px;
+}
+
+.ui-draggable:hover{
+  cursor: pointer;
+  cursor: hand;
+}
+
+
+
+
+
+/* *
+ * 2. ROUND 2 and ROUND 3
+ * ==================================================
+ *
+   ================================================== */
+
+.right, .correct{
+  border-color:green !important;
+  background: url('check.gif') center bottom no-repeat transparent;
+  border-width:3px;
+}
+hr {
+    background-color: #000000;
+    font-weight: bold;
+    height: 4px;
+}
+#base-10, #middle, #base-20{
+  float:left; display:inline;;
+}
+#base-10, #base-20{
+  width:400px !important;
+}
+#base-10-pyramid,
+#base-20-pyramid{
+  width:200px;
+  float: left;
+  display: inline;
+  margin-right:50px;
+
+}
+#middle{
+  width:392px;
+  margin-left:35px;
+}
+
+#show-numbers{
+  text-transform: uppercase;
+  text-decoration: none;
+  font-style: italic;
+  color:#202124 !important;
+  font-size:13px;
+}
+
+.pyramid div, .base-10 .total, .base-20 .total{
+  height:82px;
+  width:78px;
+  border:2px solid #552911;
+  margin: 3px 10px 18px;
+  background-color:#f9eada !important;
+  color:#381A05 !important;
+
+}
+
+.pyramid .total{
+  width: 189px;
+  float: left;
+  border: 1px solid #552911;
+}
+
+.base-10 .total,
+.base-20 .total{
+  display: inline;
+  border-width:3px !important;
+}
+#base-10-total{
+  background-color:#f9eada; 
+  width:189px;
+  height:178px;
+  border:1px solid #552911;
+  float:left;
+  font-size:90px;
+  text-align: center;
+}
+#base-20-total{
+  background-color:#f9eada; 
+  width:189px;
+  height:178px;
+  border:1px solid #552911;
+  float:left;
+  font-size:90px;
+  text-align: center;
+}
+.base-10 .total div{
+  margin:0 auto;
+  margin-top:20px;
+  text-align:center;
+  width:100px;
+  font-size:25px;
+  border: 0px !important;
+}
+#symbolPile{
+  clear:both;
+}
+#symbolPile div{
+  height:54px;
+  width:54px;
+  border:2px solid #552911;
+  display:inline-block;
+  margin:4px;
+  text-align:center;
+  font-weight:bold;
+}
+#navigation-help{
+  font-style: italic;
+  position:relative;
+  margin-top:120px;
+  width:275px;
+  font-style: italic;
+}
+#navigation-help.base-20{
+  margin-top:10px !important;
+}
+.pyramidDropZone div.cloned-symbol{
+  height:45px !important;
+  width:35px !important;
+  border:2px dotted #000 !important;
+  padding:3px;
+  font-weight:bold;
+  text-align:center;
+}
+
+#symbolPile div span, .pyramidDropZone div.cloned-symbol span, .cloned-total-symbol span, .final-answer-cloned-symbol span{
+  display:none;
+}
+
+#number-to-solve{
+  display: inline;
+  float: left;
+  font-size: 30px;
+  color: #D33201;
+  margin-top:-3px;
+  font-weight:bold;
+}
+#middle-symbols{
+  width:525px;
+}
+#middle-symbols .total{
+  width: 189px;
+  float: left;
+  margin-top:0px !important;
+  border: 1px solid #552911;
+}
+.right{
+  border-color:green !important;
+  border-style:dashed;
+  background: url('check.gif') center bottom no-repeat transparent;
+  border-width:4px;
+}
+
+
+.pyramid table{
+  font-size: 22px;
+}
+.pyramid table td span{
+  font-size:16px;
+}
+.pyramid table td {
+  text-align: right;
+}
+.maya-math-game-wrapper button{
+
+    background: #f8c67b !important;
+    border: 2px solid #552911 !important;
+    color: #333333;
+    cursor: pointer;
+    font: "times new roman" normal 14px;
+    padding: 3px 10px 4px;
+    text-shadow: none !important;
+    width: auto;
+    border-radius: 0px !important;
+    margin-top:15px;
+    text-align: center;
+    margin: 15px auto 0 auto;
+}
+.maya-math-game-wrapper button:hover{
+  background:#fff !important;
+}
+
+
+/* *
+ * 2. ROUND 4 and ROUND 5
+ * ==================================================
+ *
+   ================================================== */
+   p#reduction-instructions{
+    font-size:18px;
+    margin-top:15px;
+    padding-left:30px;
+    background: url('../img/math-game/practice/reduction-instructions-logo.png') no-repeat left center transparent;
+   }
+   p#reduction-instructions a{
+    text-transform: uppercase;
+    color:#cc3300;
+    text-decoration: none;
+   }
+
+   table#arithmetic-problem td{
+    padding:15px 0;
+    background-color:#f9eada;
+   }
+   #symbol-sidebar{
+    display:inline; 
+    float:left; 
+    width:392px;
+    margin-left:35px;
+   }
+   #bottom{
+      width:400px;
+   }

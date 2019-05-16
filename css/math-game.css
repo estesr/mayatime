@@ -1,0 +1,606 @@
+.wrong{
+		border-color: red !important;
+		background: url('../img/math-game/game/x.png') center bottom no-repeat transparent !important;
+		border-width:3px;
+	}
+	.right{
+		border-color:green !important;
+		background: url('../img/math-game/game/check.png') center bottom no-repeat transparent;
+		border-width:3px;
+	}
+	.clear{clear:both !important;}
+	#base-10, #middle, #base-20{
+		float:left; display:inline; width:250px;
+	}
+	#base-10{
+		width:200px !important;
+		padding-right:50px !important;
+	}
+	#middle{
+		width:400px;
+	}
+	#base-20{
+		margin-left:60px;
+	}
+	.pyramid div, .total{
+		height:75px;
+		width:75px;
+		border:1px solid #000;
+		margin:10px;
+	}
+	.total{
+		margin-top:50px;
+		display: inline;
+		border-width:3px;
+	}
+	#base-10-total{
+		float:left;
+		background: url('total.png') center bottom no-repeat;
+	}
+	#base-20-total{
+		float:right;
+		background: url('total.png') center bottom no-repeat;
+	}
+	.total div{
+		margin:0 auto;
+		margin-top:20px;
+		text-align:center;
+		width:75px;
+		font-size:25px;
+	}
+
+	#symbolPile div, .pyramidDropZone div.cloned-symbol, .cloned-total-symbol, .final-answer-cloned-symbol{
+		height:45px;
+		width:37px;
+		border:1px dotted #000;
+		display:inline-block;
+		padding:4px;
+		margin:4px;
+		text-align:center;
+		font-weight:bold;
+	}
+	#symbolPile div span, .pyramidDropZone div.cloned-symbol span, .cloned-total-symbol span, .final-answer-cloned-symbol span{
+		display:none;
+	}
+	.pyramidDropZone{
+		/*background: url('trash-stripe.png') repeat center center transparent;*/
+	}
+	/*
+	.pyramidDropZone div.cloned-symbol{
+		height:15px !important;
+		width:15px !important;
+		border:2px dotted #000 !important;
+		padding:3px;
+		font-weight:bold;
+		text-align:center;
+	}*/
+
+	table#grid, table.sum-grid{
+		width:75px;
+	}
+	table.equals-grid{
+		width:60px;
+	}
+	table#raw-grid, .raw-sum-grid, table#answer-grid, table.sum-grid{
+		width:79px;
+	}
+
+	table#grid td, table#answer-grid td, table#arithmetic-problem td, table#raw-grid td{
+		height:75px;
+		width:75px;
+		border:2px solid #552911;
+	}
+	table#grid td, table#answer-grid td,table#raw-grid td{
+		max-height:75px;
+		max-width:75px;
+	}
+	table#value-grid{
+		width:75px;
+	}
+	table#value-grid td{
+		height:75px;
+		width:20px;
+		font-size:18px;
+		font-weight:bold;
+		text-align:right;
+		padding-right:10px;
+		/*border:1px solid #000;*/
+	}
+	table.sum-grid td,table.raw-sum-grid td{
+		height:75px;
+		width:75px;
+		border:2px solid #552911;
+	}
+
+	td.operator-hide-border, table#arithmetic-problem td{
+		border: 0px solid transparent !important;
+	}
+
+	div#bottom > div{
+		display:inline;
+		float:left;
+	}
+	
+	
+	#arithmetic-problem, td.operator-show, table.sum-grid td.operator-hide-border, .equals-grid td, .operand-total, #finalAnswer,#rawfinalAnswer{
+		font-size:42px;
+		text-align:center;
+	}
+	.operand-total div{
+		max-width:75px;
+		font-size
+	}
+
+	hr{
+		font-weight:bold;
+		height:4px;
+		background-color:#000;
+	}
+
+	.equals-grid td{
+		height:75px;
+		width:60px;
+	}
+	.number-symbol-0,#cloned-symbol-0, #cloned-total-symbol-0, #final-answer-cloned-symbol-0{
+		background: url('../img/math-game/practice/numerals/0.png') #E89423 no-repeat center bottom;
+	}
+	.number-symbol-1,#cloned-symbol-1, #cloned-total-symbol-1, #final-answer-cloned-symbol-1{
+		background: url('../img/math-game/practice/numerals/1.png') #E89423 no-repeat center bottom;
+	}
+	.number-symbol-2,#cloned-symbol-2, #cloned-total-symbol-2, #final-answer-cloned-symbol-2{
+		background: url('../img/math-game/practice/numerals/2.png') #E89423 no-repeat center bottom;
+	}
+	.number-symbol-3,#cloned-symbol-3, #cloned-total-symbol-3, #final-answer-cloned-symbol-3{
+		background: url('../img/math-game/practice/numerals/3.png') #E89423 no-repeat center bottom;
+	}
+	.number-symbol-4,#cloned-symbol-4, #cloned-total-symbol-4, #final-answer-cloned-symbol-4{
+		background: url('../img/math-game/practice/numerals/4.png') #E89423 no-repeat center bottom;
+	}
+	.number-symbol-5,#cloned-symbol-5, #cloned-total-symbol-5, #final-answer-cloned-symbol-5{
+		background: url('../img/math-game/practice/numerals/5.png') #E89423 no-repeat center bottom;
+	}
+	.number-symbol-6,#cloned-symbol-6, #cloned-total-symbol-6, #final-answer-cloned-symbol-6{
+		background: url('../img/math-game/practice/numerals/6.png') #E89423 no-repeat center bottom;
+	}
+	.number-symbol-7,#cloned-symbol-7, #cloned-total-symbol-7, #final-answer-cloned-symbol-7{
+		background: url('../img/math-game/practice/numerals/7.png') #E89423 no-repeat center bottom;
+	}
+	.number-symbol-8,#cloned-symbol-8, #cloned-total-symbol-8, #final-answer-cloned-symbol-8{
+		background: url('../img/math-game/practice/numerals/8.png') #E89423 no-repeat center bottom;
+	}
+	.number-symbol-9,#cloned-symbol-9, #cloned-total-symbol-9, #final-answer-cloned-symbol-9{
+		background: url('../img/math-game/practice/numerals/9.png') #E89423 no-repeat center bottom;
+	}
+	.number-symbol-10,#cloned-symbol-10, #cloned-total-symbol-10, #final-answer-cloned-symbol-10{
+		background: url('../img/math-game/practice/numerals/10.png') #E89423 no-repeat center bottom;
+	}
+	.number-symbol-11,#cloned-symbol-11, #cloned-total-symbol-11, #final-answer-cloned-symbol-11{
+		background: url('../img/math-game/practice/numerals/11.png') #E89423 no-repeat center bottom;
+	}
+	.number-symbol-12,#cloned-symbol-12, #cloned-total-symbol-12, #final-answer-cloned-symbol-12{
+		background: url('../img/math-game/practice/numerals/12.png') #E89423 no-repeat center bottom;
+	}
+	.number-symbol-13,#cloned-symbol-13, #cloned-total-symbol-13, #final-answer-cloned-symbol-13{
+		background: url('../img/math-game/practice/numerals/13.png') #E89423 no-repeat center bottom;
+	}
+	.number-symbol-14,#cloned-symbol-14, #cloned-total-symbol-14, #final-answer-cloned-symbol-14{
+		background: url('../img/math-game/practice/numerals/14.png') #E89423 no-repeat center bottom;
+	}
+	.number-symbol-15,#cloned-symbol-15, #cloned-total-symbol-15, #final-answer-cloned-symbol-15{
+		background: url('../img/math-game/practice/numerals/15.png') #E89423 no-repeat center bottom;
+	}
+	.number-symbol-16,#cloned-symbol-16, #cloned-total-symbol-16, #final-answer-cloned-symbol-16{
+		background: url('../img/math-game/practice/numerals/16.png') #E89423 no-repeat center bottom;
+	}
+	.number-symbol-17,#cloned-symbol-17, #cloned-total-symbol-17, #final-answer-cloned-symbol-17{
+		background: url('../img/math-game/practice/numerals/17.png') #E89423 no-repeat center bottom;
+	}
+	.number-symbol-18,#cloned-symbol-18, #cloned-total-symbol-18, #final-answer-cloned-symbol-18{
+		background: url('../img/math-game/practice/numerals/18.png') #E89423 no-repeat center bottom;
+	}
+	.number-symbol-19,#cloned-symbol-19, #cloned-total-symbol-19, #final-answer-cloned-symbol-19{
+		background: url('../img/math-game/practice/numerals/19.png') #E89423 no-repeat center bottom;
+	}
+
+
+	.raw-symbols{
+		/*width:70%;*/
+		margin:0 auto;
+		text-align:center;
+	}
+	button{width:65px;}
+	
+	.ui-draggable:hover{
+		cursor: pointer;
+		cursor: hand;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+.math-game-landing-game-buttons .game-level-button {
+	float: left;
+	display: inline;
+	margin-right: 30px;
+	width: 278px;
+	text-align:center;
+}
+.math-game-landing-game-buttons .game-level-button h4{
+	margin-bottom:-5px;
+}
+
+.math-game-landing-game-buttons .game-level-button.last{
+	margin-right:0 !important;
+}
+
+.math-game-landing-game-buttons {
+	margin: 0px 0px 35px 25px;
+	border-top:2px solid #552911;
+	width:900px;
+	padding-top:20px;
+}
+.practice-menu{
+	height: 50px;
+	background-color:#a63715;
+}
+.practice-menu li{
+	width:auto;
+	text-transform: uppercase;
+	font-size:22px;
+	margin-left:25px;
+	padding-top:10px;
+}
+.practice .practice-menu ul li:hover{
+  background-color:#552911 !important;
+}
+
+.practice-menu li a{
+	color:#ebbb77 !important;
+
+}
+.math-game-landing-copy div.intro{
+	font-size:30px;
+}
+.math-game-landing-copy h2{
+	font-size:19px;
+	margin-top:15px;
+}
+.math-game-landing-copy h1{
+	font-size:30px;
+}
+.math-game-practice-god h2{
+	font-family:"Times New Roman";
+}
+
+.game .math-game-practice-god {
+	display: inline;
+	float: left;
+	width: 270px;
+	height: 360px;
+	margin-right: 10px;
+	text-align:center;
+}
+.game .math-game-practice-god h2{
+	font-size:24px;
+  	font-weight:normal;
+}
+.game .math-game-landing-copy {
+	display: inline;
+	float: left;
+	width: 655px;
+	line-height: 1.3;
+}
+
+.character-logo-game {
+	height: 225px;
+	margin-bottom: 5px;
+}
+.character-logo-game.game-1 {
+	background: url('../img/math-game/game/level-1-character.png') no-repeat top center;
+}
+.character-logo-game.game-2 {
+	background: url('../img/math-game/game/level-2-character.png') no-repeat top center;
+}
+.character-logo-game.game-3 {
+	background: url('../img/math-game/game/level-3-character.png') no-repeat top center;
+}
+.character-logo-game.reveal-1 {
+	background: url('../img/math-game/game/level-1-modern-character.png') no-repeat top center;
+}
+.character-logo-game.reveal-2 {
+	background: url('../img/math-game/game/level-2-modern-character.png') no-repeat top center;
+}
+.character-logo-game.reveal-3 {
+	background: url('../img/math-game/game/level-3-modern-character.png') no-repeat top center;
+}
+
+
+#symbol-sidebar{
+	display:inline; 
+	float:left; 
+	width:300px;
+	padding-left:30px;
+}
+#grid-wrapper{
+	display:inline;
+	float:left;
+	width:590px;
+}
+#show-numbers{
+  text-transform: uppercase;
+}
+table#arithmetic-problem{
+	margin:20px 0 0px 0;
+}
+table#arithmetic-problem tbody{
+	border:2px solid #552911;
+}
+table#arithmetic-problem td.problem{
+	background-color:#a63715 !important;
+	color:#f9eada;
+	width:175px;
+	text-align: center;
+	border-right:2px solid #552911;
+	font-weight:normal;
+	text-transform: uppercase;
+	font-size:34px;
+	padding:5px 0 0 0!important;
+}
+body.i18n-es table#arithmetic-problem td.problem {
+	font-size:32px;
+	padding:7px 0 0 0!important;
+}
+table#arithmetic-problem td{
+	background-color:#f9eada !important;
+	height:auto;
+	font-weight: bold;
+	padding:5px 0 0 0!important;
+}
+table#arithmetic-problem td#operand-1{
+	padding-left:30px !important;
+}
+
+table{
+	table-layout:fixed;
+}
+#equals{
+	width:75px;
+}
+
+
+.operand-1, .operand-2,
+.operand-1:hover, .operand-2:hover{
+	background-color:#f9eada !important;
+}
+.raw-row-total{
+	background-color: #f9d399 !important;
+}
+
+.raw-row-total img{
+	text-align:center;
+	width:25%;
+}
+.raw-dot-row img{
+	margin:0px -5px;
+}
+.raw-stick-row img{
+	display: block;
+	margin:0px auto;
+}
+.row-total{
+	background-color:#ace4e4 !important;
+}
+.operator-show{
+	border:0px !important;
+}
+#symbol-sidebar p{
+	margin-bottom:10px;
+	line-height:1.1;
+}
+body.i18n-es #symbol-sidebar p{
+	font-size: 15px;
+	margin-right: 15px;
+}
+
+#bottom table{
+	border-collapse:separate; 
+	border-spacing:0 15px;
+}
+#bottom table.sum-grid,
+#bottom table.raw-sum-grid{
+	border-spacing:0px 0px !important;
+}
+.answer-key{
+	position:relative;
+	top:-45px;
+	text-align:center;
+}
+.answer-key span{
+	margin-bottom:-5px;
+}
+
+#grid-wrapper button#final{
+	float:right;
+}
+.math-game-landing-copy p {
+	font-size: 17px;
+}
+.math-game-landing-copy p.intro {
+	font-size: 20px;
+	min-height:170px;
+}
+.reveal p.intro{
+	min-height:0 !important;
+}
+.reveal .practice-menu li{
+	background-color:transparent !important;
+}
+
+#column-key{
+	width:235px;
+	float:right;
+	text-align: center;
+	position: relative;
+	top: 16px;
+	font-size:90%;
+}
+body.i18n-es #column-key{
+	top:10px;
+}
+#column-key .float-right{
+	padding-right:35px;
+}
+#column-key .float-left{
+	padding-left:10px;
+}
+body.i18n-es #column-key .float-left {
+	margin-left: -5px;
+	padding-left:0px;
+}
+body.i18n-es .block-26 #column-key .float-left {
+	margin-left: 10px !important;
+	padding-left: 0px !important;
+	margin-top: 25px !important;
+}
+
+
+/* "You did it!" message */
+#successMessage,#endofgame {
+  position: absolute;
+  left: 560px;
+  bottom: 185px;
+  width: 0;
+  height: 0;
+  z-index: 100;
+  background: url('../img/math-game/practice/math-game-god-practice-feedback.png') #ace4e4 center right no-repeat;
+  /*background: #ace4e4 center right no-repeat;*/
+  border: 2px solid #552911;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  
+  border-radius: 10px;
+  -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  padding: 20px;
+}
+#successMessage p,#tryAgain p{
+  width:65%;
+}
+
+/* "Try Again" message */
+#tryAgain {
+  position: absolute;
+  left: 580px;
+  top: 250px;
+  width: 0;
+  height: 0;
+  z-index: 100;
+  background: url('../img/math-game/practice/math-game-god-practice-feedback.png') #a63715 center right no-repeat;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  
+  border-radius: 10px;
+  -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
+  padding: 20px;
+  color:#EFD9B8;
+}
+
+#check-answer, #final{
+	float:right;
+	display:none;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+
+#game-overlay{
+	display:none;
+	height: 808px;
+	width: 100%;
+	position: absolute;
+	background: url('../img/math-game/game/ajax-loader.gif') no-repeat center center #552911;
+	opacity: .9;
+}
+.border-top{
+	border-top: 2px solid #552911;
+	padding-top:20px;
+	margin-top:25px	;
+}
+.math-game-landing-copy.reveal{
+	padding-top:25px;
+}
+.reveal .math-game-landing-copy{
+	line-height:1.3;
+}
+.reveal .math-game-landing-copy p{
+	margin-bottom:15px;
+}
+.reveal .practice-menu{
+	background-color:#552911;
+}
+.reveal .practice-menu ul{
+	text-align:center;
+	width:952;
+	margin:0 auto;
+}
+.reveal .practice-menu li{
+	display:inline;
+	top:10px;
+	position:relative;
+}
+#clue span{
+	font-weight:bold;
+}
+.clues, .intros{
+	display:none;
+}
+#skip,#again{
+	color:#F9EADA !important;
+}
+#skip:hover,#again:hover{
+	color:#fff !important;
+}
+.math-game-practice-god h2{
+	line-height:1.1;
+}
+.maya-math-game-wrapper button{
+
+    background: #f8c67b !important;
+    border: 2px solid #552911 !important;
+    color: #333333;
+    cursor: pointer;
+    font: "times new roman" normal 14px;
+    padding: 3px 10px 4px;
+    text-shadow: none !important;
+    width: auto;
+    border-radius: 0px !important;
+    margin-top:15px;
+    text-align: center;
+    margin: 15px auto 0 auto;
+}
+.maya-math-game-wrapper button:hover{
+  background:#fff !important;
+}
+.game #navigation-help{
+	margin-top:15px;
+}
+strong.display-block{
+	margin-top:5px;
+}
+#grid-wrapper .show-numbers{
+	display:none !important;
+}
+body.i18n-es #bottom .small{
+	font-size:65%;
+}

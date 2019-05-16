@@ -1,0 +1,423 @@
+.glyph-content-text a, .red{
+  color:#AE390E !important;
+  text-decoration:none !important;
+}
+.red a{
+  font-weight:bold;
+}
+
+div.glyphs {
+  position: relative;
+  float: left;
+  width: 400px;
+  height: 840px;
+  overflow: scroll;
+  margin-right: 30px;
+  border:3px solid #552911;
+}
+
+div.glyphs ul {
+  margin: 0;
+  padding: 0;
+  list-style-type:none;
+  background: url(../img/glyph-interactive/glyphs.png) no-repeat;
+  height: 2250px;
+}
+body.i18n-es div.glyphs ul {
+  background: url(../img/glyph-interactive/glyphs-es.png) no-repeat !important;
+}
+
+div.glyphs ul li {
+  margin: 0;
+  cursor: pointer;
+}
+
+/*div.glyphs ul li:hover {
+  border: 3px solid #552911;
+}*/
+
+/*div.glyphs ul li.complete:hover {
+  border: none;
+}*/
+
+div.glyph-detail h2 {
+  margin-top: 0;
+}
+.glyph-detail img{
+  margin-bottom:15px;
+}
+.glyph-image-wrap{
+  width:215px;
+  height:160px;
+  margin-bottom:20px;
+}
+div.glyphs ul li.a1-b2 {
+  width: 372px;
+  height: 310px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.a3 {
+  position: absolute;
+  left: 27px;
+  top: 315px;
+  width: 154px;
+  height: 143px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.b3 {
+  position: absolute;
+  top: 317px;
+  left: 190px;
+  width: 154px;
+  height: 143px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.a4 {
+  position: absolute;
+  left: 32px;
+  top: 467px;
+  width: 144px;
+  height: 130px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.b4 {
+  position: absolute;
+  top: 467px;
+  left: 190px;
+  width: 154px;
+  height: 130px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.a5 {
+  position: absolute;
+  left: 37px;
+  top: 610px;
+  width: 144px;
+  height: 135px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.b5 {
+  position: absolute;
+  top: 610px;
+  width: 154px;
+  height: 135px;
+  left: 190px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.a6 {
+  position: absolute;
+  left: 37px;
+  top: 755px;
+  width: 140px;
+  height: 120px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.b6 {
+  position: absolute;
+  top: 755px;
+  width: 153px;
+  left: 185px;
+  height: 125px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.a7 {
+  position: absolute;
+  left: 35px;
+  top: 883px;
+  width: 144px;
+  height: 120px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.b7 {
+  position: absolute;
+  top: 885px;
+  width: 154px;
+  left: 190px;
+  height: 125px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.a8 {
+  position: absolute;
+  top: 1015px;
+  left: 37px;
+  width: 144px;
+  height: 120px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.b8 {
+  position: absolute;
+  top: 1020px;
+  left: 190px;
+  width: 154px;
+  height: 120px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.a9 {
+  position: absolute;
+  top: 1150px;
+  left: 37px;
+  width: 145px;
+  height: 133px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.b9 {
+  position: absolute;
+  top: 1155px;
+  left: 185px;
+  width: 150px;
+  height: 123px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.a10 {
+  position: absolute;
+  top: 1290px;
+  left: 37px;
+  width: 140px;
+  height: 120px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.b10 {
+  position: absolute;
+  top: 1290px;
+  left: 190px;
+  width: 135px;
+  height: 120px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.a11 {
+  position: absolute;
+  top: 1425px;
+  left: 20px;
+  width: 165px;
+  height: 140px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.b11 {
+  position: absolute;
+  top: 1425px;
+  width: 150px;
+  left: 190px;
+  height: 145px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.a12 {
+  position: absolute;
+  top: 1580px;
+  left: 27px;
+  width: 164px;
+  height: 140px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.b12 {
+  position: absolute;
+  top: 1580px;
+  width: 140px;
+  left: 200px;
+  height: 130px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.a13 {
+  position: absolute;
+  top: 1723px;
+  left: 30px;
+  width: 160px;
+  height: 140px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.b13 {
+  position: absolute;
+  top: 1723px;
+  width: 150px;
+  left: 200px;
+  height: 130px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.a14 {
+  position: absolute;
+  left: 30px;
+  top: 1873px;
+  width: 158px;
+  height: 140px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.b14 {
+  position: absolute;
+  top: 1873px;
+  width: 160px;
+  left: 195px;
+  height: 140px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.a15 {
+  position: absolute;
+  top: 2020px;
+  left: 30px;
+  width: 155px;
+  height: 130px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.b15 {
+  position: absolute;
+  top: 2020px;
+  width: 150px;
+  left: 200px;
+  height: 130px;
+  display: block;
+  float: left;
+}
+
+div.glyphs ul li.complete {
+  position: absolute;
+  top: 2175px;
+  width: 368px;
+  height: 50px;
+  display: block;
+  float: left;
+}
+
+
+
+div.glyphs ul li.complete {
+  /*width: 375px;
+  height: 65px;
+  background-color: #000;
+  display: block;*/
+}
+
+div.glyph-content {
+  float: left;
+  width: 446px;
+}
+
+div.seperator {
+  border-top: 2px solid #936f54;
+  height: 2px;
+  margin-bottom:10px;
+}
+
+div.glyph-content h1,
+div.glyph-content h2,
+div.glyph-content h3,
+div.glyph-content h4,
+div.glyph-content h5,
+div.glyph-content h6,
+div.glyph-content p {
+  color: #4d2a0e;
+}
+div.glyph-content-text p {
+  margin-bottom:15px;
+}
+
+div.glyph-content h2{
+  font-size:26px;
+  margin:15px 0;
+}
+
+blockquote {
+  color: #4d2a0e !important;
+  font-style: italic !important;
+}
+
+blockquote footer {
+  font-style: normal !important;
+}
+
+div.two_columns {
+  float: left;
+  width: 446px;
+  padding-top:15px;
+}
+
+div.two_columns div.column_one {
+  float: left;
+  margin-right: 46px;
+  width: 200px;
+}
+
+div.two_columns div.column_two {
+  float: left;
+  margin-left: 0px;
+  width: 200px;
+}
+
+img {
+  border: none;
+}
+
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+strong.highlight {
+  color: #ae390e;
+}
+
+.block-block-20,
+.block-block-21{
+  margin-top:15px;
+  border:3px solid #552911;
+  padding:20px;
+  -moz-box-shadow: inset 0 0 2px 2px #7e6c62;
+  -webkit-box-shadow: inset 0 0 2px 2px #7e6c62;
+  box-shadow: inset 0 0 2px 2px #7e6c62;
+  background-color:#efd9b8;
+}
+.page-node-41 .field-name-body, .page-node-42 .field-name-body{
+  padding-left: 160px;
+  width: 800px;
+}
+
+
