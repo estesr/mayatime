@@ -80,6 +80,7 @@ function mayatime_preprocess_page(&$vars) {
 
 	//add toolip css
 	drupal_add_css(drupal_get_path('theme', 'mayatime') . '/css/jquery.qtip.min.css');
+	drupal_add_css(drupal_get_path('theme', 'mayatime') . '/css/responsive.css');
 
 
 	// OCIO security

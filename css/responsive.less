@@ -1,3 +1,104 @@
-#block-menu-menu-secondary-menu ul li a {
-  color: green !important;
+@media (max-width: 1040px) {
+  body.html {
+    min-width: 0;
+    max-width: 100%;
+    // border: 2px solid pink;
+  }
+  #page {
+    header#section-header {
+      display: none;
+    }
+    #section-content {
+      #zone-content-wrapper-front {
+        background: url(/sites/all/themes/mayatime/img/zone-content-wrapper.jpg) top center transparent repeat-y;
+        min-height: 0 !important;
+        height: auto;
+
+        #zone-content .region-inner {
+          // display: flex;
+          // justify-content: space-between;
+
+          .grid-4, #front-menu-aside {
+            // width: auto !important;
+            // width: 200px !important;
+            // width: 50% !important;
+          }
+          .grid-4 {
+            width: 100% !important;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+            #front-menu-main {
+              // padding-right: ~"calc(100% - 260px)";
+              width: 100%;
+            }
+
+            .front-menu {
+              height: auto;
+              width: auto;
+              top: 0;
+              left: 0;
+              margin: 0;
+
+              &:not(.front-menu-the-maya) {
+                // margin-top: 25px;
+              }
+
+              &:nth-of-type(odd) {
+
+              }
+              &.front-menu-maya-sun {
+                margin-top: 25px;
+              }
+              &.front-menu-calendar {
+                margin-top: -50px;
+              }
+              &.front-menu-corn-and-maya-time {
+                // margin-top: -50px;
+              }
+              &.front-menu-2012-resetting {
+                // margin-top: 150px;
+              }
+            }
+            #front-menu-main-bottom {
+              // padding: 0;
+              // width: 100%;
+              // top: 0;
+              display: none;
+            }
+            .serpent-inline {
+              // width: 50%;
+              // display: block;
+            }
+          }
+          // #front-menu-aside {
+          //   top: 200px;
+          //
+          //   .front-menu-2012-resetting {
+          //     top: 525px;
+          //   }
+          // }
+        }
+      }
+      #zone-content {
+        box-sizing: border-box;
+        padding: 0 40px;
+        width: 100%;
+
+        .grid-12#region-content {
+          max-width: 100%;
+        }
+
+        .region-inner {
+          .front-menu-aside {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+    footer#section-footer {
+      display: none;
+    }
+  }
 }

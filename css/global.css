@@ -1456,6 +1456,9 @@ body.front .region-content .grid-6.prefix-1.alpha.omega{
 }
 
 #front-menu-main, #front-menu-main-bottom{width:260px}
+#front-menu-main .serpent-inline {
+  display: none;
+}
 #front-menu-main p.home-open{
 	margin-bottom:10px;
 	font-size:120%;
