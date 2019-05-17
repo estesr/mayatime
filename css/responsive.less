@@ -1,84 +1,152 @@
+// rebuilding fullsize layout, since the HTML structure changed
+@media (min-width: 1040px) {
+  #page #section-content #zone-content-wrapper-front {
+    #zone-content .region-inner .grid-4 {
+      // background: green;
+      position: relative;
+      width: 100% !important;
+
+      .front-menu {
+        // clear: both;
+        display: inline-block;
+        height: auto !important;
+        position: relative;
+        width: auto !important;
+      }
+      .front-menu-right {
+        float: right;
+      }
+      .front-menu-the-maya {
+        float: left;
+      }
+      .front-menu-maya-sun {
+        top: 100px;
+        // border: 2px solid green;
+      }
+      .front-menu-calendar {
+        clear: both;
+        float: left;
+        top: 150px;
+      }
+      .front-menu-corn-and-maya-time {
+        top: 250px;
+      }
+      .front-menu-2012-resetting  {
+        float: right;
+        clear: both;
+      }
+      #front-menu-main-bottom {
+        clear: both;
+        float: left;
+        top: -50px;
+      }
+    }
+  }
+
+}
 @media (max-width: 1040px) {
   body.html {
-    min-width: 0;
     max-width: 100%;
-    // border: 2px solid pink;
+    min-width: 0;
+    overflow-x: hidden;
   }
   #page {
     header#section-header {
-      display: none;
+      #zone-user-wrapper, #zone-user, .grid-12, .region-inner, .block, .block-inner, .content.clearfix {
+        max-width: 100%;
+      }
+      #zone-branding {
+        max-width: 100%;
+        .grid-1 {
+          display: none;
+        }
+        .grid-8 {
+          float: none;
+          width: auto !important;
+
+          .branding-data {
+            text-align: center;
+
+            .logo-img {
+              float: none;
+              margin-top: 20px;
+              width: 100%;
+
+              @media (max-width: 750px) {
+                margin-top: 35px;
+              }
+
+              img {
+                max-width: 100%;
+              }
+            }
+          }
+        }
+        .grid-2 {
+          padding: 0;
+          box-sizing: border-box;
+
+          &#region-secondary-menu {
+            clear: both;
+            float: left;
+            left: 50px;
+            margin: -30px 0 0 0;
+            width: auto !important;
+            // width: 175px !important;
+            font-size: 90%;
+
+            @media (max-width: 850px) {
+              font-size: 80%;
+              left: 40px;
+            }
+            @media (max-width: 750px) {
+              display: none;
+              // margin: 0;
+              // left: 30px;
+              //
+              // ul li.leaf {
+              //   display: inline !Important;
+              // }
+            }
+          }
+          #block-locale-language ul.language-switcher-locale-url {
+            margin-right: 20px;
+          }
+
+        }
+      }
     }
     #section-content {
+      // front page styles
       #zone-content-wrapper-front {
-        background: url(/sites/all/themes/mayatime/img/zone-content-wrapper.jpg) top center transparent repeat-y;
+        background: url('/sites/all/themes/mayatime/img/zone-content-wrapper.jpg') top center transparent repeat-y;
         min-height: 0 !important;
         height: auto;
 
         #zone-content .region-inner {
-          // display: flex;
-          // justify-content: space-between;
-
-          .grid-4, #front-menu-aside {
-            // width: auto !important;
-            // width: 200px !important;
-            // width: 50% !important;
-          }
           .grid-4 {
-            width: 100% !important;
+            align-items: center;
             display: flex;
-            justify-content: space-around;
             flex-wrap: wrap;
+            justify-content: space-around;
+            width: 100% !important;
 
             #front-menu-main {
-              // padding-right: ~"calc(100% - 260px)";
               width: 100%;
             }
 
             .front-menu {
               height: auto;
-              width: auto;
-              top: 0;
               left: 0;
               margin: 0;
-
-              &:not(.front-menu-the-maya) {
-                // margin-top: 25px;
-              }
-
-              &:nth-of-type(odd) {
-
-              }
-              &.front-menu-maya-sun {
-                margin-top: 25px;
-              }
-              &.front-menu-calendar {
-                margin-top: -50px;
-              }
-              &.front-menu-corn-and-maya-time {
-                // margin-top: -50px;
-              }
-              &.front-menu-2012-resetting {
-                // margin-top: 150px;
-              }
+              padding: 0 15px;
+              top: 0;
+              width: auto;
             }
             #front-menu-main-bottom {
-              // padding: 0;
-              // width: 100%;
-              // top: 0;
               display: none;
             }
-            .serpent-inline {
-              // width: 50%;
-              // display: block;
-            }
           }
-          // #front-menu-aside {
-          //   top: 200px;
-          //
-          //   .front-menu-2012-resetting {
-          //     top: 525px;
-          //   }
-          // }
         }
       }
       #zone-content {
@@ -98,7 +166,21 @@
       }
     }
     footer#section-footer {
-      display: none;
+      min-height: 0;
+
+      #zone-footer-wrapper {
+        min-height: 0;
+
+        #zone-footer.container-12, {
+          max-width: 100%;
+          padding-left: 30px;
+          padding-right: 30px;
+
+          .grid-12 {
+            width: 100% !important;
+          }
+        }
+      }
     }
   }
 }
