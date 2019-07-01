@@ -53,6 +53,7 @@
    ================================================== */
 
 @import "reset.css";
+/* @import "responsive.css"; */
 
 /* *
  * 1.GLOBAL
@@ -271,10 +272,12 @@ body.front #zone-branding-wrapper{
 /*This allows us to tweak the grid for our content area since it doesnt
 always align with grid increments*/
 #zone-content.container-12 .grid-8.alpha.omega {
-	width: 660px !important;
+	/* width: 660px !important; */
+  width: 660px;
 }
 #zone-content.container-12 .grid-4.alpha.omega {
-	width: 295px !important;
+	/* width: 295px !important; */
+  width: 295px;
 	padding-right:5px;
 }
 
