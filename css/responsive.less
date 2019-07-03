@@ -47,6 +47,7 @@
   max-width: 100%;
 }
 
+// general
 @media (max-width: 1040px) {
   body.html {
     max-width: 100%;
@@ -263,6 +264,7 @@
   }
 }
 
+// landing pages for toplevel sections
 @media (max-width: 1040px) {
   body.page-node-5,
   body.page-node-7,
@@ -319,6 +321,104 @@
   }
 }
 
+// calendar activity page
+.page-node-39 {
+  .calendar-quote-mobile {
+    display: none;
+  }
+  @media (max-width: 1040px) {
+    #calendar-wrapper {
+      #calendar-converter-intro {
+        width: 100%;
+        float: none;
+
+        #calendar-converter-intro-top {
+          float: none;
+          margin-bottom: 30px;
+          width: 100%;
+
+          #calendar-quote.calendar-quote-mobile {
+            display: block;
+            // float: right;
+            font-size: .9em;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: ~"calc(100% - 360px)";
+          }
+          @media (max-width: 850px) {
+            .break {
+              display: none;
+            }
+            #calendar-converter-header {
+              width: auto;
+
+              h1 br {
+                display: none;
+              }
+            }
+            #calendar-quote.calendar-quote-mobile {
+              margin-left: auto;
+              margin-right: auto;
+              position: static;
+              width: 85%;
+            }
+          }
+        }
+        .intro-paragraphs p {
+          width: 100%;
+        }
+
+        // #calendar-converter-header {
+        //   float: none;
+        //   width: 100%;
+        //   h1 br {
+        //     display: none;
+        //   }
+        // }
+      }
+      #calendar-converter-main {
+        // text-align: center;
+        width: 100%;
+
+        #calendar-quote {
+          display: none;
+        }
+        #converter-wrap {
+          align-items: center;
+          display: flex;
+          justify-content: space-around;
+          margin-top: 20px;
+
+          @media (max-width: 750px) {
+            flex-wrap: wrap;
+            justify-content: center;
+
+            #conveter-main, #converter-aside {
+              width: 100%;
+            }
+            #conveter-main #monument {
+              margin: 0 auto;
+            }
+          }
+
+          #conveter-main, #converter-aside {
+            display: inline-block;
+            float: none;
+            margin: 0;
+          }
+          #converter-aside {
+            max-width: ~"calc(100% - 375px)";
+            width: auto;
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// menu tests
 @media (max-width: 1040px) {
   .page-node-31 {
     header #region-menu {
@@ -395,6 +495,8 @@
     }
   }
 }
+
+// mobile
 @media (max-width: 500px) {
   body { font-size: 20px; }
   p {
