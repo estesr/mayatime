@@ -3,7 +3,7 @@
   Drupal.behaviors.mayatime = {
     attach: function (context, settings) {
 
-    		$('.glossary-tip').click(function(e){
+    	$('.glossary-tip').click(function(e){
     			e.preventDefault();
     		});
 			/******
@@ -17,10 +17,9 @@
 				style: {
 					classes: 'page-glyph-image-tooltips'
 				}
-					
+
 			});
-			
-			
+
 			/******
 			*** Interactive map tooltips
 			***/
@@ -36,7 +35,7 @@
 					classes: 'maya-world-map-tooltips'
 				}
 			});
-			
+
 			/******
 			*** Glossary term tooltips
 			***/
@@ -55,7 +54,7 @@
 					classes: 'page-glyph-image-tooltips'
 				}
 			});
-			
+
 			$('.node-photo-gallery .field-name-body.grid-4 .glossary-tip').qtip({
 				position: {
 					my: 'left top',
@@ -68,20 +67,18 @@
 					classes: 'page-glyph-image-tooltips'
 				}
 			});
-			
-			
+
 			$('.block-menu-block-2 li',context).bind({
 				click : function(e){
 					el = $(this);
 					destination = el.find('a').attr('href');
-					window.location = destination; 
+					window.location = destination;
 				},
 				hover: function(){
-					
+
 				}
 			});
-			
-			
+
 			/******
 			*** Homepage sliding reveal menu
 			***/
@@ -98,22 +95,29 @@
 					if($.browser.msie && $.browser.version <= 8.0){
 						$(this).find('img').animate({
 							left: '-6px'
-						});	
+						});
 					}
 					else{
 						$(this).find('img').animate({
 							left: '0px'
 						});
 					}
-					
-					
+
+
 					$(this).find('.mask').animate({
 						left: '-400px'
 					})
-				} 
+				}
 			})
 
+      // responsive menu
+      // $('#region-menu').click (function (e) {
+      //   console.log('1');
+      // })
     }
   };
 
+  // $('#region-menu').click (function (e) {
+  //   console.log('1');
+  // })
 })(jQuery);

@@ -1,6 +1,24 @@
 // rebuilding fullsize layout, since the HTML structure changed
-@media (min-width: 1040px) {
+
+@main-breakpoint: 1040px;
+
+// all-width changes
+body.html {
+  // font-size: 100%;
+  font-size: initial;
+
+  header#section-header, footer#section-footer {
+    font-size: 75%;
+  }
+  #zone-content #messages {
+    max-width: 100%;
+  }
+}
+
+// homepage styles
+@media (min-width: @main-breakpoint) {
   #page #section-content #zone-content-wrapper-front {
+    border: 2px solid green;
     #zone-content .region-inner .grid-4 {
       position: relative;
       width: 100% !important;
@@ -43,22 +61,19 @@
   }
 }
 
-#zone-content #messages {
-  max-width: 100%;
-}
-
 // general
-@media (max-width: 1040px) {
+@media (max-width: @main-breakpoint) {
   body.html {
     max-width: 100%;
     min-width: 0;
     overflow-x: hidden;
 
     section#section-content {
-      // font-size: 100%;
-      font-size: 150%;
-      // font-size: 18px;
-      // color: blue;
+      font-size: 100%;
+    }
+    // TEMPORARY
+    #zone-menu {
+      display: none;
     }
   }
   #page {
@@ -265,7 +280,7 @@
 }
 
 // landing pages for toplevel sections
-@media (max-width: 1040px) {
+@media (max-width: @main-breakpoint) {
   body.page-node-5,
   body.page-node-7,
   body.page-node-9,
@@ -323,10 +338,20 @@
 
 // calendar activity page
 .page-node-39 {
-  .calendar-quote-mobile {
+  .calendar-quote-mobile, .aside-mobile {
     display: none;
   }
-  @media (max-width: 1040px) {
+  .unit-conversions {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+
+    div {
+      width: 50%;
+    }
+  }
+
+  @media (max-width: @main-breakpoint) {
     #calendar-wrapper {
       #calendar-converter-intro {
         width: 100%;
@@ -339,46 +364,18 @@
 
           #calendar-quote.calendar-quote-mobile {
             display: block;
-            // float: right;
             font-size: .9em;
             position: absolute;
             right: 20px;
             top: 20px;
             width: ~"calc(100% - 360px)";
           }
-          @media (max-width: 850px) {
-            .break {
-              display: none;
-            }
-            #calendar-converter-header {
-              width: auto;
-
-              h1 br {
-                display: none;
-              }
-            }
-            #calendar-quote.calendar-quote-mobile {
-              margin-left: auto;
-              margin-right: auto;
-              position: static;
-              width: 85%;
-            }
-          }
         }
         .intro-paragraphs p {
           width: 100%;
         }
-
-        // #calendar-converter-header {
-        //   float: none;
-        //   width: 100%;
-        //   h1 br {
-        //     display: none;
-        //   }
-        // }
       }
       #calendar-converter-main {
-        // text-align: center;
         width: 100%;
 
         #calendar-quote {
@@ -389,19 +386,6 @@
           display: flex;
           justify-content: space-around;
           margin-top: 20px;
-
-          @media (max-width: 750px) {
-            flex-wrap: wrap;
-            justify-content: center;
-
-            #conveter-main, #converter-aside {
-              width: 100%;
-            }
-            #conveter-main #monument {
-              margin: 0 auto;
-            }
-          }
-
           #conveter-main, #converter-aside {
             display: inline-block;
             float: none;
@@ -415,11 +399,98 @@
         }
       }
     }
+    #block-system-main  {
+      width: 100%;
+
+      article {
+        font-size: 18px !important;
+        display: block;
+        float: none;
+        position: static;
+        width: 100%;
+
+      }
+      aside {
+        display: none;
+      }
+      .aside-mobile {
+        display: block;
+        float: left;
+        margin: 0 20px 10px 0;
+      }
+    }
+    #calendar-abstract3 div {
+      width: ~"calc(50% - 18px)";
+
+      @media (max-width: 750px) {
+        width: 100%;
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    .unit-conversions {
+      display: block;
+
+      div {
+        width: 100%;
+      }
+    }
+  }
+  @media (max-width: 850px) {
+    #calendar-wrapper #calendar-converter-intro #calendar-converter-intro-top {
+      #calendar-converter-header {
+        height: 96px;
+        width: auto;
+
+        h1 {
+          margin-left: 15px;
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+
+          br {
+            display: none;
+          }
+        }
+      }
+      .break {
+        display: none;
+      }
+      #calendar-quote.calendar-quote-mobile {
+        margin-left: auto;
+        margin-right: auto;
+        position: static;
+        width: 85%;
+      }
+    }
+  }
+  @media (max-width: 750px) {
+    #calendar-wrapper #calendar-converter-main #converter-wrap {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      #conveter-main, #converter-aside {
+        max-width: 100%;
+        width: 100%;
+      }
+      #conveter-main #monument {
+        margin: 0 auto;
+      }
+      #converter-aside {
+        text-align: center;
+
+        #select-date {
+          display: inline-block;
+          margin: 30px 0;
+          max-width: 315px;
+        }
+      }
+    }
   }
 }
 
 // menu tests
-@media (max-width: 1040px) {
+@media (max-width: @main-breakpoint) {
   .page-node-31 {
     header #region-menu {
       // left: ~"calc(100% - 300px)";
@@ -497,9 +568,9 @@
 }
 
 // mobile
-@media (max-width: 500px) {
-  body { font-size: 20px; }
-  p {
-    font-size: 1em !important;
-  }
-}
+// @media (max-width: 500px) {
+//   body { font-size: 20px; }
+//   p {
+//     font-size: 1em !important;
+//   }
+// }
