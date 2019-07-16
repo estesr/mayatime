@@ -416,15 +416,12 @@ body.html {
       .aside-mobile {
         display: block;
         float: left;
-        margin: 0 20px 10px 0;
+        margin: 0 30px 10px 0;
       }
     }
     #calendar-abstract3 div {
-      width: ~"calc(50% - 18px)";
-
-      @media (max-width: 750px) {
-        width: 100%;
-      }
+      margin: 0 !important;
+      width: ~"calc(100% - 271px)";
     }
   }
   @media (max-width: 900px) {
@@ -484,6 +481,17 @@ body.html {
           margin: 30px 0;
           max-width: 315px;
         }
+      }
+    }
+  }
+  @media (max-width: 680px) {
+    #block-system-main {
+      .aside-mobile {
+        float: none;
+        text-align: center;
+      }
+      #calendar-abstract3 div {
+        width: 100%;
       }
     }
   }
@@ -567,6 +575,12 @@ body.html {
   }
 }
 
+
+@media (max-width: 600px) {
+  #page #section-content #zone-content {
+    padding: 0 20px;
+
+}
 // mobile
 // @media (max-width: 500px) {
 //   body { font-size: 20px; }
