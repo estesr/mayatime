@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * @file
  * Alpha's theme implementation to display a single Drupal page.
@@ -9,11 +9,11 @@
     <?php print render($page['header']); ?>
   <?php endif; ?>
 	<?php //print_r($)?>
-	
-	
+
+
   <section id="section-content" class="section section-content">
-	  <div id="zone-content-wrapper-front" class="zone-wrapper zone-content-wrapper clearfix">  
-	  	<div id="zone-content" class="zone zone-content clearfix container-12">    
+	  <div id="zone-content-wrapper-front" class="zone-wrapper zone-content-wrapper clearfix">
+	  	<div id="zone-content" class="zone zone-content clearfix container-12">
 		        <div class="grid-12 region region-content alpha omega" id="region-content">
 		  				<div class="region-inner region-content-inner">
 								<div class='grid-4 alpha omega'>
@@ -23,8 +23,8 @@
 										<p class='home-open'>Los mayas de Mesoamérica son famosos por sus calendarios precisos y su conocimiento de la astronomía.</p>
 										<p>A través de observaciones sistemáticas realizadas durante miles de años, los observadores mayas desarrollaron calendarios complejos y precisos que siguen marcando los ciclos agrícolas y ceremoniales en la actualidad. Únase a nosotros en una exploración del sistema de calendario maya y sus ciclos complejos. Escuche las voces de los mayas contemporáneos quienes entrelazan su pasado con su presente, y comparta con nosotros las tradiciones vivas del tiempo maya.</p>
 									</div><!--home-main-->
-									
-									
+
+
 									<!-- the maya -->
 									<div class='front-menu-the-maya front-menu'>
 										<h2><?php print l(t('Los mayas'),'node/6');?></h2>
@@ -39,9 +39,21 @@
 										</div><!-- viewer -->
 									</div><!--front-menu-->
 									<!-- end the maya -->
-									
-									
-									
+
+                  <!-- maya sun-->
+                  <div class='front-menu-maya-sun front-menu front-menu-right'>
+                    <h2><?php print l(t('El Sol maya'),'node/8'); ?></h2>
+                    <div class='viewer'>
+                      <?php print theme('image',array('path'=>drupal_get_path('theme','mayatime') . '/img/main-menu-maya-sun.jpg' ))?>
+                      <div class='mask'>
+                        <div class='mask-inner'>
+                          <?php print $mayatime_main_menu_front_descriptions['8']?>
+                          <?php print l(t('Learn More')."&nbsp;&raquo;",'node/8',array('html'=>TRUE,'attributes'=>array('class'=>array('display-block')))); ?>
+                        </div>
+                      </div>
+                    </div><!-- viewer -->
+                  </div><!--front-menu-->
+
 									<!-- calendar -->
 									<div class='front-menu-calendar front-menu'>
 										<h2 class='short'><?php print l(t('Calendario'),'node/10');?></h2>
@@ -56,31 +68,15 @@
 										</div><!-- viewer -->
 									</div><!--front-menu-->
 									<!-- end calendar -->
-																		
-									
-									<div id='front-menu-main-bottom'>
-										<p class='italic'>Íconos culturales, como la serpiente emplumada, conectan a los mayas a su antiguo pasado. Como símbolo de fuerza y renovación, la serpiente emplumada conecta la Tierra con el cielo y trae la energía del Sol para la siembra.</p>
-									</div><!-- front-menu-main-bottom -->
-									
-									
-								</div><!--grid 4-->
-								<div id="front-menu-aside" class='grid-6 prefix-1 alpha omega'>
-									<!-- maya sun-->
-									<div class='front-menu-maya-sun front-menu front-menu-right'>
-										<h2><?php print l(t('El Sol maya'),'node/8');?></h2>
-										<div class='viewer'>
-											<?php print theme('image',array('path'=>drupal_get_path('theme','mayatime') . '/img/main-menu-maya-sun.jpg' ))?>
-											<div class='mask'>
-												<div class='mask-inner'>
-													<?php print $mayatime_main_menu_front_descriptions['8']?>
-													<?php print l(t('Learn More')."&nbsp;&raquo;",'node/8',array('html'=>TRUE,'attributes'=>array('class'=>array('display-block')))); ?>
-												</div>
-											</div>
-										</div><!-- viewer -->
-									</div><!--front-menu-->
-									
-									<div class='clear'></div>
-									
+
+
+
+								<!-- </div>  -->
+                <!--grid 4-->
+
+
+									<!-- <div class='clear'></div> -->
+
 									<!-- corn and maya time-->
 									<div class='front-menu-corn-and-maya-time front-menu front-menu-right'>
 										<h2 class='long'><?php print l(t('El maíz y el tiempo maya'),'node/12');?></h2>
@@ -94,9 +90,9 @@
 											</div>
 										</div><!-- viewer -->
 									</div><!--front-menu-->
-									
-									<div class='clear'></div>
-									
+
+									<!-- <div class='clear'></div> -->
+
 									<!-- resetting the count-->
 									<div class='front-menu-2012-resetting front-menu front-menu-right'>
 										<h2 class='long'><?php print l(t('2012: La cuenta reinicia'),'node/14');?></h2>
@@ -110,9 +106,11 @@
 											</div>
 										</div><!-- viewer -->
 									</div><!--front-menu-->
-									
-									
-									
+
+                  <div id='front-menu-main-bottom'>
+                    <p class='italic'>Íconos culturales, como la serpiente emplumada, conectan a los mayas a su antiguo pasado. Como símbolo de fuerza y renovación, la serpiente emplumada conecta la Tierra con el cielo y trae la energía del Sol para la siembra.</p>
+                  </div><!-- front-menu-main-bottom -->
+
 								</div><!--grid-6-->
 
 		        	</div><!--region-inner-->
@@ -120,7 +118,7 @@
 					</div><!--zone-content-->
 				</div><!--zone-content-wrapper-->
 	</section>
-  
+
   <?php if (isset($page['footer'])) : ?>
     <?php print render($page['footer']); ?>
   <?php endif; ?>

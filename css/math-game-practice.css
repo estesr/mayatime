@@ -75,7 +75,7 @@ table.practice td.symbol{
   float:left !important;
   background-color:#599695 !important;
   text-align:center !important;
-  /* width:157px !important; */
+  width:157px;
   border-right:1px solid #552911 !important;
   height:50px !important;
   margin-left:0px !important;
@@ -85,7 +85,7 @@ table.practice td.symbol{
   background-color:#552911 !important;
 }
 .practice-menu ul li.last{
-  /* width:161px; */
+  width:161px;
 }
 .practice-menu ul li a{
   color:#efd9b8 !important;
