@@ -279,11 +279,11 @@ body.html {
 
 // landing pages for toplevel sections
 @media (max-width: @main-breakpoint) {
-  body.page-node-5,
-  body.page-node-7,
-  body.page-node-9,
-  body.page-node-11,
-  body.page-node-13 {
+  body.page-node-5, .page-node-6,
+  body.page-node-7, .page-node-8,
+  body.page-node-9, .page-node-10,
+  body.page-node-11, .page-node-12,
+  body.page-node-13, .page-node-14 {
     #zone-content {
       .region-content {
         width: 100% !important;
@@ -326,7 +326,8 @@ body.html {
       }
     }
   }
-  body.page-node-11, body.page-node-13 {
+  body.page-node-11, body.page-node-12,
+  body.page-node-13, body.page-node-14 {
     #zone-content aside.region-sidebar-second ul.menu {
       padding-bottom: 90px;
     }
@@ -334,7 +335,7 @@ body.html {
 }
 
 // calendar activity page
-.page-node-39 {
+.page-node-39, .page-node-40 {
   .calendar-quote-mobile, .aside-mobile {
     display: none;
   }
@@ -368,7 +369,7 @@ body.html {
             width: ~"calc(100% - 360px)";
           }
         }
-        .intro-paragraphs p {
+        .intro-paragraph p {
           width: 100%;
         }
       }
@@ -493,11 +494,10 @@ body.html {
       }
     }
   }
-  border: 2px solid red;
 }
 
 // Maya World interactive map
-.page-node-25 {
+.page-node-25, .page-node-26 {
 
   @media (max-width: @main-breakpoint) {
     .maya-world-interactive-map img {
@@ -507,7 +507,7 @@ body.html {
 }
 
 // math game: common styles
-.page-node-33 {
+.page-node-33, .page-node-44 {
   // this changes on every page
   @media (max-width: @main-breakpoint) {
     #zone-content, #region-content, #block-block-8 {
@@ -703,7 +703,7 @@ body.html {
 
 // menu tests
 @media (max-width: @main-breakpoint) {
-  .page-node-31 {
+  .page-node-31, .page-node-32 {
     header #region-menu {
       // left: ~"calc(100% - 300px)";
       position: relative;
