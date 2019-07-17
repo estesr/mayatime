@@ -18,7 +18,6 @@ body.html {
 // homepage styles
 @media (min-width: @main-breakpoint) {
   #page #section-content #zone-content-wrapper-front {
-    border: 2px solid green;
     #zone-content .region-inner .grid-4 {
       position: relative;
       width: 100% !important;
@@ -38,7 +37,6 @@ body.html {
       }
       .front-menu-maya-sun {
         top: 100px;
-        // border: 2px solid green;
       }
       .front-menu-calendar {
         clear: both;
@@ -320,10 +318,9 @@ body.html {
     }
     nav.navigation {
       margin: 0;
-      // border: 2px solid green;
+
       ul#main-menu {
         display: flex;
-        // width: auto;
         flex-wrap: wrap;
         width: ~"calc(100% - 80px)" !important;
       }
@@ -419,6 +416,7 @@ body.html {
         margin: 0 30px 10px 0;
       }
     }
+    #calendar-abstract2
     #calendar-abstract3 div {
       margin: 0 !important;
       width: ~"calc(100% - 271px)";
@@ -495,7 +493,213 @@ body.html {
       }
     }
   }
+  border: 2px solid red;
 }
+
+// Maya World interactive map
+.page-node-25 {
+
+  @media (max-width: @main-breakpoint) {
+    .maya-world-interactive-map img {
+      width: 50%;
+    }
+  }
+}
+
+// math game: common styles
+.page-node-33 {
+  // this changes on every page
+  @media (max-width: @main-breakpoint) {
+    #zone-content, #region-content, #block-block-8 {
+      max-width: 100% !important;
+    }
+  }
+  .maya-math-game-wrapper {
+    background-size: cover;
+
+    .symbols {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      .symbol {
+        margin-top: 10px;
+        text-align: center;
+        width: 32%;
+
+        span {
+          display: block;
+          position: relative;
+          margin-top: 5px;
+        }
+        &:last-of-type span {
+          margin-top: 0;
+        }
+      }
+    }
+    hr {
+      max-width: 100%;
+    }
+    #practice-content #answer-pane .total {
+      width: 100%;
+    }
+
+    @media (max-width: @main-breakpoint) {
+      .math-game-landing-copy {
+        display: block;
+        float: none;
+        margin: 0 25px;
+        width: auto;
+      }
+    }
+    &.landing {
+      // this changes at every size
+      .math-game-landing-symbol-bar {
+        padding: 15px;
+
+        .three-symbols-intro {
+          font-size: 1.2em;
+        }
+        // .symbols {
+        //   display: flex;
+        //   flex-wrap: wrap;
+        //   justify-content: space-around;
+        //
+        //   .symbol {
+        //     margin-top: 10px;
+        //     text-align: center;
+        //     width: 30%;
+        //
+        //     span {
+        //       position: relative;
+        //       display: block;
+        //     }
+        //   }
+        // }
+      }
+      @media (max-width: @main-breakpoint) {
+        .math-math-god {
+          display: inline-block;
+          margin-right: 0;
+        }
+        .are-you-ready {
+          margin: 0 25px;
+        }
+        .math-game-landing-game-buttons {
+          box-sizing: border-box;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+          margin: 0;
+          max-width: 100%;
+          padding: 15px 10px;
+
+          .math-game-button {
+            margin: 10px auto 0;
+          }
+        }
+      }
+      @media (max-width: 725px) {
+        .math-math-god {
+          display: block;
+          float: none;
+          margin: 0 auto;
+          max-width: 100%;
+        }
+      }
+      @media (max-width: 700px) {
+        .math-game-landing-symbol-bar .symbols .symbol {
+          width: 50%;
+        }
+      }
+    }
+    &.practice {
+      .round-instructions {
+        margin: 15px 0;
+      }
+      .math-game-landing-copy p {
+        margin-bottom: 15px;
+      }
+      #practice-content {
+        #answer-pane {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        #successMessage, #tryAgain, #endofgame {
+          box-shadow: none;
+          max-width: ~"calc(100% - 50px)";
+          transform: translateX(-50%);
+          top: auto;
+        }
+      }
+      @media (max-width: @main-breakpoint) {
+        .practice-menu ul {
+          display: flex;
+          flex-wrap: wrap;
+
+          li {
+            width: ~"calc(100% / 3 - 1px)";
+            border-top: 1px solid #552911;
+          }
+        }
+      }
+      @media (max-width: 500px) {
+        .practice-menu ul li {
+          width: ~"calc(50% - 1px)";
+        }
+      }
+      &.practice-1 {
+        @media (max-width: @main-breakpoint) {
+          #practice-content {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15px;
+
+            #symbols-left, #answer-pane, #directions {
+              float: none;
+              margin: 0;
+            }
+            #symbols-left, #symbolBox {
+              width: 100px;
+            }
+          }
+        }
+        @media (max-width: 800px) {
+          #practice-content {
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            #symbols-left, #answer-pane, #directions {
+              margin: 0;
+            }
+            #symbols-left {
+              order: 2;
+            }
+            #answer-pane {
+              order: 3;
+            }
+            #directions {
+              margin-bottom: 20px;
+              order: 1;
+              width: 100%;
+            }
+          }
+        }
+        @media (max-width: 750px)  {
+          .math-game-landing-copy .symbols .symbol {
+            width: 100%;
+          }
+        }
+      }
+    }
+    &.game {
+
+    }
+    &.reveal {
+    }
+  }
+}
+
 
 // menu tests
 @media (max-width: @main-breakpoint) {
@@ -579,7 +783,7 @@ body.html {
 @media (max-width: 600px) {
   #page #section-content #zone-content {
     padding: 0 20px;
-
+  }
 }
 // mobile
 // @media (max-width: 500px) {

@@ -36,6 +36,19 @@
 				}
 			});
 
+      $('.maya-world-interactive-map map rect',context).qtip({
+        position: {
+          my: 'bottom center',
+          at: 'top center'
+        },
+        content: {
+          attr: 'alt' // Use the ALT attribute of the area map for the content
+        },
+        style: {
+          classes: 'maya-world-map-tooltips'
+        }
+      });
+
 			/******
 			*** Glossary term tooltips
 			***/

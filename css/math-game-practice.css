@@ -75,7 +75,7 @@ table.practice td.symbol{
   float:left !important;
   background-color:#599695 !important;
   text-align:center !important;
-  width:157px !important;
+  /* width:157px !important; */
   border-right:1px solid #552911 !important;
   height:50px !important;
   margin-left:0px !important;
@@ -85,7 +85,7 @@ table.practice td.symbol{
   background-color:#552911 !important;
 }
 .practice-menu ul li.last{
-  width:161px;
+  /* width:161px; */
 }
 .practice-menu ul li a{
   color:#efd9b8 !important;
@@ -96,7 +96,7 @@ table.practice td.symbol{
 }
 .practice-menu ul li.active{
   background-color:#552911 !important;
-  padding-right:4px;
+  /* padding-right:4px; */
 }
 
 .practice-menu ul li.last{
@@ -461,7 +461,7 @@ hr {
   border-width:3px !important;
 }
 #base-10-total{
-  background-color:#f9eada; 
+  background-color:#f9eada;
   width:189px;
   height:178px;
   border:1px solid #552911;
@@ -470,7 +470,7 @@ hr {
   text-align: center;
 }
 #base-20-total{
-  background-color:#f9eada; 
+  background-color:#f9eada;
   width:189px;
   height:178px;
   border:1px solid #552911;
@@ -597,8 +597,8 @@ hr {
     background-color:#f9eada;
    }
    #symbol-sidebar{
-    display:inline; 
-    float:left; 
+    display:inline;
+    float:left;
     width:392px;
     margin-left:35px;
    }
