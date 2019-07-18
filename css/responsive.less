@@ -540,8 +540,15 @@ body.html {
     hr {
       max-width: 100%;
     }
-    #practice-content #answer-pane .total {
-      width: 100%;
+    #practice-content #answer-pane {
+      .total {
+        width: 100%;
+      }
+      #numberSlot .ui-droppable {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
     }
 
     @media (max-width: @main-breakpoint) {
@@ -621,8 +628,6 @@ body.html {
         margin-bottom: 15px;
       }
       #practice-content {
-        // border: 1px solid green;
-
         #answer-pane {
           display: flex;
           flex-wrap: wrap;
@@ -653,7 +658,7 @@ body.html {
         }
       }
       @media (max-width: 500px) {
-        .practice-menu ul li {
+        .practice-menu ul li, .practice-menu ul li.last {
           width: ~"calc(50% - 1px)";
         }
       }
@@ -837,43 +842,6 @@ body.html {
         display: inline-block;
         margin: 0 auto;
       }
-      // #block-menu-block-1 {
-      //   background-color: #e79223;
-      //   border: 2px solid #6e4429;
-      //   box-sizing: border-box;
-      //   // display: none;
-      //   // left: 300px;
-      //   // margin-left: 20px;
-      //   // display: none;
-      //   padding: 10px;
-      //   position: absolute;
-      //   top: 0;
-      //   width: 300px;
-      //
-      //   ul {
-      //     li.leaf {
-      //       width: 100%;
-      //       margin: 0 0 .5em;
-      //
-      //       &.last {
-      //         margin-bottom: 0;
-      //       }
-      //
-      //       .memu-block-1-glyph-icon {
-      //         display: none;
-      //       }
-      //       .menu-block-1-desc {
-      //         width: 100%;
-      //         text-align: center;
-      //
-      //         .menu-desc, a.learn-more, br {
-      //           display: none;
-      //           height: 0;
-      //         }
-      //       }
-      //     }
-      //   }
-      // }
     }
   }
 }

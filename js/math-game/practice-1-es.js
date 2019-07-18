@@ -4,10 +4,10 @@
     attach: function (context, settings) {
 
     	var correctCards = 0;
-		numberSymbols = {number_0: {dot: 0, stick: 0}, 
-		number_1: {dot: 1, stick: 0}, 
-		number_2: {dot: 2, stick: 0}, 
-		number_3: {dot: 3, stick: 0}, 
+		numberSymbols = {number_0: {dot: 0, stick: 0},
+		number_1: {dot: 1, stick: 0},
+		number_2: {dot: 2, stick: 0},
+		number_3: {dot: 3, stick: 0},
 		number_4: {dot: 4, stick: 0},
 		number_5: {dot: 0, stick: 1},
 		number_6: {dot: 1, stick: 1},
@@ -28,7 +28,7 @@
 
 		$( init );
 
-	
+
 		//overwrite the distroy method that removes the draggable property
 		$.ui.draggable.prototype.destroy = function (ul, item) { };
 		//re-create the distroy method as "remove" with same functionalty.
@@ -44,19 +44,19 @@
 
 		    return this;
 		};
-		
-		
-		
+
+
+
 		var numbers = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ];
 		for ( var i=0; i<20; i++ ) {
 			//$('<div>' + numbers[i] + '</div>').data( 'number', numbers[i] ).attr(
 	    	$('<div>' +'</div>').data( 'number', numbers[i] ).attr( {'class':'hide-symbol number-symbol-'+numbers[i],'id':'symbol-'+numbers[i], 'rel':numbers[i]}).appendTo( '#symbolBox' );
 	    }
-		
-		
-		
+
+
+
 		var symbols = { 0:'concha', 1:'frijol', 5:'palito' };
-		
+
 		$.each(symbols,function(key,value){
 			$('<span/>',{'id': 'symbol'+key,'class':'symbol ' + value, 'rel': value}).data('number',parseInt(key)).appendTo( '#symbolBox' ).draggable({
 		     containment: '#content',
@@ -66,7 +66,7 @@
 			 revert: 'true'
 		   });
 		});
-		 
+
 		$('<div/>').appendTo( '#numberSlot' ).data('valu',0).droppable( {
 	     accept: '#symbolBox span.symbol',
 	     hoverClass: 'hovered',
@@ -84,15 +84,22 @@
 			if($('#number').data('valu') == 19){
 				$(this).hide();
 				$('#endofgame').show().animate( {
-		      left: '260px',
-		      top: '250px',
-		      width: '270px',
+          // left: '260px',
+          left: '50%',
+		      // top: '250px',
+		      // width: '270px',
+          bottom: '350px',
 		      height: '100px',
-		      opacity: 1
+		      opacity: 1,
 		    },800);
 			}
 			else{
-				$(this).hide().css({'left':'260px','top':'270px'});
+        $(this).hide().css({
+          // 'left':'260px',
+          left: '50%',
+          // 'top':'270px'
+          bottom: '350px',
+        });
 				nuvalue= parseInt($('#number').data('valu')) + 1;
 				$('#number').data('valu',nuvalue);
 				$('#number').html($('#number').data('valu'));
@@ -102,9 +109,9 @@
 				$('#user-number').html('0');
 				$('#numberSlot div.ui-droppable').removeClass('right');
 			}
-			
+
 		});
-		
+
 		$('#tryAgain').click(function(){
 			$(this).hide();
 			$('#numberSlot div').removeClass('wrong');
@@ -117,7 +124,7 @@
 
 
 
-					
+
 
 
 function clearSlot(){
@@ -132,29 +139,34 @@ function init() {
   (jQuery)('#tryAgain').hide();
   (jQuery)('#endofgame').hide();
   (jQuery)('#successMessage').css( {
-    left: '260px',
-    top: '270px',
+    // left: '260px',
+    left: '50%',
+    // top: '270px',
+    bottom: '350px',
     width: 0,
     height: 0
   });
 	(jQuery)('#endofgame').css( {
-    left: '260px',
-    top: '270px',
-    width: 0,
+    // left: '260px',
+    left: '50%',
+    // top: '270px',
+    bottom: '350px',
+    // width: 0,
+    width: '400px',
     height: 0
   });
-  
+
 	num = (jQuery)('#number');
 	//change number
-	
+
 	if(!num.data('valu')){
 			num.data('valu',0).html('0');
 			(jQuery)('#user-number').data('valu',0).html('0');
 	}
 
-	
+
 	//console.log("number data valu: " + (jQuery)('#number').data('valu'));
-	
+
 }
 
 function showCorrect(correctValue,symbolValue)
@@ -162,18 +174,20 @@ function showCorrect(correctValue,symbolValue)
 	updateUserNumber(totalValue);
 	slot = (jQuery)('#numberSlot div.ui-droppable');
 	slot.removeClass('wrong').addClass('correct');
-	
-	
+
+
 	(jQuery)('#symbol-'+correctValue).clone().attr('id', 'symbol-clone'+symbolValue).draggable().appendTo((jQuery)('#numberSlot div.ui-droppable')).show();
 	//ui.draggable.clone().attr('id', 'symbol-clone'+symbolValue).draggable().appendTo((jQuery)('#numberSlot div.ui-droppable'));
- 	
+
 
 	(jQuery)('#successMessage').show().animate( {
-      left: '260px',
-      top: '270px',
-      width: '400px',
-      height: '100px',
-      opacity: 1
+    // left: '260px',
+    left: '50%',
+    // top: '270px',
+    bottom: '350px',
+    width: '400px',
+    height: '100px',
+    opacity: 1,
     },800);
 
 
@@ -181,23 +195,25 @@ function showCorrect(correctValue,symbolValue)
 
 function revertAndWrong(ui,correctValue)
 {
-	
+
 	ui.draggable.draggable( 'option', 'revert', true );
 	slot = (jQuery)('#numberSlot div.ui-droppable');
 	slot.addClass('wrong');
-	
-	
+
+
 	num = ui.draggable.data( 'number' );
 	sym = ui.draggable.attr('rel');
 	var tryagain = (jQuery)('#tryAgain');
-	gender = (num == 0) ? "a" : ""; 
+	gender = (num == 0) ? "a" : "";
 	tryagain.empty().html("<p>¡inténtelo de nuevo! un" + gender + " " + sym + " (que vale " + num + ") no se utiliza para escribir el número " + correctValue + ".<br/><br/>Haga clic en esta casilla para continuar.</p>");
 	tryagain.show().animate( {
-	    left: '260px',
-	    top: '270px',
-	    width: '400px',
-	    height: '100px',
-	    opacity: 1
+    // left: '260px',
+    left: '50%',
+    // top: '270px',
+    bottom: '350px',
+    width: '400px',
+    height: '100px',
+    opacity: 1,
 	  },800);
 	ui.draggable.draggable( 'option', 'revert', false );
 }
@@ -207,27 +223,29 @@ function revertAndWrongMultiple(ui,correctValue,numberSymbols)
 	ui.draggable.draggable( 'option', 'revert', true );
 	slot = (jQuery)('#numberSlot div.ui-droppable');
 	slot.addClass('wrong');
-	
-	
+
+
 	num = ui.draggable.data( 'number' );
 	sym = ui.draggable.attr('rel');
-	
+
 	verbTense = (numberSymbols == 1) ? "is" : "are";
 	plural = (numberSymbols == 1) ? "" : "s";
 	plural = (sym == 'frijol') ? "es" : plural;
 	var tryagain = (jQuery)('#tryAgain');
-	
+
 	tryagain.empty().html("<p>¡inténtelo de nuevo! Solo " + numberSymbols + " " + sym + plural + " se utiliza para escribir el número " + correctValue + ".<br/><b>Haga clic en esta casilla para continuar.</b></p>");
 	// quick fix for error message verbiage for the #15.
 	if(correctValue == 15 && num == 1)
 		tryagain.empty().html("<p>¡inténtelo de nuevo! Un frijol (que vale 1) no se utiliza para escribir el número " + correctValue + ".<br/><b>Haga clic en esta casilla para continuar.</b></p>");
-	
+
 	tryagain.show().animate( {
-	    left: '260px',
-	    top: '270px',
-	    width: '400px',
-	    height: '100px',
-	    opacity: 1
+    // left: '260px',
+    left: '50%',
+    // top: '270px',
+    bottom: '350px',
+    width: '400px',
+    height: '100px',
+    opacity: 1,
   	},800);
 	ui.draggable.draggable( 'option', 'revert', false );
 }
@@ -253,14 +271,14 @@ function handleSymbolDrop( event, ui )
 {
 
 	slotValue = parseInt((jQuery)(this).data( 'valu' ));
-	
+
   correctValue = (jQuery)('#number').data('valu');
   symbolValue = ui.draggable.data( 'number' );
-	
-		
+
+
   switch(correctValue)
 	{
-		
+
 		case 0:
 			if(symbolValue != 0 )
 				revertAndWrong(ui,correctValue);
@@ -278,9 +296,9 @@ function handleSymbolDrop( event, ui )
 				slotValue = totalValue;
 				showCorrect(correctValue,symbolValue);
 			}
-				
+
 		break;
-		
+
 		case 2:
 		case 3:
 		case 4:
@@ -298,7 +316,7 @@ function handleSymbolDrop( event, ui )
 				}
 			}//else
 		break;
-		
+
 		case 5:
 			if(symbolValue == 1 || symbolValue == 0 )
 				revertAndWrong(ui,correctValue);
@@ -312,13 +330,13 @@ function handleSymbolDrop( event, ui )
 
 					showCorrect(correctValue,symbolValue);
 				}
-					
+
 			}//else
 		break;
 		case 6:
 			if(symbolValue == 1)
 			{
-				
+
 				if((jQuery)('.ui-droppable span.frijol').size() < 1){
 					totalValue = slotValue + symbolValue;
 					slotValue = totalValue;
@@ -328,12 +346,12 @@ function handleSymbolDrop( event, ui )
 					totalValue = slotValue;
 					revertAndWrongMultiple(ui,correctValue,1);
 				}
-				
+
 				if(correctValue == slotValue){
 					clearClones();
 					showCorrect(correctValue,symbolValue);
 				}
-					
+
 			}
 			else if(symbolValue == 0){
 				totalValue = slotValue;
@@ -350,19 +368,19 @@ function handleSymbolDrop( event, ui )
 					totalValue = slotValue;
 					revertAndWrongMultiple(ui,correctValue,1);
 				}
-				
+
 				if(correctValue == slotValue){
 					clearClones();
 					showCorrect(correctValue,symbolValue);
 				}
-					
+
 			}//else
 		break;
-		
+
 		case 7:
 			if(symbolValue == 1)
 			{
-				
+
 				if((jQuery)('.ui-droppable span.frijol').size() < 2){
 					totalValue = slotValue + symbolValue;
 					slotValue = totalValue;
@@ -372,12 +390,12 @@ function handleSymbolDrop( event, ui )
 					totalValue = slotValue;
 					revertAndWrongMultiple(ui,correctValue,2);
 				}
-				
+
 				if(correctValue == slotValue){
 					clearClones();
 					showCorrect(correctValue,symbolValue);
 				}
-					
+
 			}
 			else if(symbolValue == 0){
 				totalValue = slotValue;
@@ -394,19 +412,19 @@ function handleSymbolDrop( event, ui )
 					totalValue = slotValue;
 					revertAndWrongMultiple(ui,correctValue,1);
 				}
-				
+
 				if(correctValue == slotValue){
 					clearClones();
 					showCorrect(correctValue,symbolValue);
 				}
-					
+
 			}//else
 		break;
-		
+
 		case 8:
 			if(symbolValue == 1)
 			{
-				
+
 				if((jQuery)('.ui-droppable span.frijol').size() < 3){
 					totalValue = slotValue + symbolValue;
 					slotValue = totalValue;
@@ -416,12 +434,12 @@ function handleSymbolDrop( event, ui )
 					totalValue = slotValue;
 					revertAndWrongMultiple(ui,correctValue,3);
 				}
-				
+
 				if(correctValue == slotValue){
 					clearClones();
 					showCorrect(correctValue,symbolValue);
 				}
-					
+
 			}
 			else if(symbolValue == 0){
 				totalValue = slotValue;
@@ -438,15 +456,15 @@ function handleSymbolDrop( event, ui )
 					totalValue = slotValue;
 					revertAndWrongMultiple(ui,correctValue,1);
 				}
-				
+
 				if(correctValue == slotValue){
 					clearClones();
 					showCorrect(correctValue,symbolValue);
 				}
-					
+
 			}//else
 		break;
-		
+
 		case 9:
 		case 11:
 		case 12:
@@ -469,12 +487,12 @@ function handleSymbolDrop( event, ui )
 					totalValue = slotValue;
 					revertAndWrongMultiple(ui,correctValue,numberSymbols["number_"+correctValue]['dot']);
 				}
-				
+
 				if(correctValue == slotValue){
 					clearClones();
 					showCorrect(correctValue,symbolValue);
 				}
-					
+
 			}
 			else if(symbolValue == 0){
 				totalValue = slotValue;
@@ -492,15 +510,15 @@ function handleSymbolDrop( event, ui )
 					totalValue = slotValue;
 					revertAndWrongMultiple(ui,correctValue,numberSymbols["number_"+correctValue]['stick']);
 				}
-				
+
 				if(correctValue == slotValue){
 					clearClones();
 					showCorrect(correctValue,symbolValue);
 				}
-					
+
 			}//else
 		break;
-		
+
 		case 10:
 			if(symbolValue == 1 || symbolValue == 0)
 			{
@@ -518,12 +536,12 @@ function handleSymbolDrop( event, ui )
 					totalValue = slotValue;
 					revertAndWrongMultiple(ui,correctValue,1);
 				}
-				
+
 				if(correctValue == slotValue){
 					clearClones();
 					showCorrect(correctValue,symbolValue);
 				}
-					
+
 			}//else
 		break;
 

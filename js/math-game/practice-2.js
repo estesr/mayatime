@@ -2,7 +2,7 @@
 
   Drupal.behaviors.mayatimepractice = {
     attach: function (context, settings) {
-		
+
 
     	function handleSymbolDrop( event, ui )
 		{
@@ -12,13 +12,13 @@
 			dropZoneValue = 0; //dropZone.data('valu');
 			symbolValue = ui.draggable.data( 'number' );
 			symbolID = ui.draggable.attr('id');
-			whichPyramid = dropZone.hasClass('base-10') ? 'base-10' : 'base-20'; 
+			whichPyramid = dropZone.hasClass('base-10') ? 'base-10' : 'base-20';
 			total = (jQuery)('#' + whichPyramid + '-total');
 			totalValue = total.data('valu');
 			otherDropZoneValue = 0;
 			number = (jQuery)('#number-to-solve').data('valu');
 
-			
+
 			//clone draggable into dropzone to visually represent additions or removals
 			(jQuery)('.cloned-symbol',dropZone).remove();
 
@@ -28,13 +28,13 @@
 				//},
 				'revert' : false,
 				'cursor' : 'move',
-				
+
 			});
 
 			//get dropzone multiplier to multiple symbol value with
 			pyramidMultiplier = dropZone.data('multiplier');
 
-			//get the value of each other dropzone 
+			//get the value of each other dropzone
 			(jQuery)('.pyramidDropZone.'+whichPyramid).not("div[rel=" + pyramidMultiplier + "]").each(function(index){
 				//console.log((jQuery)(this),(jQuery)(this).data('valu'));
 				otherDropZoneValue += (jQuery)(this).data('valu');
@@ -61,7 +61,7 @@
 				showSuccess();
 			}
 		}
-	
+
 		function recalculate()
 		{
 
@@ -80,7 +80,7 @@
 
 
 
-		
+
 		/***** OVERLOADING OF ui.draggable.distroy ******/
 		//overwrite the distroy method that removes the draggable property
 		$.ui.draggable.prototype.destroy = function (ul, item) { };
@@ -98,12 +98,12 @@
 		    return this;
 		};
 		/*********************************************/
-	
-	
+
+
 		$('a#show-numbers').click(function(e){
 			e.preventDefault();
 			el = $(this);
-			
+
 			if(el.hasClass('hide')){
 				el.removeClass('hide').addClass('show');
 				if($('body').hasClass('i18n-es'))
@@ -127,18 +127,18 @@
 					$(this).show();
 				});
 			}
-			
+
 		});
-		
-		
+
+
 		//Apply mulitplier value to pyramid dropzones, store in el.data('multiplier')
 		$('.pyramidDropZone').each(function(index){
 			el = $(this);
 			el.data('multiplier',el.attr('rel'));
 			el.data('valu',0);
 		});
-	
-			
+
+
 		// Create the pile of numbers / symbols
 		var numbers = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
 		for ( var i=0; i<10; i++ ) {
@@ -150,17 +150,17 @@
 		      revert: 'invalid'
 		    });
 	    }
-		
+
 		//make each dropzone officially droppable
 		$('.pyramid div').droppable( {
 	      accept: '#symbolPile div',
 	      hoverClass: 'hovered',
 	      drop: handleSymbolDrop
 	    });
-		
-		
-		
-		
+
+
+
+
 		$('#new-number').click(function(){
 			init();
 		});
@@ -168,15 +168,15 @@
 		$('#successMessage').click(function(){
 			init();
 		});
-			
+
 		init();
-		
+
 		function init()
 		{
 			//set up problem to solve
 			number = Math.floor( (Math.random()*98 ) + (Math.random()*28 ) + (Math.random()*110 ) );
 			$('#number-to-solve').data('valu',number).html(number);
-			
+
 			// set "total" div's HTML and data "valu" to 0, initially
 			$('#base-10-total').data('valu',0).empty().removeClass('correct').removeClass('wrong');
 			//console.log($('#base-10-total').data('valu'));
@@ -185,21 +185,25 @@
 				$(this).data('valu',0);
 			})
 			$('.cloned-symbol').remove();
-			
+
 			$('.total').removeClass('correct');
 			//recalculate();
 			$('#successMessage').css( {
-			    left: '260px',
-			    top: '270px',
+			    // left: '260px',
+			    // top: '270px',
+          left: '50%',
+          bottom: '350px',
 			    width: 0,
 			    height: 0
-			  }).hide();	
+			  }).hide();
 		}
 
 		function showSuccess(){
 			(jQuery)('#successMessage').show().animate( {
-		      left: '260px',
-		      top: '270px',
+		      // left: '260px',
+		      // top: '270px',
+          left: '50%',
+          bottom: '350px',
 		      width: '400px',
 		      height: '100px',
 		      opacity: 1
