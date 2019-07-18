@@ -192,7 +192,8 @@
 			    // left: '260px',
 			    // top: '270px',
           left: '50%',
-          bottom: '350px',
+          top: '50%',
+          // bottom: '350px',
 			    width: 0,
 			    height: 0
 			  }).hide();
@@ -203,7 +204,7 @@
 		      // left: '260px',
 		      // top: '270px',
           left: '50%',
-          bottom: '350px',
+          top: '50%',
 		      width: '400px',
 		      height: '100px',
 		      opacity: 1

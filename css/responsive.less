@@ -627,6 +627,11 @@ body.html {
       .math-game-landing-copy p {
         margin-bottom: 15px;
       }
+      #navigation-help {
+        margin: 10px 10px 20px;
+        width: 100%;
+        text-align: center;
+      }
       #practice-content {
         #answer-pane {
           display: flex;
@@ -635,8 +640,43 @@ body.html {
         #successMessage, #tryAgain, #endofgame {
           box-shadow: none;
           max-width: ~"calc(100% - 50px)";
-          transform: translateX(-50%);
+          position: fixed;
+          transform: translate(-50%, -50%);
           top: auto;
+          top: 50%;
+        }
+        display: flex;
+        padding: 0 25px;
+
+        .symbols-container {
+          max-width: 350px;
+
+          #symbolsPile {
+            display: flex;
+            flex-wrap: wrap;
+          }
+        }
+        .base-container {
+          display: flex;
+          justify-content: flex-end;
+          width: ~"calc(100% - 350px)" !important;
+
+          .pyramid {
+            margin-right: 15%;
+
+            h4 {
+              text-align: center;
+            }
+
+            @media (max-width: @main-breakpoint) {
+              margin-right: 5%;
+            }
+          }
+
+          #middle-symbols {
+            margin: 0 auto;
+            width: 230px;
+          }
         }
       }
       @media (max-width: @main-breakpoint) {
@@ -657,9 +697,63 @@ body.html {
 
         }
       }
+      @media (max-width: 900px) {
+        #practice-content {
+          flex-wrap: wrap;
+          padding: 0 15px;
+
+          .symbols-container, .base-container {
+            max-width: 100%;
+            width: 100% !important;
+          }
+          .base-container {
+            justify-content: space-around;
+            margin-top: 30px;
+          }
+        }
+      }
       @media (max-width: 500px) {
         .practice-menu ul li, .practice-menu ul li.last {
           width: ~"calc(50% - 1px)";
+        }
+        #practice-content {
+          .base-container {
+            flex-wrap: wrap;
+            margin-top: 0;
+
+            .pyramid {
+              height: 225px;
+              position: relative;
+              top: -75px;
+
+              h4 {
+                position: relative;
+                top: 100px;
+              }
+              table {
+                display: inline-block;
+                transform: rotate(-90deg);
+
+                td {
+                  .cloned-symbol {
+                    transform: rotate(90deg);
+                  }
+                  &.label {
+                    padding-top: 15px;
+                    text-align: left;
+                    transform: rotate(90deg);
+                  }
+                }
+                tr:hover {
+                  background: #FFFEEE;
+
+                  td {
+                    background: transparent !important;
+                  }
+                }
+              }
+            }
+          }
         }
       }
       &.practice-1 {
@@ -702,97 +796,89 @@ body.html {
         }
       }
       &.practice-2 {
-        #navigation-help {
-          margin: 10px 10px 20px;
-          width: 100%;
-          text-align: center;
-        }
         #practice-content {
-          display: flex;
-          padding: 0 25px;
-
-          #symbols-10 {
-            max-width: 350px;
-
-            #symbolsPile {
-              display: flex;
-              flex-wrap: wrap;
-            }
-          }
-          #base-10 {
-            display: flex;
-            justify-content: flex-end;
-            width: ~"calc(100% - 350px)" !important;
-
-            #base-10-pyramid {
-              margin-right: 15%;
-
-              h4 {
-                text-align: center;
-              }
-
-              @media (max-width: @main-breakpoint) {
-                margin-right: 5%;
-              }
-            }
-
-            #middle-symbols {
-              width: 230px;
-            }
-          }
-          @media (max-width: 900px) {
-            flex-wrap: wrap;
-            padding: 0 15px;
-
-            #symbols-10, #base-10 {
-              max-width: 100%;
-              width: 100% !important;
-            }
-            #base-10 {
-              justify-content: space-around;
-              margin-top: 30px;
-
-            }
-          }
-          @media (max-width: 500px) {
-            #base-10 {
-              flex-wrap: wrap;
-
-              #base-10-pyramid {
-                height: 225px;
-                position: relative;
-                top: -75px;
-
-                h4 {
-                  position: relative;
-                  top: 60px;
-                }
-
-                // TFW when you're trying to make an 8 yr old site responsive and there is no documentation to explain why removing tables breaks everything (:
-                table {
-                  transform: rotate(-90deg);
-
-                  td {
-                    .cloned-symbol {
-                      transform: rotate(90deg);
-                    }
-                    &.label {
-                      padding-top: 15px;
-                      text-align: left;
-                      transform: rotate(90deg);
-                    }
-                  }
-                  tr:hover {
-                    background: #FFFEEE;
-
-                    td {
-                      background: transparent !important;
-                    }
-                  }
-                }
-              }
-            }
-          }
+          // display: flex;
+          // padding: 0 25px;
+          //
+          // #symbols-10, .symbols-container {
+          //   max-width: 350px;
+          //
+          //   #symbolsPile {
+          //     display: flex;
+          //     flex-wrap: wrap;
+          //   }
+          // }
+          // #base-10, .base-container {
+          //   display: flex;
+          //   justify-content: flex-end;
+          //   width: ~"calc(100% - 350px)" !important;
+          //
+          //   #base-10-pyramid, .pyramid {
+          //     margin-right: 15%;
+          //
+          //     h4 {
+          //       text-align: center;
+          //     }
+          //
+          //     @media (max-width: @main-breakpoint) {
+          //       margin-right: 5%;
+          //     }
+          //   }
+          //
+          //   #middle-symbols {
+          //     width: 230px;
+          //   }
+          // }
+          // @media (max-width: 900px) {
+          //   flex-wrap: wrap;
+          //   padding: 0 15px;
+          //
+          //   #symbols-10, #base-10, .symbols-container, .base-container {
+          //     max-width: 100%;
+          //     width: 100% !important;
+          //   }
+          //   #base-10, .base-container {
+          //     justify-content: space-around;
+          //     margin-top: 30px;
+          //   }
+          // }
+          // @media (max-width: 500px) {
+          //   #base-10, .base-container {
+          //     flex-wrap: wrap;
+          //
+          //     #base-10-pyramid, .pyramid {
+          //       height: 225px;
+          //       position: relative;
+          //       top: -75px;
+          //
+          //       h4 {
+          //         position: relative;
+          //         top: 60px;
+          //       }
+          //       table {
+          //         transform: rotate(-90deg);
+          //
+          //         td {
+          //           .cloned-symbol {
+          //             transform: rotate(90deg);
+          //           }
+          //           &.label {
+          //             padding-top: 15px;
+          //             text-align: left;
+          //             transform: rotate(90deg);
+          //           }
+          //         }
+          //         tr:hover {
+          //           background: #FFFEEE;
+          //
+          //           td {
+          //             background: transparent !important;
+          //           }
+          //         }
+          //       }
+          //     }
+          //   }
+          // }
         }
       }
     }
