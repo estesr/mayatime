@@ -10,14 +10,14 @@
 		var rawfinalAnswer = null;
 		var operandTotal = null;
 		challenge = 0;
-		
+
 		dots = 0;
 		sticks = 0;
 		numberSymbols = {
-			number_0: {dot: 0, stick: 0}, 
-		 	number_1: {dot: 1, stick: 0}, 
-			number_2: {dot: 2, stick: 0}, 
-			number_3: {dot: 3, stick: 0}, 
+			number_0: {dot: 0, stick: 0},
+		 	number_1: {dot: 1, stick: 0},
+			number_2: {dot: 2, stick: 0},
+			number_3: {dot: 3, stick: 0},
 			number_4: {dot: 4, stick: 0},
 			number_5: {dot: 0, stick: 1},
 			number_6: {dot: 1, stick: 1},
@@ -36,7 +36,7 @@
 			number_19: {dot: 4, stick: 3}
 		};
 
-		
+
 		// Overlading of duplicate method
 		$.fn.duplicate = function(count, cloneEvents) {
 			var tmp = [];
@@ -62,7 +62,7 @@
 
 		    return this;
 		};
-		
+
 
 		/***** Click Events ******/
 		$('#successMessage').click(function(){
@@ -79,11 +79,11 @@
 			$(init);
 			(jQuery)('#symbolPile .ui-draggable').draggable( "option", "disabled", false );
 		});
-		
+
 		$('a#show-numbers').click(function(e){
 			e.preventDefault();
 			el = $(this);
-			
+
 			if(el.hasClass('hide')){
 				el.removeClass('hide').addClass('show');
 				if($('body').hasClass('i18n-es'))
@@ -107,19 +107,19 @@
 					$(this).show();
 				});
 			}
-			
+
 		});
 
 		$('button#final').click(function(){
-			showReduction();	
+			showReduction();
 		});
 		$('button#check-answer').click(function(){
-			checkAnswer();	
+			checkAnswer();
 		});
 
 		$( init );
-		
-		
+
+
 		/*DROPPABLES*/
 		var numbers = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ];
 		for ( var i=0; i<20; i++ ) {
@@ -131,8 +131,8 @@
 			  helper: 'clone',
 		      revert: 'invalid'
 		    });
-	    }	
-		
+	    }
+
 		/* DROPPABLES*/
 		//make each dropzone officially droppable
 		$('.base-20').droppable( {
@@ -140,14 +140,14 @@
 	      hoverClass: 'hovered',
 	      drop: handleSymbolDrop
 	    });
-		
+
 		$('#answer-grid td').droppable( {
 	      accept: '#symbolPile div',
 	      hoverClass: 'hovered',
 	      drop: handleReductionDrop
 	    });
-		
-		
+
+
     }
   }
 })(jQuery);
@@ -188,7 +188,7 @@ function showReduction(){
 
 			remainder = finalAnswerValue % multiplier_value;
 			newFinalAnswerValue = remainder;
-			
+
 			(jQuery)('#finalAnswer').html((jQuery)('#rawfinalAnswer').html()).addClass('right');
 			showSuccess();
 		}
@@ -198,7 +198,7 @@ function showReduction(){
 
 
 function init()
-{	
+{
 	challenge++;
 
 	/*if(challenge > 5){
@@ -207,11 +207,11 @@ function init()
 		window.location = '/maya-sun/maya-math-game?game=game-intro';
 		return false;
 	}*/
-	
+
 	operand1 = 0;
 	operand2 = 1;
 	while( (operand2 > operand1) || (operand2 == 0) || (operand1 - operand2 == 0) ){
-		operand1 = Math.floor( (Math.random()*19) + 1 ); 
+		operand1 = Math.floor( (Math.random()*19) + 1 );
 		operand2 = Math.floor( (Math.random()*18 ) + 1 );
 	}
 
@@ -240,20 +240,24 @@ function init()
 	(jQuery)('#tryAgain').hide();
 	(jQuery)('#endofgame').hide();
 	(jQuery)('#successMessage').css({
-	    left: '260px',
-	    top: '270px',
+	    // left: '260px',
+	    // top: '270px',
+      left: '50%',
+      top: '50%',
 	    width: 0,
 	    height: 0
 	});
 	(jQuery)('#endofgame').css( {
-	    left: '260px',
-	    top: '270px',
+	    // left: '260px',
+	    // top: '270px',
+      left: '50%',
+      top: '50%',
 	    width: 0,
 	    height: 0
 	});
 	//(jQuery)('.math-game-practice-god h2.italic').text("Challenge " + challenge);
 	(jQuery)('check-answer').hide();
-	
+
 	//if(challenge > 1)
 	//	swapClue(challenge);
 
@@ -277,39 +281,39 @@ function handleSymbolDrop( event, ui )
 	var dropZoneValue = 0; //dropZone.data('valu');
 	symbolValue = ui.draggable.data( 'valu' );
 	symbolID = ui.draggable.attr('id');
-	whichPyramid = dropZone.hasClass('operand-1') ? 'operand-1' : 'operand-2'; 
+	whichPyramid = dropZone.hasClass('operand-1') ? 'operand-1' : 'operand-2';
 	rowTotalClass = dropZone.attr('lang');
 	rowTotal = 0;
 	rawrowTotal = 0;
-	
-	
+
+
 	operandTotal = (jQuery)('#' + whichPyramid + '-total');
 	operandTotalValue = operandTotal.data('valu');
-	
+
 	otherDropZoneValue = 0;
 	otherOperandTotal = 0;
-	
+
 	//clone draggable into dropzone to visually represent additions or removals
 	(jQuery)('.cloned-symbol',dropZone).remove();
 
 	ui.draggable.clone().data('valu',symbolValue).click(
-		function(){ 
-			var operand = ((jQuery)(this).hasClass('operand-1')) ? 'operand-1' : 'operand-2'; 
+		function(){
+			var operand = ((jQuery)(this).hasClass('operand-1')) ? 'operand-1' : 'operand-2';
 			var parent = (jQuery)(this).parent();
-			parent.data('valu',0); 
-			updateCurrentColumn(finalAnswer,parseInt(symbolValue),operand,parent,true,false); 
+			parent.data('valu',0);
+			updateCurrentColumn(finalAnswer,parseInt(symbolValue),operand,parent,true,false);
 			(jQuery)(this).remove();
 			//get row total
-			
+
 			(jQuery)('.'+rowTotalClass + ' div.final-answer-cloned-symbol').each(function(el){
-				rowTotal -= (jQuery)(this).data('valu'); 
+				rowTotal -= (jQuery)(this).data('valu');
 			});
 			(jQuery)("."+operand).removeClass('right');
 			(jQuery)("#"+operand+"-total").removeClass('right').removeClass('wrong');
 			(jQuery)("#finalAnswer").removeClass('right').removeClass('wrong');
 			//now update row totals
 			(jQuery)('#'+rowTotalClass+'-total div.final-answer-cloned-symbol').remove();
-			
+
 			//(jQuery)('#'+rowTotalClass+'-total').html(rowTotal);
 			//(jQuery)('#symbol-' + rowTotal).clone().attr({'id':'cloned-total-symbol-'+rowTotal, 'class':'cloned-total-symbol'}).appendTo((jQuery)('#'+rowTotalClass+'-total')).html(rowTotal);
 
@@ -325,7 +329,7 @@ function handleSymbolDrop( event, ui )
 			'revert' : false,
 			'cursor' : 'move'
 			});
-	
+
 
 	updateCurrentColumn(finalAnswer,parseInt(symbolValue),whichPyramid,dropZone,false,false);
 	//updateRawColumn(dropZone);
@@ -333,7 +337,7 @@ function handleSymbolDrop( event, ui )
 	//get dropzone multiplier to multiple symbol value with
 	pyramidMultiplier = dropZone.data('multiplier');
 
-	//get the value of each other dropzone 
+	//get the value of each other dropzone
 	(jQuery)('.pyramidDropZone.'+whichPyramid).not("[rel=" + pyramidMultiplier + "]").each(function(index){
 		otherDropZoneValue += (jQuery)(this).data('valu');
 		//console.log((jQuery)(this));
@@ -347,15 +351,15 @@ function handleSymbolDrop( event, ui )
 	dropZoneValue = newProduct;
 	dropZone.data('valu',dropZoneValue);
 
-	
+
 
   	//now apply value from dropzone and add into total value
 	operandTotalValue = dropZoneValue + otherDropZoneValue;
 
 	operandTotal.data('valu',operandTotalValue);
 	operandTotal.html('<div>'+operandTotalValue+'</div>');
-	
-	
+
+
 	if(operandTotalValue != (jQuery)('#'+whichPyramid).data('valu')){
 		operandTotal.removeClass('right').addClass('wrong');
 	}
@@ -364,18 +368,18 @@ function handleSymbolDrop( event, ui )
 		(jQuery)('.'+whichPyramid).addClass('right');
 		// add zero to "empty" cells
 	}
-	
-	
-	
+
+
+
 	//updateFinalAnswer();
-	
+
 	//get other operand-total values
 	//subtraction is differnt that addition, so here we need to get operands and subtract
 	finalAnswerValue = (jQuery)('#operand-1-total').data('valu') - (jQuery)('#operand-2-total').data('valu');
 	finalAnswer.data('valu',finalAnswerValue);
-	
+
 	finalAnswer.html(finalAnswerValue);
-	
+
 	if(finalAnswerValue != correctAnswer){
 		finalAnswer.removeClass('right').addClass('wrong');
 		if( (jQuery)('#operand-2-total').hasClass('wrong') && (jQuery)('#operand-1-total').hasClass('wrong') )
@@ -387,10 +391,10 @@ function handleSymbolDrop( event, ui )
 		if( (jQuery)('#operand-1-total').hasClass('right') && (jQuery)('#operand-2-total').hasClass('right') ){
 			showSuccess();
 		}
-			
+
 	}
-	
-	
+
+
 	newFinalAnswerValue = false;
 	(jQuery)('#answer-grid .row-total').each(function(el){
 		el = (jQuery)(this);
@@ -405,26 +409,28 @@ function handleSymbolDrop( event, ui )
 			el.html('');
 			if(whole_number != 0)
 				(jQuery)('#symbol-'+whole_number).clone().attr({'id':'final-answer-cloned-symbol-'+whole_number, 'class': 'final-answer-cloned-symbol'}).appendTo(el);
-			
+
 			remainder = finalAnswerValue % multiplier_value;
 			newFinalAnswerValue = remainder;
 		}
-		
-		
+
+
 	});
 
 
 
 
-	
+
 }
 
 
 
 function showSuccess(){
 	(jQuery)('#successMessage').show().animate( {
-      left: '260px',
-      top: '270px',
+      // left: '260px',
+      // top: '270px',
+      left: '50%',
+      top: '50%',
       width: '400px',
       height: '100px',
       opacity: 1
@@ -434,8 +440,10 @@ function showSuccess(){
 }
 function showTryAgain(){
 	(jQuery)('#tryAgain').show().animate( {
-    left: '260px',
-    top: '270px',
+    // left: '260px',
+    // top: '270px',
+    left: '50%',
+    top: '50%',
     width: '400px',
     height: '100px',
     opacity: 1
@@ -449,7 +457,7 @@ function showTryAgain(){
 //remove= did we drop or remove? true for drop false for remove (bool)
 function updateRawColumn(dropZone)
 {
-	
+
 	(jQuery)('#raw-grid .raw-row-total').each(function(el){
 
 
@@ -457,12 +465,12 @@ function updateRawColumn(dropZone)
 		val = el.attr('lang');
 		//console.log(val);
 		rowTotalClass = dropZone.attr('lang');
-		
+
 		if (val == rowTotalClass){
 			operand1 = (jQuery)('.operand-1.'+val+' .cloned-symbol');
 			operand2 = (jQuery)('.operand-2.'+val+' .cloned-symbol');
 			//console.log(operand1,operand2);
-			
+
 			raw_op1 = parseInt(operand1.attr('rel'));
 			raw_op2 = parseInt(operand2.attr('rel'));
 			//console.log(raw_op1, raw_op2);
@@ -472,7 +480,7 @@ function updateRawColumn(dropZone)
 
 			//console.log(operand1);
 			//console.log(operand2);
-			
+
 			if(isNumber(raw_op1)){
 				operand1.data('sticks',numberSymbols["number_"+raw_op1]["stick"]);
 				operand1.data('dots',numberSymbols["number_"+raw_op1]["dot"]);
@@ -512,8 +520,8 @@ function updateRawColumn(dropZone)
 
 
 	});
-	
-	
+
+
 }
 
 function handleReductionDrop(event, ui){
@@ -536,7 +544,7 @@ function handleReductionDrop(event, ui){
 	rowTotalClass = dropZone.attr('lang');
 	rowTotal = 0;
 	rawrowTotal = 0;
-	
+
 
 	dropZoneValue = symbolValue * dropZoneMultiplier;
 	dropZone.data('valu', dropZoneValue);
@@ -544,14 +552,14 @@ function handleReductionDrop(event, ui){
 	dropZone.empty();
 
 	ui.draggable.clone().data('valu',symbolValue).click(
-		function(){ 
+		function(){
 			var operand = 'row-total';
 			var parent = (jQuery)(this).parent();
 			parent.data('valu',0);
 			//updateCurrentColumn((jQuery)(this),operand,parent,true);
 			//updateCurrentColumn(parseInt(symbolValue),'row-total',parent,true,true);
-			(jQuery)(this).remove(); 
-			
+			(jQuery)(this).remove();
+
 		}).appendTo(dropZone).attr({'class':'cloned-symbol ' + whichPyramid + ' cloned-'+whichPyramid,'id':'cloned-'+symbolID});
 
 	updateCurrentColumn(finalAnswer,parseInt(symbolValue),'row-total',dropZone,false,true);
@@ -587,8 +595,8 @@ function updateCurrentColumn(finalAnswer,symbol,which,dropZone,remove,reduction)
 	rawrowTotal = 0;
 	otherDropZoneValue = 0;
 	otherOperandTotal = 0;
-	
-	
+
+
 	symbolValu = symbol; //symbol.data('valu');
 	//console.log(symbolValu);
 
@@ -596,12 +604,12 @@ function updateCurrentColumn(finalAnswer,symbol,which,dropZone,remove,reduction)
 	if(operandTotal.length <= 0)
 		operandTotal = (jQuery)('#finalAnswer');
 
-	
+
 	//get dropzone multiplier to multiple symbol value with
 	pyramidMultiplier = dropZone.data('multiplier');
 	//console.log(pyramidMultiplier);
 
-	//get the value of each other dropzone 
+	//get the value of each other dropzone
 	(jQuery)('.pyramidDropZone.'+which).not("div[rel=" + pyramidMultiplier + "]").each(function(index){
 		el = (jQuery)(this);
 		if( el.attr('rel') != pyramidMultiplier || symbolValu == 0){
@@ -617,13 +625,13 @@ function updateCurrentColumn(finalAnswer,symbol,which,dropZone,remove,reduction)
 		dropZoneValue = newProduct;
 		dropZone.data('valu',dropZoneValue);
 
-		
+
 	}
 	else{
 		//newProduct = otherDropZoneValue;
 		dropZoneValue = 0;
 	}
-	
+
   	//now apply value from dropzone and add into total value
 	operandTotalValue = dropZoneValue + otherDropZoneValue;
 
@@ -668,7 +676,7 @@ function updateCurrentColumn(finalAnswer,symbol,which,dropZone,remove,reduction)
 		//get row total
 		(jQuery)('.'+rowTotalClass + ' div.cloned-symbol').each(function(){
 			el = (jQuery)(this);
-			rawrowTotal += el.data('valu'); 
+			rawrowTotal += el.data('valu');
 		});
 
 		//now update row totals
@@ -677,6 +685,6 @@ function updateCurrentColumn(finalAnswer,symbol,which,dropZone,remove,reduction)
 		newFinalAnswerValue = false;
 
 	}
-	
-	
+
+
 }
