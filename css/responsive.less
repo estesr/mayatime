@@ -559,6 +559,24 @@ body.html {
         width: auto;
       }
     }
+    @media (max-width: 600px) {
+      .math-game-practice-god {
+        align-items: center;
+        display: flex;
+        float: none;
+        height: auto;
+        justify-content: space-around;
+        margin: 0 auto;
+        width: 100%;
+
+        .god-logo-practice {
+          min-width: 225px;
+        }
+      }
+      @media (max-width: 400px) {
+        display: block;
+      }
+    }
     &.landing {
       // this changes at every size
       .math-game-landing-symbol-bar {
@@ -584,7 +602,7 @@ body.html {
         //   }
         // }
       }
-      @media (max-width: @main-breakpoint) {
+      // @media (max-width: @main-breakpoint) {
         .math-math-god {
           display: inline-block;
           margin-right: 0;
@@ -605,7 +623,7 @@ body.html {
             margin: 10px auto 0;
           }
         }
-      }
+      // }
       @media (max-width: 725px) {
         .math-math-god {
           display: block;
@@ -621,6 +639,9 @@ body.html {
       }
     }
     &.practice {
+      .practice-menu ul li a {
+        margin-top: 7px;
+      }
       .round-instructions {
         margin: 15px 0;
       }
@@ -662,20 +683,55 @@ body.html {
           width: ~"calc(100% - 350px)" !important;
 
           .pyramid {
-            margin-right: 15%;
+            // margin-right: 15%;
+            margin: 0 auto;
 
             h4 {
               text-align: center;
             }
-
-            @media (max-width: @main-breakpoint) {
-              margin-right: 5%;
-            }
           }
 
           #middle-symbols {
-            margin: 0 auto;
-            width: 230px;
+            margin: 0 0 0 20px;
+            width: 210px;
+          }
+        }
+        .detabled {
+          background-color: transparent !important;
+          border: none;
+          height: 100%;
+          width: auto;
+
+          .problem-row {
+            border: none;
+            background-color: transparent !important;
+            display: flex;
+            height: auto;
+            margin: 0;
+            width: auto;
+            margin: 0;
+
+            .label {
+              border: none;
+              background-color: transparent !important;
+            }
+
+            &:hover {
+              background-color: #FFFEEE !important;
+            }
+            .label {
+              font-size: 22px;
+              width: 40px;
+              text-align: right;
+            }
+            .pyramidDropZone {
+              height: 82px;
+              width: 78px;
+              border: 2px solid #552911;
+              margin: 3px 10px 18px;
+              background-color: #f9eada !important;
+              color: #381A05 !important;
+            }
           }
         }
       }
@@ -693,8 +749,6 @@ body.html {
           display: flex;
           justify-content: space-between;
           padding: 0 15px;
-
-
         }
       }
       @media (max-width: 900px) {
@@ -708,7 +762,22 @@ body.html {
           }
           .base-container {
             justify-content: space-around;
+            // justify-content: space-between;
             margin-top: 30px;
+
+            #middle-symbols {
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+      @media (max-width: 650px) {
+        #practice-content .base-container {
+          justify-content: space-between;
+
+          #base-20-pyramid, #middle-symbols {
+            margin-left: 0;
+            margin-right: 0;
           }
         }
       }
@@ -719,40 +788,63 @@ body.html {
         #practice-content {
           .base-container {
             flex-wrap: wrap;
-            margin-top: 0;
+            margin-top: 25px;
 
             .pyramid {
-              height: 225px;
-              position: relative;
-              top: -75px;
+              width: 100%;
 
-              h4 {
-                position: relative;
-                top: 100px;
-              }
-              table {
-                display: inline-block;
-                transform: rotate(-90deg);
+              .detabled {
+                display: flex;
+                justify-content: space-between;
+                margin: 10px 0 20px;
 
-                td {
-                  .cloned-symbol {
-                    transform: rotate(90deg);
-                  }
-                  &.label {
-                    padding-top: 15px;
-                    text-align: left;
-                    transform: rotate(90deg);
-                  }
+                label {
+                  font-size: 1em;
                 }
-                tr:hover {
-                  background: #FFFEEE;
 
-                  td {
-                    background: transparent !important;
-                  }
+                .pyramidDropZone {
+                  height: 70px;
+                  width: 60px;
                 }
               }
             }
+            #middle-symbols {
+              margin: 0 auto 20px;
+            }
+            // margin-top: 0;
+
+            // .pyramid {
+            //   height: 225px;
+            //   position: relative;
+            //   top: -75px;
+            //
+            //   h4 {
+            //     position: relative;
+            //     top: 100px;
+            //   }
+            //   table {
+            //     display: inline-block;
+            //     transform: rotate(-90deg);
+            //
+            //     td {
+            //       .cloned-symbol {
+            //         transform: rotate(90deg);
+            //       }
+            //       &.label {
+            //         padding-top: 15px;
+            //         text-align: left;
+            //         transform: rotate(90deg);
+            //       }
+            //     }
+            //     tr:hover {
+            //       background: #FFFEEE;
+            //
+            //       td {
+            //         background: transparent !important;
+            //       }
+            //     }
+            //   }
+            // }
           }
         }
       }
@@ -795,94 +887,48 @@ body.html {
           }
         }
       }
-      &.practice-2 {
-        #practice-content {
-          // display: flex;
-          // padding: 0 25px;
-          //
-          // #symbols-10, .symbols-container {
-          //   max-width: 350px;
-          //
-          //   #symbolsPile {
-          //     display: flex;
-          //     flex-wrap: wrap;
-          //   }
-          // }
-          // #base-10, .base-container {
-          //   display: flex;
-          //   justify-content: flex-end;
-          //   width: ~"calc(100% - 350px)" !important;
-          //
-          //   #base-10-pyramid, .pyramid {
-          //     margin-right: 15%;
-          //
-          //     h4 {
-          //       text-align: center;
-          //     }
-          //
-          //     @media (max-width: @main-breakpoint) {
-          //       margin-right: 5%;
-          //     }
-          //   }
-          //
-          //   #middle-symbols {
-          //     width: 230px;
-          //   }
-          // }
-          // @media (max-width: 900px) {
-          //   flex-wrap: wrap;
-          //   padding: 0 15px;
-          //
-          //   #symbols-10, #base-10, .symbols-container, .base-container {
-          //     max-width: 100%;
-          //     width: 100% !important;
-          //   }
-          //   #base-10, .base-container {
-          //     justify-content: space-around;
-          //     margin-top: 30px;
-          //   }
-          // }
-          // @media (max-width: 500px) {
-          //   #base-10, .base-container {
-          //     flex-wrap: wrap;
-          //
-          //     #base-10-pyramid, .pyramid {
-          //       height: 225px;
-          //       position: relative;
-          //       top: -75px;
-          //
-          //       h4 {
-          //         position: relative;
-          //         top: 60px;
-          //       }
-          //       table {
-          //         transform: rotate(-90deg);
-          //
-          //         td {
-          //           .cloned-symbol {
-          //             transform: rotate(90deg);
-          //           }
-          //           &.label {
-          //             padding-top: 15px;
-          //             text-align: left;
-          //             transform: rotate(90deg);
-          //           }
-          //         }
-          //         tr:hover {
-          //           background: #FFFEEE;
-          //
-          //           td {
-          //             background: transparent !important;
-          //           }
-          //         }
-          //       }
-          //     }
-          //   }
-          // }
+      &.practice-3 {
+        #base-20-pyramid {
+          width: 150px;
+        }
+        .pyramid div {
+          height: auto;
+          width: auto;
+          border: none;
+          margin: 0;
+          background-color: transparent !important;
         }
       }
     }
     &.game {
+      &.practice-4 {
+        @media (max-width: @main-breakpoint) {
+          #symbol-sidebar {
+            margin-left: 0px;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0 15px;
+          }
+          #grid-wrapper {
+            max-width: 100%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+        @media (max-width: 725px) {
+          #grid-wrapper {
+            position: relative;
+            #bottom {
+              // transform: scale(.75);
+              // position: relative;
+            }
+
+            // width: 100vw;
+            // float: none;
+          }
+        }
+      }
 
     }
     &.reveal {

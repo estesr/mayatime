@@ -152,7 +152,8 @@
 	    }
 
 		//make each dropzone officially droppable
-		$('.pyramid div').droppable( {
+		// $('.pyramid div').droppable( {
+      $('.pyramid .pyramidDropZone').droppable( {
 	      accept: '#symbolPile div',
 	      hoverClass: 'hovered',
 	      drop: handleSymbolDrop
@@ -192,7 +193,7 @@
 			    // left: '260px',
 			    // top: '270px',
           left: '50%',
-          top: '50%',
+          top: 'calc(50% - 50px)',
           // bottom: '350px',
 			    width: 0,
 			    height: 0
@@ -204,7 +205,7 @@
 		      // left: '260px',
 		      // top: '270px',
           left: '50%',
-          top: '50%',
+          top: 'calc(50% - 50px)',
 		      width: '400px',
 		      height: '100px',
 		      opacity: 1

@@ -149,11 +149,17 @@
 	    }
 
 		//make each dropzone officially droppable
-		$('.pyramid div').droppable( {
-	      accept: '#symbolPile div',
-	      hoverClass: 'hovered',
-	      drop: handleSymbolDrop
-	    });
+		// $('.pyramid div').droppable( {
+	  //     accept: '#symbolPile div',
+	  //     hoverClass: 'hovered',
+	  //     drop: handleSymbolDrop
+	  //   });
+
+    $('.pyramid .pyramidDropZone').droppable( {
+        accept: '#symbolPile div',
+        hoverClass: 'hovered',
+        drop: handleSymbolDrop
+      });
 
 
 
@@ -192,7 +198,7 @@
 			    // left: '260px',
 			    // top: '270px',
           left: '50%',
-          top: '50%',
+          top: 'calc(50% - 50px)',
 			    width: 0,
 			    height: 0
 			  }).hide();
@@ -202,7 +208,7 @@
 		      // left: '260px',
 		      // top: '270px',
           left: '50%',
-          top: '50%',
+          top: 'calc(50% - 50px)',
 		      width: '400px',
 		      height: '100px',
 		      opacity: 1

@@ -243,7 +243,7 @@ function init()
 	    // left: '260px',
 	    // top: '270px',
       left: '50%',
-      top: '50%',
+      top: 'calc(50% - 50px)',
 	    width: 0,
 	    height: 0
 	});
@@ -251,7 +251,7 @@ function init()
 	    // left: '260px',
 	    // top: '270px',
       left: '50%',
-      top: '50%',
+      top: 'calc(50% - 50px)',
 	    width: 0,
 	    height: 0
 	});
@@ -430,7 +430,7 @@ function showSuccess(){
       // left: '260px',
       // top: '270px',
       left: '50%',
-      top: '50%',
+      top: 'calc(50% - 50px)',
       width: '400px',
       height: '100px',
       opacity: 1
@@ -443,7 +443,7 @@ function showTryAgain(){
     // left: '260px',
     // top: '270px',
     left: '50%',
-    top: '50%',
+    top: 'calc(50% - 50px)',
     width: '400px',
     height: '100px',
     opacity: 1

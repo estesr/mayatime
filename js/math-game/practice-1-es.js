@@ -89,7 +89,7 @@
 		      // top: '250px',
 		      // width: '270px',
           // bottom: '350px',
-          top: '50%',
+          top: 'calc(50% - 50px)',
 		      height: '100px',
 		      opacity: 1,
 		    },800);
@@ -100,7 +100,7 @@
           left: '50%',
           // 'top':'270px'
           // bottom: '350px',
-          top: '50%',
+          top: 'calc(50% - 50px)',
         });
 				nuvalue= parseInt($('#number').data('valu')) + 1;
 				$('#number').data('valu',nuvalue);
@@ -145,7 +145,7 @@ function init() {
     left: '50%',
     // top: '270px',
     // bottom: '350px',
-    top: '50%',
+    top: 'calc(50% - 50px)',
     width: 0,
     height: 0
   });
@@ -154,7 +154,7 @@ function init() {
     left: '50%',
     // top: '270px',
     // bottom: '350px',
-    top: '50%',
+    top: 'calc(50% - 50px)',
     // width: 0,
     width: '400px',
     height: 0
@@ -189,7 +189,7 @@ function showCorrect(correctValue,symbolValue)
     left: '50%',
     // top: '270px',
     // bottom: '350px',
-    top: '50%',
+    top: 'calc(50% - 50px)',
     width: '400px',
     height: '100px',
     opacity: 1,
@@ -216,7 +216,7 @@ function revertAndWrong(ui,correctValue)
     left: '50%',
     // top: '270px',
     // bottom: '350px',
-    top: '50%',
+    top: 'calc(50% - 50px)',
     width: '400px',
     height: '100px',
     opacity: 1,
@@ -249,7 +249,7 @@ function revertAndWrongMultiple(ui,correctValue,numberSymbols)
     left: '50%',
     // top: '270px',
     // bottom: '350px',
-    top: '50%',
+    top: 'calc(50% - 50px)',
     width: '400px',
     height: '100px',
     opacity: 1,
