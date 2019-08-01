@@ -1,20 +1,19 @@
 // rebuilding fullsize layout, since the HTML structure changed
+@main-breakpoint: 1040px; // all-width changes
 
-@main-breakpoint: 1040px;
-
-// all-width changes
 body.html {
   // font-size: 100%;
   font-size: initial;
 
-  header#section-header, footer#section-footer {
+  footer#section-footer,
+  header#section-header {
     font-size: 75%;
   }
+
   #zone-content #messages {
     max-width: 100%;
   }
 }
-
 // homepage styles
 @media (min-width: @main-breakpoint) {
   #page #section-content #zone-content-wrapper-front {
@@ -29,27 +28,34 @@ body.html {
         position: relative;
         width: auto !important;
       }
+
       .front-menu-right {
         float: right;
       }
+
       .front-menu-the-maya {
         float: left;
       }
+
       .front-menu-maya-sun {
         top: 100px;
       }
+
       .front-menu-calendar {
         clear: both;
         float: left;
         top: 150px;
       }
+
       .front-menu-corn-and-maya-time {
         top: 250px;
       }
-      .front-menu-2012-resetting  {
+
+      .front-menu-2012-resetting {
         float: right;
         clear: both;
       }
+
       #front-menu-main-bottom {
         clear: both;
         float: left;
@@ -58,7 +64,6 @@ body.html {
     }
   }
 }
-
 // general
 @media (max-width: @main-breakpoint) {
   body.html {
@@ -74,16 +79,26 @@ body.html {
       display: none;
     }
   }
+
   #page {
     header#section-header {
-      #zone-user-wrapper, #zone-user, .grid-12, .region-inner, .block, .block-inner, .content.clearfix {
+      #zone-user,
+      #zone-user-wrapper,
+      .block,
+      .block-inner,
+      .content.clearfix,
+      .grid-12,
+      .region-inner {
         max-width: 100%;
       }
+
       #zone-branding {
         max-width: 100%;
+
         .grid-1 {
           display: none;
         }
+
         .grid-8 {
           float: none;
           width: auto !important;
@@ -95,7 +110,6 @@ body.html {
               float: none;
               margin-top: 20px;
               width: 100%;
-
               @media (max-width: 750px) {
                 margin-top: 35px;
               }
@@ -106,6 +120,7 @@ body.html {
             }
           }
         }
+
         .grid-2 {
           padding: 0;
           box-sizing: border-box;
@@ -114,11 +129,10 @@ body.html {
             clear: both;
             float: left;
             left: 50px;
-            margin: -30px 0 0 0;
+            margin: -30px 0 0;
             width: auto !important;
             // width: 175px !important;
             font-size: 90%;
-
             @media (max-width: 850px) {
               font-size: 80%;
               left: 40px;
@@ -133,12 +147,13 @@ body.html {
               // }
             }
           }
+
           #block-locale-language ul.language-switcher-locale-url {
             margin-right: 20px;
           }
-
         }
       }
+
       #zone-user {
         .content h4 {
           @media (max-width: 600px) {
@@ -150,13 +165,14 @@ body.html {
           }
         }
       }
-        // @media (Max-width: )
+      // @media (Max-width: )
       // }
     }
+
     #section-content {
       // front page styles
       #zone-content-wrapper-front {
-        background: url('/sites/all/themes/mayatime/img/zone-content-wrapper.jpg') top center transparent repeat-y;
+        background: url("/sites/all/themes/mayatime/img/zone-content-wrapper.jpg") top center transparent repeat-y;
         min-height: 0 !important;
         height: auto;
 
@@ -180,12 +196,14 @@ body.html {
               top: 0;
               width: auto;
             }
+
             #front-menu-main-bottom {
               display: none;
             }
           }
         }
       }
+
       #zone-content {
         box-sizing: border-box;
         padding: 0 40px;
@@ -202,6 +220,7 @@ body.html {
         }
       }
     }
+
     footer#section-footer {
       min-height: 0;
 
@@ -213,7 +232,6 @@ body.html {
           box-sizing: border-box;
           max-width: 100%;
           padding: 90px 30px 60px;
-
           @media (max-width: 700px) {
             padding-top: 130px;
           }
@@ -228,7 +246,6 @@ body.html {
               display: flex;
               justify-content: space-between;
               margin-top: 1.5em;
-
               @media (max-width: 710px) {
                 flex-wrap: wrap;
 
@@ -266,6 +283,7 @@ body.html {
                 }
               }
             }
+
             #block-menu-menu-menu-footer-secondary-menu {
               margin-top: 1em;
               width: 100%;
@@ -276,21 +294,27 @@ body.html {
     }
   }
 }
-
 // landing pages for toplevel sections
 @media (max-width: @main-breakpoint) {
-  body.page-node-5, .page-node-6,
-  body.page-node-7, .page-node-8,
-  body.page-node-9, .page-node-10,
-  body.page-node-11, .page-node-12,
-  body.page-node-13, .page-node-14 {
+  .page-node-10,
+  .page-node-12,
+  .page-node-14,
+  .page-node-6,
+  .page-node-8,
+  body.page-node-11,
+  body.page-node-13,
+  body.page-node-5,
+  body.page-node-7,
+  body.page-node-9 {
     #zone-content {
       .region-content {
         width: 100% !important;
+
         h1.title {
-          margin-top: .75em;
+          margin-top: 0.75em;
         }
       }
+
       aside.region-sidebar-second {
         width: 100% !important;
 
@@ -302,6 +326,7 @@ body.html {
             padding: 30px 0;
           }
         }
+
         ul.menu {
           display: flex;
           flex-wrap: wrap;
@@ -313,9 +338,11 @@ body.html {
         }
       }
     }
+
     #region-menu {
       max-width: 100% !important;
     }
+
     nav.navigation {
       margin: 0;
 
@@ -326,19 +353,25 @@ body.html {
       }
     }
   }
-  body.page-node-11, body.page-node-12,
-  body.page-node-13, body.page-node-14 {
+
+  body.page-node-11,
+  body.page-node-12,
+  body.page-node-13,
+  body.page-node-14 {
     #zone-content aside.region-sidebar-second ul.menu {
       padding-bottom: 90px;
     }
   }
 }
-
 // calendar activity page
-.page-node-39, .page-node-40 {
-  .calendar-quote-mobile, .aside-mobile {
+
+.page-node-39,
+.page-node-40 {
+  .aside-mobile,
+  .calendar-quote-mobile {
     display: none;
   }
+
   .unit-conversions {
     display: flex;
     flex-wrap: wrap;
@@ -348,7 +381,6 @@ body.html {
       width: 50%;
     }
   }
-
   @media (max-width: @main-breakpoint) {
     #calendar-wrapper {
       #calendar-converter-intro {
@@ -362,33 +394,39 @@ body.html {
 
           #calendar-quote.calendar-quote-mobile {
             display: block;
-            font-size: .9em;
+            font-size: 0.9em;
             position: absolute;
             right: 20px;
             top: 20px;
             width: ~"calc(100% - 360px)";
           }
         }
+
         .intro-paragraph p {
           width: 100%;
         }
       }
+
       #calendar-converter-main {
         width: 100%;
 
         #calendar-quote {
           display: none;
         }
+
         #converter-wrap {
           align-items: center;
           display: flex;
           justify-content: space-around;
           margin-top: 20px;
-          #conveter-main, #converter-aside {
+
+          #converter-aside,
+          #conveter-main {
             display: inline-block;
             float: none;
             margin: 0;
           }
+
           #converter-aside {
             max-width: ~"calc(100% - 375px)";
             width: auto;
@@ -397,7 +435,8 @@ body.html {
         }
       }
     }
-    #block-system-main  {
+
+    #block-system-main {
       width: 100%;
 
       article {
@@ -406,19 +445,20 @@ body.html {
         float: none;
         position: static;
         width: 100%;
-
       }
+
       aside {
         display: none;
       }
+
       .aside-mobile {
         display: block;
         float: left;
         margin: 0 30px 10px 0;
       }
     }
-    #calendar-abstract2
-    #calendar-abstract3 div {
+
+    #calendar-abstract2 #calendar-abstract3 div {
       margin: 0 !important;
       width: ~"calc(100% - 271px)";
     }
@@ -449,9 +489,11 @@ body.html {
           }
         }
       }
+
       .break {
         display: none;
       }
+
       #calendar-quote.calendar-quote-mobile {
         margin-left: auto;
         margin-right: auto;
@@ -465,13 +507,16 @@ body.html {
       flex-wrap: wrap;
       justify-content: center;
 
-      #conveter-main, #converter-aside {
+      #converter-aside,
+      #conveter-main {
         max-width: 100%;
         width: 100%;
       }
+
       #conveter-main #monument {
         margin: 0 auto;
       }
+
       #converter-aside {
         text-align: center;
 
@@ -489,31 +534,37 @@ body.html {
         float: none;
         text-align: center;
       }
+
       #calendar-abstract3 div {
         width: 100%;
       }
     }
   }
 }
-
 // Maya World interactive map
-.page-node-25, .page-node-26 {
 
+.page-node-25,
+.page-node-26 {
   @media (max-width: @main-breakpoint) {
     .maya-world-interactive-map img {
       width: 50%;
     }
   }
 }
-
 // math game: common styles
-.page-node-33, .page-node-34 {
+
+.page-node-33,
+.page-node-34 {
   // changes that apply on every page
   @media (max-width: @main-breakpoint) {
-    #zone-content, #region-content, #block-block-8, #block-block-9 {
+    #block-block-8,
+    #block-block-9,
+    #region-content,
+    #zone-content {
       max-width: 100% !important;
     }
   }
+
   .maya-math-game-wrapper {
     background-size: cover;
 
@@ -532,25 +583,28 @@ body.html {
           position: relative;
           margin-top: 5px;
         }
+
         &:last-of-type span {
           margin-top: 0;
         }
       }
     }
+
     hr {
       max-width: 100%;
     }
+
     #practice-content #answer-pane {
       .total {
         width: 100%;
       }
+
       #numberSlot .ui-droppable {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
       }
     }
-
     @media (max-width: @main-breakpoint) {
       .math-game-landing-copy {
         display: block;
@@ -577,6 +631,7 @@ body.html {
         display: block;
       }
     }
+
     &.landing {
       // this changes at every size
       .math-game-landing-symbol-bar {
@@ -603,26 +658,28 @@ body.html {
         // }
       }
       // @media (max-width: @main-breakpoint) {
-        .math-math-god {
-          display: inline-block;
-          margin-right: 0;
-        }
-        .are-you-ready {
-          margin: 0 25px;
-        }
-        .math-game-landing-game-buttons {
-          box-sizing: border-box;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-around;
-          margin: 0;
-          max-width: 100%;
-          padding: 15px 10px;
+      .math-math-god {
+        display: inline-block;
+        margin-right: 0;
+      }
 
-          .math-game-button {
-            margin: 10px auto 0;
-          }
+      .are-you-ready {
+        margin: 0 25px;
+      }
+
+      .math-game-landing-game-buttons {
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 0;
+        max-width: 100%;
+        padding: 15px 10px;
+
+        .math-game-button {
+          margin: 10px auto 0;
         }
+      }
       // }
       @media (max-width: 725px) {
         .math-math-god {
@@ -638,27 +695,35 @@ body.html {
         }
       }
     }
+
     &.practice {
       .practice-menu ul li a {
         margin-top: 7px;
       }
+
       .round-instructions {
         margin: 15px 0;
       }
+
       .math-game-landing-copy p {
         margin-bottom: 15px;
       }
+
       #navigation-help {
         margin: 10px 10px 20px;
         width: 100%;
         text-align: center;
       }
+
       #practice-content {
         #answer-pane {
           display: flex;
           flex-wrap: wrap;
         }
-        #successMessage, #tryAgain, #endofgame {
+
+        #endofgame,
+        #successMessage,
+        #tryAgain {
           box-shadow: none;
           max-width: ~"calc(100% - 50px)";
           position: fixed;
@@ -677,6 +742,7 @@ body.html {
             flex-wrap: wrap;
           }
         }
+
         .base-container {
           display: flex;
           justify-content: flex-end;
@@ -696,6 +762,7 @@ body.html {
             width: 210px;
           }
         }
+
         .detabled {
           background-color: transparent !important;
           border: none;
@@ -719,11 +786,13 @@ body.html {
             &:hover {
               background-color: #FFFEEE !important;
             }
+
             .label {
               font-size: 22px;
               width: 40px;
               text-align: right;
             }
+
             .pyramidDropZone {
               height: 82px;
               width: 78px;
@@ -740,11 +809,13 @@ body.html {
           display: flex;
           flex-wrap: wrap;
 
-          li, li.last {
+          li,
+          li.last {
             width: ~"calc(100% / 3 - 1px)";
             border-top: 1px solid #552911;
           }
         }
+
         #practice-content {
           display: flex;
           justify-content: space-between;
@@ -756,10 +827,12 @@ body.html {
           flex-wrap: wrap;
           padding: 0 15px;
 
-          .symbols-container, .base-container {
+          .base-container,
+          .symbols-container {
             max-width: 100%;
             width: 100% !important;
           }
+
           .base-container {
             justify-content: space-around;
             // justify-content: space-between;
@@ -775,16 +848,19 @@ body.html {
         #practice-content .base-container {
           justify-content: space-between;
 
-          #base-20-pyramid, #middle-symbols {
+          #base-20-pyramid,
+          #middle-symbols {
             margin-left: 0;
             margin-right: 0;
           }
         }
       }
       @media (max-width: 500px) {
-        .practice-menu ul li, .practice-menu ul li.last {
+        .practice-menu ul li,
+        .practice-menu ul li.last {
           width: ~"calc(50% - 1px)";
         }
+
         #practice-content {
           .base-container {
             flex-wrap: wrap;
@@ -808,11 +884,11 @@ body.html {
                 }
               }
             }
+
             #middle-symbols {
               margin: 0 auto 20px;
             }
             // margin-top: 0;
-
             // .pyramid {
             //   height: 225px;
             //   position: relative;
@@ -848,14 +924,19 @@ body.html {
           }
         }
       }
+
       &.practice-1 {
         @media (max-width: @main-breakpoint) {
           #practice-content {
-            #symbols-left, #answer-pane, #directions {
+            #answer-pane,
+            #directions,
+            #symbols-left {
               float: none;
               margin: 0;
             }
-            #symbols-left, #symbolBox {
+
+            #symbolBox,
+            #symbols-left {
               width: 100px;
             }
           }
@@ -865,15 +946,20 @@ body.html {
             flex-wrap: wrap;
             justify-content: space-around;
 
-            #symbols-left, #answer-pane, #directions {
+            #answer-pane,
+            #directions,
+            #symbols-left {
               margin: 0;
             }
+
             #symbols-left {
               order: 2;
             }
+
             #answer-pane {
               order: 3;
             }
+
             #directions {
               margin-bottom: 20px;
               order: 1;
@@ -881,16 +967,18 @@ body.html {
             }
           }
         }
-        @media (max-width: 750px)  {
+        @media (max-width: 750px) {
           .math-game-landing-copy .symbols .symbol {
             width: 100%;
           }
         }
       }
+
       &.practice-3 {
         #base-20-pyramid {
           width: 150px;
         }
+
         .pyramid div {
           height: auto;
           width: auto;
@@ -900,15 +988,147 @@ body.html {
         }
       }
     }
+
     &.game {
-      &.practice-4 {
+      &.practice-4  {
+        .detabled {
+          margin-top: 25px;
+          #grid-holder {
+            display: flex;
+
+            #value-grid {
+              padding-right: 5px;
+
+              .label {
+                font-size: 18px;
+                font-weight: bold;
+                height: 85px;
+                text-align: right;
+                width: 40px;
+
+                & > span {
+                  display: inline-block;
+                  position: relative;
+                  top: 10px;
+                }
+              }
+            }
+            #grid {
+              // min-width: 200px;
+              width: 45%;
+              // width: 200px;
+
+              .row {
+                height: 80px;
+                display: flex;
+                justify-content: space-between;
+
+                .operator {
+                  margin-top: 10px;
+                }
+              }
+              div {
+                display: inline-block;
+              }
+            }
+            .borderless-cell {
+              height: 75px;
+            }
+            .equals-grid {
+              // background: lightblue;
+              padding: 0 10px;
+
+              .borderless-cell {
+                height: 75px;
+              }
+              .operator {
+                position: relative;
+                top: 80px;
+
+                &:last-of-type {
+                  top: 160px;
+                }
+              }
+            }
+            #raw-grid {
+              .raw-symbols {
+                display: inline-block;
+              }
+              &:before {
+                content: "RAW answer";
+                display: inline-block;
+                font-style: italic;
+                padding-left: 5px;
+                position: absolute;
+                top: -20px;
+              }
+            }
+            #answer-grid {
+              &:before {
+                content: "FINAL answer";
+                display: inline-block;
+                font-style: italic;
+                padding-left: 5px;
+                position: absolute;
+                top: -20px;
+              }
+            }
+            .answer-tables {
+              display: flex;
+              justify-content: space-between;
+              position: relative;
+              // top: -26px;
+              width: 40%;
+            }
+            .cell {
+              border: 2px solid #552911;
+              box-sizing: border-box;
+              margin: 5px 0;
+              width: 75px;
+              height: 75px;
+            }
+            .operator {
+              // border: 1px solid yellow;
+              // background: green;
+              font-size: 42px;
+              height: 75px;
+              margin: 8px 5px 5px;
+              text-align: center;
+              width: 30px;
+
+              &.operator-hide-border, &.operator-hide {
+                visibility: hidden;
+              }
+              // &.operator-show {
+              //   border:
+              // }
+            }
+          }
+        }
+
+        button {
+          cursor: pointer;
+        }
+        #navigation-help {
+          margin: 10px 10px 20px;
+          width: 100%;
+          text-align: center;
+        }
+        .practice-menu {
+          height: auto;
+        }
+
         @media (max-width: @main-breakpoint) {
+          .detabled {
+            padding: 0 10px;
+          }
           #symbol-sidebar {
-            margin-left: 0px;
+            margin-left: 0;
             width: 100%;
             box-sizing: border-box;
             padding: 0 15px;
           }
+
           #grid-wrapper {
             max-width: 100%;
             position: relative;
@@ -919,41 +1139,70 @@ body.html {
         @media (max-width: 725px) {
           #grid-wrapper {
             position: relative;
+
             #bottom {
               // transform: scale(.75);
               // position: relative;
             }
-
             // width: 100vw;
             // float: none;
           }
         }
-      }
+        @media (max-width: 600px) {
+          .equals-grid, .row.operator {
+            padding: 0 !important;
+          }
+          #grid {
+            width: 190px;
+          }
+        }
+        @media (max-width: 525px) {
+          #grid-holder {
+            .cell {
+              width: 50px;
+              height: 70px;
+            }
+            .row {
+              height: 70px;
+            }
+          }
+        }
+        @media (max-width: 500px) {
+          #arithmetic-problem {
+            flex-wrap: wrap;
 
+            .problem {
+              border-right: none;
+              width: 100%;
+            }
+          }
+        }
+      }
     }
-    &.reveal {
-    }
+
+    &.reveal {}
   }
 }
-
-
 // menu tests
 @media (max-width: @main-breakpoint) {
-  .page-node-31, .page-node-32 {
+  .page-node-31,
+  .page-node-32 {
     header #region-menu {
       // left: ~"calc(100% - 300px)";
       position: relative;
       width: 600px;
 
-      ul.menu, ul#main-menu {
+      ul#main-menu,
+      ul.menu {
         // width: 300px;
         margin: 0;
       }
+
       nav.navigation {
         display: none;
 
         ul#main-menu {
-        // margin: 0;
+          // margin: 0;
           width: 300px;
 
           li {
@@ -963,12 +1212,14 @@ body.html {
               display: none;
             }
 
-            a:hover, a.active-trail {
+            a.active-trail,
+            a:hover {
               background: none;
             }
           }
         }
       }
+
       #block-menu-block-1 {
         width: auto;
         display: inline-block;
@@ -977,8 +1228,6 @@ body.html {
     }
   }
 }
-
-
 @media (max-width: 600px) {
   #page #section-content #zone-content {
     padding: 0 20px;

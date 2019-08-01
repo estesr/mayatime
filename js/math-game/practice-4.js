@@ -139,7 +139,8 @@
 	      drop: handleSymbolDrop
 	    });
 
-		$('#answer-grid td').droppable( {
+		// $('#answer-grid td').droppable( {
+    $('#answer-grid cell').droppable( {
 	      accept: '#symbolPile div',
 	      hoverClass: 'hovered',
 	      drop: handleReductionDrop
@@ -170,7 +171,8 @@ function checkAnswer(){
 
 //When user select "show me reduction"
 function showReduction(){
-	(jQuery)('#answer-grid td.row-total').each(function(el){
+	// (jQuery)('#answer-grid td.row-total').each(function(el){
+  (jQuery)('#answer-grid .row-total').each(function(el){
 		el = (jQuery)(this);
 		//console.log("finalanswervalue:" + finalAnswerValue);
 		multiplier_value = parseInt(el.attr('rel'));

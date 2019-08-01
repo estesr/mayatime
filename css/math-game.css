@@ -120,8 +120,8 @@
 		display:inline;
 		float:left;
 	}
-	
-	
+
+
 	#arithmetic-problem, td.operator-show, table.sum-grid td.operator-hide-border, .equals-grid td, .operand-total, #finalAnswer,#rawfinalAnswer{
 		font-size:42px;
 		text-align:center;
@@ -209,7 +209,7 @@
 		text-align:center;
 	}
 	button{width:65px;}
-	
+
 	.ui-draggable:hover{
 		cursor: pointer;
 		cursor: hand;
@@ -324,8 +324,8 @@
 
 
 #symbol-sidebar{
-	display:inline; 
-	float:left; 
+	display:inline;
+	float:left;
 	width:300px;
 	padding-left:30px;
 }
@@ -337,13 +337,20 @@
 #show-numbers{
   text-transform: uppercase;
 }
-table#arithmetic-problem{
+table#arithmetic-problem, #arithmetic-problem{
 	margin:20px 0 0px 0;
 }
-table#arithmetic-problem tbody{
+table#arithmetic-problem tbody,
+#arithmetic-problem
+{
 	border:2px solid #552911;
+	display: flex;
+	/* justify-content: space-between; */
+	background-color: #f9eada;
+	max-width: 100%;
 }
-table#arithmetic-problem td.problem{
+table#arithmetic-problem td.problem,
+#arithmetic-problem .problem {
 	background-color:#a63715 !important;
 	color:#f9eada;
 	width:175px;
@@ -352,17 +359,23 @@ table#arithmetic-problem td.problem{
 	font-weight:normal;
 	text-transform: uppercase;
 	font-size:34px;
-	padding:5px 0 0 0!important;
+	padding: 7px 10px 0;
+	/* padding:5px 0 0 0!important; */
 }
 body.i18n-es table#arithmetic-problem td.problem {
 	font-size:32px;
 	padding:7px 0 0 0!important;
+	padding: 7px 10px 0;
 }
-table#arithmetic-problem td{
+table#arithmetic-problem td,
+#arithmetic-problem .problem-components {
 	background-color:#f9eada !important;
 	height:auto;
 	font-weight: bold;
 	padding:5px 0 0 0!important;
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
 }
 table#arithmetic-problem td#operand-1{
 	padding-left:30px !important;
@@ -372,7 +385,7 @@ table{
 	table-layout:fixed;
 }
 #equals{
-	width:75px;
+	/* width:75px; */
 }
 
 
@@ -411,7 +424,7 @@ body.i18n-es #symbol-sidebar p{
 }
 
 #bottom table{
-	border-collapse:separate; 
+	border-collapse:separate;
 	border-spacing:0 15px;
 }
 #bottom table.sum-grid,
@@ -485,7 +498,7 @@ body.i18n-es .block-26 #column-key .float-left {
   border: 2px solid #552911;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
-  
+
   border-radius: 10px;
   -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
   -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
@@ -508,7 +521,7 @@ body.i18n-es .block-26 #column-key .float-left {
   border: 2px solid #333;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
-  
+
   border-radius: 10px;
   -moz-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);
   -webkit-box-shadow: .3em .3em .5em rgba(0, 0, 0, .8);

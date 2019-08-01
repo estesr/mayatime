@@ -592,8 +592,9 @@ hr {
     text-decoration: none;
    }
 
-   table#arithmetic-problem td{
-    padding:15px 0;
+   table#arithmetic-problem td,
+   #arithmetic-problem div {
+    /* padding:15px 0; */
     background-color:#f9eada;
    }
    #symbol-sidebar{
