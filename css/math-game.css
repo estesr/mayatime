@@ -238,7 +238,7 @@
 }
 
 .math-game-landing-game-buttons .game-level-button.last{
-	margin-right:0 !important;
+	/* margin-right:0 !important; */
 }
 
 .math-game-landing-game-buttons {
@@ -359,7 +359,7 @@ table#arithmetic-problem td.problem,
 	font-weight:normal;
 	text-transform: uppercase;
 	font-size:34px;
-	padding: 7px 10px 0;
+	padding: 5px 10px;
 	/* padding:5px 0 0 0!important; */
 }
 body.i18n-es table#arithmetic-problem td.problem {
@@ -372,7 +372,7 @@ table#arithmetic-problem td,
 	background-color:#f9eada !important;
 	height:auto;
 	font-weight: bold;
-	padding:5px 0 0 0!important;
+	/* padding:5px 0 0 0!important; */
 	display: flex;
 	justify-content: space-around;
 	width: 100%;

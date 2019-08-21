@@ -553,8 +553,7 @@ body.html {
 }
 // math game: common styles
 
-.page-node-33,
-.page-node-34 {
+.page-node-33, .page-node-34 {
   // changes that apply on every page
   @media (max-width: @main-breakpoint) {
     #block-block-8,
@@ -672,11 +671,11 @@ body.html {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        margin: 0;
+        margin: 20px 0 0;
         max-width: 100%;
         padding: 15px 10px;
 
-        .math-game-button {
+        .math-game-button, .game-level-button {
           margin: 10px auto 0;
         }
       }
@@ -696,7 +695,8 @@ body.html {
       }
     }
 
-    &.practice {
+    &.practice  {
+      // border: 2px solid green;
       .practice-menu ul li a {
         margin-top: 7px;
       }
@@ -711,28 +711,21 @@ body.html {
 
       #navigation-help {
         margin: 10px 10px 20px;
-        width: 100%;
+        max-width: ~"calc(100% - 20px)";
         text-align: center;
+        width: auto;
+      }
+      .character-logo-game {
+        min-width: 225px;
       }
 
       #practice-content {
+        display: flex;
+        padding: 0 25px;
         #answer-pane {
           display: flex;
           flex-wrap: wrap;
         }
-
-        #endofgame,
-        #successMessage,
-        #tryAgain {
-          box-shadow: none;
-          max-width: ~"calc(100% - 50px)";
-          position: fixed;
-          transform: translate(-50%, -50%);
-          top: auto;
-          top: 50%;
-        }
-        display: flex;
-        padding: 0 25px;
 
         .symbols-container {
           max-width: 350px;
@@ -803,6 +796,16 @@ body.html {
             }
           }
         }
+      }
+      #endofgame,
+      #successMessage,
+      #tryAgain {
+        box-shadow: none;
+        max-width: ~"calc(100% - 50px)";
+        position: fixed;
+        transform: translate(-50%, -50%);
+        top: auto;
+        top: 50%;
       }
       @media (max-width: @main-breakpoint) {
         .practice-menu ul {
@@ -990,9 +993,17 @@ body.html {
     }
 
     &.game {
-      &.practice-4  {
+      // &.practice-4, &.practice-5 {
+      &.practice-4-5, &.game-1, &.game-2, &.game-3 {
+        #arithmetic-problem {
+          margin-bottom: 20px;
+          .problem {
+            min-width: 185px;
+          }
+        }
         .detabled {
-          margin-top: 25px;
+          margin-top: 15px;
+
           #grid-holder {
             display: flex;
 
@@ -1019,12 +1030,12 @@ body.html {
               // width: 200px;
 
               .row {
-                height: 80px;
+                height: 78px;
                 display: flex;
                 justify-content: space-between;
 
                 .operator {
-                  margin-top: 10px;
+                  // margin-top: 10px;
                 }
               }
               div {
@@ -1042,35 +1053,48 @@ body.html {
                 height: 75px;
               }
               .operator {
+                padding-top: 3px;
                 position: relative;
-                top: 80px;
+                top: 75px;
 
                 &:last-of-type {
-                  top: 160px;
+                  top: 150px;
                 }
               }
             }
             #raw-grid {
               .raw-symbols {
                 display: inline-block;
+                width: 100%;
               }
-              &:before {
+              // &:before {
+              .column-title-container:before {
                 content: "RAW answer";
                 display: inline-block;
+                font-size: 14px;
                 font-style: italic;
-                padding-left: 5px;
+                line-height: 1.1;
+                max-width: 70px;
                 position: absolute;
-                top: -20px;
+                text-align: center;
+                top: -30px;
+
+                @media (max-width: 525px) {
+                  max-width: 55px;
+                }
               }
             }
             #answer-grid {
-              &:before {
+              .column-title-container:before {
                 content: "FINAL answer";
                 display: inline-block;
+                font-size: 14px;
                 font-style: italic;
-                padding-left: 5px;
+                line-height: 1.1;
+                max-width: 70px;
                 position: absolute;
-                top: -20px;
+                text-align: center;
+                top: -30px;
               }
             }
             .answer-tables {
@@ -1083,7 +1107,7 @@ body.html {
             .cell {
               border: 2px solid #552911;
               box-sizing: border-box;
-              margin: 5px 0;
+              margin: 3px 0;
               width: 75px;
               height: 75px;
             }
@@ -1092,9 +1116,10 @@ body.html {
               // background: green;
               font-size: 42px;
               height: 75px;
-              margin: 8px 5px 5px;
+              margin: 5px;
               text-align: center;
               width: 30px;
+              // background: blue;
 
               &.operator-hide-border, &.operator-hide {
                 visibility: hidden;
@@ -1112,12 +1137,11 @@ body.html {
         #navigation-help {
           margin: 10px 10px 20px;
           width: 100%;
-          text-align: center;
+          // text-align: center;
         }
         .practice-menu {
           height: auto;
         }
-
         @media (max-width: @main-breakpoint) {
           .detabled {
             padding: 0 10px;
@@ -1157,17 +1181,6 @@ body.html {
           }
         }
         @media (max-width: 525px) {
-          #grid-holder {
-            .cell {
-              width: 50px;
-              height: 70px;
-            }
-            .row {
-              height: 70px;
-            }
-          }
-        }
-        @media (max-width: 500px) {
           #arithmetic-problem {
             flex-wrap: wrap;
 
@@ -1176,14 +1189,164 @@ body.html {
               width: 100%;
             }
           }
+          .detabled #grid-holder {
+            #grid {
+              width: 40%;
+              min-width: 150px;
+            }
+            .equals-grid .operator {
+              padding: 0 10px;
+            }
+            .cell {
+              width: 55px;
+              height: 70px;
+            }
+            .row {
+              height: 70px !important;
+              margin-bottom: 3px;
+            }
+            .operator {
+              height: 70px;
+            }
+          }
+        }
+      }
+      &.practice-5, &.game-2 {
+        #grid-wrapper {
+          // width: 550px;
+          float: right;
+          width: 500px;
+          margin-right: 50px;
+
+          .detabled #grid-holder {
+            #grid {
+              width: 250px;
+
+              .row .operator {
+                padding: 0 25px;
+              }
+            }
+
+            .equals-grid {
+              padding: 0 25px;
+
+              .operator {
+                padding-top: 7px;
+              }
+            }
+            .answer-tables {
+              width: auto;
+            }
+          }
+          @media (max-width: @main-breakpoint) {
+            float: left;
+          }
+          @media (max-width: 600px) {
+            margin-left: 0;
+            margin-right: 0;
+            width: auto;
+
+            .detabled #grid-holder {
+              .equals-grid .operator {
+                padding-left: 10px;
+                padding-right: 10px;
+              }
+              #grid {
+                width: 200px;
+
+                .row .operator {
+                  padding-left: 0;
+                  padding-right: 0;
+                }
+              }
+            }
+          }
+          @media (max-width: 550px) {
+            .detabled #grid-holder {
+              #grid {
+                // border: 1px solid green;
+                width: 160px;
+              }
+              .equals-grid .operator {
+                padding-top: 0;
+              }
+            }
+          }
+        }
+      }
+      &.game-1, &.game-2, &.game-3 {
+        #grid-wrapper {
+          margin-bottom: 20px;
+        }
+        .practice-menu ul li {
+          box-sizing: border-box;
+          margin-left: 0;
+          padding: 5px 10px 5px 25px;
+          width: 100%;
+
+          @media (max-width: 500px) {
+            margin: 0 auto;
+            padding: 5px 10px;
+            text-align: center;
+          }
+        }
+      }
+      &.espanol .detabled #grid-holder {
+        #raw-grid .column-title-container:before {
+          content: "Respuesta PRELIMINAR";
+          max-width: 81px;
+          left: -3px;
+        }
+        #answer-grid .column-title-container:before {
+          content: "Respuesta FINAL";
         }
       }
     }
 
-    &.reveal {}
+    &.reveal {
+      .math-game-practice-god {
+        height: auto;
+      }
+      @media (max-width: @main-breakpoint) {
+        .math-game-practice-god {
+          float: none;
+          text-align: center;
+          // margin: 0 auto 20px;
+
+          & + .math-game-landing-copy {
+            // margin-top: 20px;
+          }
+        }
+        .border-top {
+          padding-top: 0;
+
+          .math-game-landing-copy {
+            margin-top: 0;
+            padding-top: 0;
+          }
+        }
+      }
+      @media (max-width: 600px) {
+        .character-logo-game {
+          width: 225px;
+        }
+        .math-game-practice-god + .math-game-landing-copy {
+          margin-top: 15px;
+        }
+        .border-top {
+          .math-game-practice-god {
+            margin-top: 20px;
+          }
+          .math-game-landing-copy {
+            margin-top: 0;
+          }
+        }
+      }
+    }
   }
 }
 // menu tests
+
 @media (max-width: @main-breakpoint) {
   .page-node-31,
   .page-node-32 {
@@ -1227,10 +1390,75 @@ body.html {
       }
     }
   }
+
+  .template-2 #page-title {
+    padding-top: 20px;
+  }
 }
 @media (max-width: 600px) {
   #page #section-content #zone-content {
     padding: 0 20px;
+  }
+}
+
+// article#node-page-23,
+.template-2 {
+  .region-inner .block .block-inner article.node-page > .content {
+    .field-name-field-page-primary-node-ref  { // video
+      article.node-video {
+        width: 560px;
+
+        .zip-archive-link {
+          display: flex;
+        }
+      }
+    }
+    .field-name-body, .field-name-field-page-quote { // main body text
+      width: ~"calc(100% - 600px)";
+    }
+  }
+  @media (max-width: @main-breakpoint) {
+    .region-inner .block .block-inner article.node-page {
+      & > .content {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        .field-name-field-page-glyph-image { // glyph
+          order: 1;
+        }
+        .field-name-body { // main body text
+          order: 2;
+          position: relative;
+          transform: translateY(-155px); // to bring it up beside the glyph
+          width: 100%;
+
+          &:before { // this fake element mimics the glyph, and allows the body text to wrap around
+            content: "";
+            display: inline-block;
+            float: left;
+            height: 160px;
+            width: 160px;
+          }
+        }
+        .field-name-field-page-primary-node-ref { // video
+          display: inline-block;
+          float: none;
+          margin: 0 auto;
+          order: 4;
+        }
+        // quote
+        .field-name-field-page-quote {
+          margin: 0 auto 30px;
+          order: 3;
+          width: 80%;
+        }
+      }
+      &#node-page-23 .content .field-name-field-page-quote {
+        // this specific negative margin accounts for the absolutely-positioned main body text
+        margin-top: -130px;
+      }
+    }
   }
 }
 // mobile
