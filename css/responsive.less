@@ -1,5 +1,6 @@
 // rebuilding fullsize layout, since the HTML structure changed
-@main-breakpoint: 1040px; // all-width changes
+@primary-breakpoint: 1040px; // all-width changes
+@secondary-breakpoint: 500px;
 
 body.html {
   // font-size: 100%;
@@ -15,7 +16,7 @@ body.html {
   }
 }
 // homepage styles
-@media (min-width: @main-breakpoint) {
+@media (min-width: @primary-breakpoint) {
   #page #section-content #zone-content-wrapper-front {
     #zone-content .region-inner .grid-4 {
       position: relative;
@@ -65,7 +66,7 @@ body.html {
   }
 }
 // general
-@media (max-width: @main-breakpoint) {
+@media (max-width: @primary-breakpoint) {
   body.html {
     max-width: 100%;
     min-width: 0;
@@ -159,7 +160,7 @@ body.html {
           @media (max-width: 600px) {
             font-size: 1.5em;
           }
-          @media (max-width: 500px) {
+          @media (max-width: @secondary-breakpoint) {
             font-size: 1.25em;
             padding-top: 2px;
           }
@@ -232,10 +233,11 @@ body.html {
           box-sizing: border-box;
           max-width: 100%;
           padding: 90px 30px 60px;
+
           @media (max-width: 700px) {
             padding-top: 130px;
           }
-          @media (max-width: 500px) {
+          @media (max-width: @secondary-breakpoint) {
             padding-top: 80px;
           }
 
@@ -272,7 +274,7 @@ body.html {
             }
 
             .block-menu-footer-main-menu ul.menu {
-              @media (max-width: 500px) {
+              @media (max-width: @secondary-breakpoint) {
                 li {
                   display: block;
                   text-align: center;
@@ -295,7 +297,7 @@ body.html {
   }
 }
 // landing pages for toplevel sections
-@media (max-width: @main-breakpoint) {
+@media (max-width: @primary-breakpoint) {
   .page-node-10,
   .page-node-12,
   .page-node-14,
@@ -381,7 +383,7 @@ body.html {
       width: 50%;
     }
   }
-  @media (max-width: @main-breakpoint) {
+  @media (max-width: @primary-breakpoint) {
     #calendar-wrapper {
       #calendar-converter-intro {
         width: 100%;
@@ -541,11 +543,174 @@ body.html {
     }
   }
 }
-// Maya World interactive map
 
+.page-node-41, .page-node-42 {
+  article .field-name-body {
+    padding-left: 0;
+  }
+  @media (max-width: @primary-breakpoint) {
+    .glyph-wrapper {
+      text-align: center;
+
+      .glyphs {
+        display: inline-block;
+        float: none;
+        margin: 0 0 20px;
+        max-width: 100%;
+      }
+    }
+    .glyph-content {
+      float: none;
+      text-align: left;
+      width: 100%;
+
+      blockquote {
+        margin: 0 auto;
+        width: 80%;
+      }
+      .glyph-content-text .glyph-detail {
+        h2 {
+          // text-align: center;
+        }
+        .glyph-image-wrap {
+          margin: 0 auto 10px;
+        }
+      }
+      h4 {
+        text-align: center;
+      }
+      .two_columns {
+        display: flex;
+        float: none;
+        margin: 0 auto;
+        max-width: 500px;
+        width: auto;
+
+        & > div {
+          margin: 0 auto;
+        }
+
+        .column_one {
+          margin-bottom: 20px;
+        }
+        @media (max-width: 550px) {
+          display: inline-block;
+          text-align: center;
+
+          .column_one, .column_two {
+            width: 100%;
+
+            p {
+              margin: 0 auto;
+              text-align: left;
+
+              &:first-of-type {
+                padding-top: 5px;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.page-node-44, .page-node-46 {
+  .template-2 .field-name-field-page-secondary-node-ref > .field-items {
+    text-align: center;
+
+    & > .field-item {
+      float: none;
+      display: inline-block;
+      width: auto;
+
+      article .field-name-field-pg-preview {
+        width: auto;
+      }
+    }
+  }
+}
+
+// Calendar: The Calendar System
+.page-node-37, .page-node-38 {
+  aside.grid-3 {
+    .views-field-title, .views-field-body, .views-field-php {
+      padding-bottom: 5px;
+    }
+    .views-field-title {
+      padding-top: 2px;
+    }
+  }
+  @media (max-width: @primary-breakpoint) {
+    .grid-9#region-content {
+      border-right: none;
+      width: 100%;
+
+      .calendar-system-copy {
+        width: ~"calc(100% - 205px)";
+      }
+      .more-details {
+        margin-top: -10px;
+      }
+      .downloads {
+        margin: 10px 0 -10px;
+      }
+      .field-name-field-page-quote {
+        display: none;
+      }
+    }
+    aside.grid-3 {
+      width: 100% !important;
+      .block-video-sidebar-block {
+        padding-left: 0;
+
+        .views-field-colorbox {
+          float: left;
+          margin-right: 15px;
+        }
+        .views-field-title {
+          padding-top: 0;
+        }
+        .views-field-php:after {
+          clear: both;
+          content: "";
+          display: block;
+        }
+      }
+    }
+  }
+  @media (max-width: 650px) {
+    .grid-9#region-content, aside.grid-3 {
+      .calendar-system-image, .views-field-colorbox {
+        display: block;
+        float: none;
+        margin-bottom: 5px;
+        text-align: center;
+        width: 100%;
+
+        .video-play-button {
+          left: 50%;
+          top: -95px;
+          transform: translateX(-50%);
+          height: 50px;
+          width: 50px;
+        }
+      }
+      .calendar-system-copy {
+        display: block;
+        float: none;
+        width: 100%;
+      }
+      // .views-field-colorbox
+    }
+  }
+}
+
+// Maya World interactive map
 .page-node-25,
 .page-node-26 {
-  @media (max-width: @main-breakpoint) {
+  @media (max-width: @primary-breakpoint) {
     .maya-world-interactive-map img {
       width: 50%;
     }
@@ -555,7 +720,7 @@ body.html {
 
 .page-node-33, .page-node-34 {
   // changes that apply on every page
-  @media (max-width: @main-breakpoint) {
+  @media (max-width: @primary-breakpoint) {
     #block-block-8,
     #block-block-9,
     #region-content,
@@ -604,7 +769,7 @@ body.html {
         justify-content: space-evenly;
       }
     }
-    @media (max-width: @main-breakpoint) {
+    @media (max-width: @primary-breakpoint) {
       .math-game-landing-copy {
         display: block;
         float: none;
@@ -656,7 +821,7 @@ body.html {
         //   }
         // }
       }
-      // @media (max-width: @main-breakpoint) {
+      // @media (max-width: @primary-breakpoint) {
       .math-math-god {
         display: inline-block;
         margin-right: 0;
@@ -807,7 +972,7 @@ body.html {
         top: auto;
         top: 50%;
       }
-      @media (max-width: @main-breakpoint) {
+      @media (max-width: @primary-breakpoint) {
         .practice-menu ul {
           display: flex;
           flex-wrap: wrap;
@@ -858,7 +1023,7 @@ body.html {
           }
         }
       }
-      @media (max-width: 500px) {
+      @media (max-width: @secondary-breakpoint) {
         .practice-menu ul li,
         .practice-menu ul li.last {
           width: ~"calc(50% - 1px)";
@@ -929,7 +1094,7 @@ body.html {
       }
 
       &.practice-1 {
-        @media (max-width: @main-breakpoint) {
+        @media (max-width: @primary-breakpoint) {
           #practice-content {
             #answer-pane,
             #directions,
@@ -1142,7 +1307,7 @@ body.html {
         .practice-menu {
           height: auto;
         }
-        @media (max-width: @main-breakpoint) {
+        @media (max-width: @primary-breakpoint) {
           .detabled {
             padding: 0 10px;
           }
@@ -1238,7 +1403,7 @@ body.html {
               width: auto;
             }
           }
-          @media (max-width: @main-breakpoint) {
+          @media (max-width: @primary-breakpoint) {
             float: left;
           }
           @media (max-width: 600px) {
@@ -1284,7 +1449,7 @@ body.html {
           padding: 5px 10px 5px 25px;
           width: 100%;
 
-          @media (max-width: 500px) {
+          @media (max-width: @secondary-breakpoint) {
             margin: 0 auto;
             padding: 5px 10px;
             text-align: center;
@@ -1307,7 +1472,7 @@ body.html {
       .math-game-practice-god {
         height: auto;
       }
-      @media (max-width: @main-breakpoint) {
+      @media (max-width: @primary-breakpoint) {
         .math-game-practice-god {
           float: none;
           text-align: center;
@@ -1347,7 +1512,7 @@ body.html {
 }
 // menu tests
 
-@media (max-width: @main-breakpoint) {
+@media (max-width: @primary-breakpoint) {
   .page-node-31,
   .page-node-32 {
     header #region-menu {
@@ -1401,64 +1566,178 @@ body.html {
   }
 }
 
-// article#node-page-23,
+// normal templates
 .template-2 {
-  .region-inner .block .block-inner article.node-page > .content {
-    .field-name-field-page-primary-node-ref  { // video
-      article.node-video {
-        width: 560px;
-
-        .zip-archive-link {
-          display: flex;
-        }
-      }
-    }
-    .field-name-body, .field-name-field-page-quote { // main body text
-      width: ~"calc(100% - 600px)";
-    }
-  }
-  @media (max-width: @main-breakpoint) {
-    .region-inner .block .block-inner article.node-page {
+  .region-inner .block .block-inner article.node-page {
       & > .content {
-        display: flex;
-        flex-direction: column;
-        position: relative;
+      .field-name-field-page-primary-node-ref  { // video
+        article.node-video {
+          width: 560px;
 
-        .field-name-field-page-glyph-image { // glyph
-          order: 1;
-        }
-        .field-name-body { // main body text
-          order: 2;
-          position: relative;
-          transform: translateY(-155px); // to bring it up beside the glyph
-          width: 100%;
+          .zip-archive-link {
+            display: flex;
 
-          &:before { // this fake element mimics the glyph, and allows the body text to wrap around
-            content: "";
-            display: inline-block;
-            float: left;
-            height: 160px;
-            width: 160px;
+            .float-left {
+              margin-right: 8px;
+              width: 320px;
+            }
+            .float-right {
+              margin-left: 8px;
+              text-align: left;
+              width: 320px;
+            }
           }
         }
-        .field-name-field-page-primary-node-ref { // video
-          display: inline-block;
-          float: none;
-          margin: 0 auto;
-          order: 4;
-        }
-        // quote
-        .field-name-field-page-quote {
-          margin: 0 auto 30px;
-          order: 3;
-          width: 80%;
-        }
       }
-      &#node-page-23 .content .field-name-field-page-quote {
-        // this specific negative margin accounts for the absolutely-positioned main body text
-        margin-top: -130px;
+      .field-name-body, .field-name-field-page-quote { // main body text
+        width: ~"calc(100% - 600px)";
+      }
+      .field-name-field-page-secondary-node-ref {
+        left: 30px;
+        position: relative;
+        top: 0;
       }
     }
+    @media (min-width: @primary-breakpoint) {
+      &#node-page-26 > .content .field-name-field-page-quote {
+        margin-top: -40px;
+      }
+      &#node-page-32 > .content .field-name-field-page-quote {
+        margin-top: -20px;
+      }
+    }
+  }
+  @media (max-width: @primary-breakpoint) {
+    .region-inner .block .block-inner article.node-page > .content {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      .field-name-field-page-glyph-image { // glyph
+        order: 1;
+      }
+      & > .field-name-body { // main body text
+        order: 2;
+        position: relative;
+        transform: translateY(-155px); // to bring it up beside the glyph
+        width: 100%;
+
+        &:before { // this fake element mimics the glyph, and allows the body text to wrap around
+          content: "";
+          display: inline-block;
+          float: left;
+          height: 160px;
+          width: 160px;
+        }
+      }
+      .field-name-field-page-primary-node-ref { // video
+        display: inline-block;
+        float: none;
+        margin: 0 auto;
+        max-width: 100%;
+        order: 4;
+
+        article.node-video {
+          max-width: 100%;
+
+          iframe {
+            max-width: 100%;
+          }
+        }
+      }
+      .field-name-field-page-quote { // quotes
+        margin: -130px auto 30px;
+        // this specific negative margin accounts for the Y-translate in the body text
+        order: 3;
+        width: 80%;
+      }
+      .field-name-field-page-secondary-node-ref {
+        order: 5;
+        position: relative;
+        top: 30px;
+        left: 0;
+
+        article.node-photo-gallery div.photo-gallery-teaser-preview {
+          // position: static;
+          top: -60px;
+
+        }
+        .field-name-body  {
+          line-height: 1.2;
+          padding-top: 5px;
+        }
+      }
+    }
+  }
+  @media (max-width: @secondary-breakpoint) {
+    .region-inner .block .block-inner article.node-page > .content {
+      .field-name-field-page-primary-node-ref article.node-video .zip-archive-link {
+        display: block;
+
+        .float-right, .float-left {
+          float: none;
+          margin: 0;
+          text-align: left;
+          width: 100%;
+        }
+        .float-left {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
+  @media (max-width: 400px) {
+    .region-inner .block .block-inner article.node-page > .content {
+      .field-name-field-page-glyph-image {
+        // width: 100%;
+        margin: 0 auto;
+      }
+      .field-name-body {
+        position: static;
+        transform: none;
+        width: 100%;
+
+        &:before {
+          display: none;
+        }
+      }
+      .field-name-field-page-quote {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+#cboxOverlay,
+#colorbox,
+#cboxContent,
+#cboxLoadedContent,
+iframe
+ {
+  max-width: 100%;
+  box-sizing: border-box;
+
+  // border: 2px solid pink;
+}
+// popups
+.template-3 article {
+  padding-top: 20px;
+
+  .content > .view {
+    float: none !important;
+    width: 100% !important;
+
+    & > .view-content {
+      margin: 0 auto;
+      max-width: 100%;
+      width: 650px;
+
+      .galleria-container {
+        border: 2px solid green;
+      }
+    }
+  }
+  .field-name-body {
+    width: 100%;
   }
 }
 // mobile

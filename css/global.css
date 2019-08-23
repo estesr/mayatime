@@ -164,8 +164,9 @@ body.i18n-es .en-content{display:none;}
 }
 
 #zone-content-wrapper{
-	min-height:876px;
+	/* min-height:876px; */
 	background: url('../img/zone-content-wrapper.jpg') top center transparent repeat-y;
+  padding-bottom: 30px;
 }
 #zone-content-wrapper-front{
 	background: url('../img/zone-content-wrapper-front.jpg') top center transparent no-repeat;
