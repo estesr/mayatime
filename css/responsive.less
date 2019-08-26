@@ -193,9 +193,36 @@ body.html {
               height: auto;
               left: 0;
               margin: 0;
+              max-width: 100%;
               padding: 0 15px;
               top: 0;
               width: auto;
+
+              h2.long {
+                // left: 100% !important;
+                top: 100px;
+                // transform: translateX(~"calc(-100% + 8px)");
+              }
+
+              &.front-menu-corn-and-maya-time {
+                margin-top: -40px;
+                // border: 2px solid pink;
+
+                h2.long {
+                  left: 100% !important;
+                  transform: translateX(~"calc(-100% + 8px)");
+                }
+              }
+
+              &.front-menu-2012-resetting {
+                margin-top: -40px;
+
+                h2.long {
+                  left: -8px !important;
+                  // right: 100% !important;
+                  // transform: translateX(~"calc(100% + 8px)");
+                }
+              }
             }
 
             #front-menu-main-bottom {
@@ -634,6 +661,13 @@ body.html {
 
 // Calendar: The Calendar System
 .page-node-37, .page-node-38 {
+  .grid-9#region-content {
+    padding-top: 20px;
+
+    .calendar-system-copy {
+      float: none;
+    }
+  }
   aside.grid-3 {
     .views-field-title, .views-field-body, .views-field-php {
       padding-bottom: 5px;
@@ -648,7 +682,9 @@ body.html {
       width: 100%;
 
       .calendar-system-copy {
-        width: ~"calc(100% - 205px)";
+        // width: ~"calc(100% - 205px)";
+        // float: none;
+        // border: 1px solid green;
       }
       .more-details {
         margin-top: -10px;
@@ -1690,7 +1726,7 @@ body.html {
     .region-inner .block .block-inner article.node-page > .content {
       .field-name-field-page-glyph-image {
         // width: 100%;
-        margin: 0 auto;
+        margin: 0 auto 10px;
       }
       .field-name-body {
         position: static;
