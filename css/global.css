@@ -323,7 +323,7 @@ h1.page-title{
 	font-size:34px;
 	line-height:30px;
 	margin-bottom:15px;
-	width:700px !important;
+	/* width:700px !important; */
 	color:#552813 !important;
 	font-family:"Times New Roman";
 }

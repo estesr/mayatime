@@ -198,29 +198,30 @@ body.html {
               top: 0;
               width: auto;
 
+              .mask {
+                width: 100% !important;
+              }
+
               h2.long {
-                // left: 100% !important;
-                top: 100px;
-                // transform: translateX(~"calc(-100% + 8px)");
+                top: 67px;
               }
 
               &.front-menu-corn-and-maya-time {
-                margin-top: -40px;
-                // border: 2px solid pink;
+                // margin-top: -40px;
+                margin-top: 0;
 
                 h2.long {
                   left: 100% !important;
-                  transform: translateX(~"calc(-100% + 8px)");
+                  transform: translateX(~"calc(-100% + 7px)");
                 }
               }
 
               &.front-menu-2012-resetting {
-                margin-top: -40px;
+                // margin-top: -40px;
+                margin-top: 0;
 
                 h2.long {
-                  left: -8px !important;
-                  // right: 100% !important;
-                  // transform: translateX(~"calc(100% + 8px)");
+                  left: -7px !important;
                 }
               }
             }
@@ -659,8 +660,38 @@ body.html {
   }
 }
 
-// Calendar: The Calendar System
-.page-node-37, .page-node-38 {
+// Meaning of 2012 - reuses some styles from nodes above, but with different selectors
+.page-node-47 {
+  #region-content {
+    padding-top: 20px;
+  }
+  section#section-content .block-system-main .copy-float-left {
+    float: none;
+    width: ~"calc(100% - 220px)";
+
+    .h4-emphasis {
+      font-size: 100%;
+    }
+  }
+  @media (max-width: 550px) {
+    section#section-content .block-system-main {
+      .copy-float-left {
+        width: 100%;
+      }
+      .image-float-left {
+        display: block;
+        float: none;
+        margin: 0 auto;
+        width: 190px;
+      }
+    }
+  }
+}
+
+// Calendar: The Calendar System, Corn: Calendar Traditions, and 2012: Maya Opinions pages
+.page-node-37, .page-node-38,
+.page-node-43, .page-node-45,
+.page-node-48, .page-node-50 {
   .grid-9#region-content {
     padding-top: 20px;
 
@@ -677,14 +708,14 @@ body.html {
     }
   }
   @media (max-width: @primary-breakpoint) {
-    .grid-9#region-content {
+    .grid-9#region-content, #zone-content .grid-4#region-content.alpha.omega {
+
       border-right: none;
+      // border: 1px solid
       width: 100%;
 
-      .calendar-system-copy {
-        // width: ~"calc(100% - 205px)";
-        // float: none;
-        // border: 1px solid green;
+      .region-inner {
+        padding-right: 0;
       }
       .more-details {
         margin-top: -10px;
@@ -695,10 +726,21 @@ body.html {
       .field-name-field-page-quote {
         display: none;
       }
+      .view-horizontal-video-sidebar .view-content {
+        align-items: flex-start;
+        display: flex;
+        justify-content: space-between;
+
+        .views-row {
+          float: none;
+          margin: 25px 0 0;
+        }
+      }
     }
     aside.grid-3 {
       width: 100% !important;
-      .block-video-sidebar-block {
+
+      .block-video-sidebar-block, .block {
         padding-left: 0;
 
         .views-field-colorbox {
@@ -715,8 +757,113 @@ body.html {
         }
       }
     }
+    aside.grid-8 {
+      width: 100% !important;
+
+      .view-video-sidebar .view-content {
+        align-items: flex-start;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+
+        // this serves as a fake item for the last row when there are only 2 items per row instead of 3
+        &:after {
+          content: "";
+          display: inline-block;
+          margin: 0 15px;
+          min-width: 191px;
+          width: 25%;
+          height: 1px;
+        }
+
+        .views-row {
+          margin: 15px;
+          min-width: 191px;
+          width: 25%;
+
+          .views-field-colorbox {
+            text-align: center;
+
+            .video-play-button {
+              left: 50%;
+              top: -88px;
+              transform: translateX(-50%);
+            }
+          }
+        }
+        @media (max-width: 760px) {
+          justify-content: space-around;
+
+          .views-row {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 45%;
+            width: 45%;
+
+            .file-video {
+              text-align: center;
+            }
+            .video-play-button {
+              left: 50%;
+              transform: translateX(-50%);
+            }
+
+            .views-field-title {
+              margin-top: 5px;
+            }
+          }
+        }
+        @media (max-width: 600px) {
+          .views-row {
+            max-width: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+    #zone-content .grid-4#region-content.alpha.omega .field-name-field-page-quote {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+
+      @media (max-width: 500px) {
+        width: 100%;
+      }
+    }
   }
-  @media (max-width: 650px) {
+  @media (max-width: 750px) {
+    .grid-9#region-content .view-horizontal-video-sidebar .view-content {
+      flex-wrap: wrap;
+      margin: 0 auto;
+
+      .views-row, .views-row.views-row-2 {
+        margin: 25px auto 0;
+        width: 45%;
+
+        .file-video {
+          text-align: center;
+        }
+        .video-play-button {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .views-field-title {
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .grid-9#region-content .view-horizontal-video-sidebar .view-content {
+      .views-row, .views-row.views-row-2 {
+        width: 100%;
+      }
+    }
+  }
+  @media (max-width: 550px) {
     .grid-9#region-content, aside.grid-3 {
       .calendar-system-image, .views-field-colorbox {
         display: block;
@@ -738,11 +885,23 @@ body.html {
         float: none;
         width: 100%;
       }
-      // .views-field-colorbox
+    }
+  }
+  @media (min-width: 650px) and (max-width: @primary-breakpoint) {
+    .grid-4#region-content article .field-type-text-with-summary {
+      position: relative;
+
+      .field-items {
+        position: absolute;
+        top: 50%;
+        left: 165px;
+        transform: translateY(-50%);
+      }
     }
   }
 }
 
+// Maya Opinions on 2012
 // Maya World interactive map
 .page-node-25,
 .page-node-26 {
@@ -1686,6 +1845,10 @@ body.html {
         // this specific negative margin accounts for the Y-translate in the body text
         order: 3;
         width: 80%;
+
+        @media (max-width: 500px) {
+          width: 100%;
+        }
       }
       .field-name-field-page-secondary-node-ref {
         order: 5;
@@ -1739,6 +1902,7 @@ body.html {
       }
       .field-name-field-page-quote {
         margin-top: 20px;
+        width: 100%;
       }
     }
   }
