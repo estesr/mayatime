@@ -3,7 +3,6 @@
   Drupal.behaviors.mayatimegame = {
     attach: function (context, settings) {
 
-
 	    /***** Variables and moethod overloading  ******/
 	    var dropZone = null;
 		var finalAnswer = null;

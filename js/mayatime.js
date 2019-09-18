@@ -53,12 +53,19 @@
 			*** Glossary term tooltips
 			***/
 			$('.glossary-tip',context).qtip({
+        // prerender: true,
 				position: {
 					/*my: 'bottom center',
 					at: 'top center'
 					*/
-					my: 'left center',
-					at: 'right center'
+					my: 'bottom center',
+					at: 'top center',
+          viewport: $('.block-system-main'),
+          container: $('.block-system-main'),
+          adjust: {
+            resize: true,
+            // y: -12
+          }
 				},
 				content: {
 					attr: 'title' // Use the ALT attribute of the area map for the content
@@ -67,6 +74,36 @@
 					classes: 'page-glyph-image-tooltips'
 				}
 			});
+
+      // $('a.glossary-tip').mouseenter (function (e) {
+      //
+      //   // console.log($('.ui-tooltip').css('left'));
+      //   var leftValue = $('.ui-tooltip').css('left');
+      //   var leftOffset = leftValue.slice(0, leftValue.indexOf('p'));
+      //   var tooltipAttr = $(this).attr('aria-describedby') + '-content';
+      //   console.log(tooltipAttr)
+      //   // var tooltipBox = $('.ui-tooltip').attr('aria-describedby', tooltipSelector + '-content');
+      //   var tooltipBox = $('.ui-tooltip["aria-describedby", "tooltipAttr"]');
+      //   console.log(tooltipBox);
+      //   // if (leftOffset < 0) {
+      //   //   tooltipBox.css('left', '20px !important');
+      //   // } else if (leftOffset + 280 > $(window).width()) {
+      //   //   tooltipBox.css({
+      //   //     left: 'auto',
+      //   //     right: '20px !important'
+      //   //   })
+      //   // }
+      //   // if ($('.ui-tooltip') < 0)
+      //
+
+      $('.photo-gallery-teaser-preview a').click (function (e) {
+        if ($(window).width() < 600) {
+          e.preventDefault ();
+          console.log('stop')
+        } else {
+          console.log('go')
+        }
+      })
 
 			$('.node-photo-gallery .field-name-body.grid-4 .glossary-tip').qtip({
 				position: {
@@ -129,8 +166,4 @@
       // })
     }
   };
-
-  // $('#region-menu').click (function (e) {
-  //   console.log('1');
-  // })
 })(jQuery);

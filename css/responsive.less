@@ -3,6 +3,14 @@
 @secondary-breakpoint: 500px;
 @menu-mobile-breakpoint: 765px;
 
+html,body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+}
+
 body.html {
   // font-size: 100%;
   font-size: initial;
@@ -10,6 +18,14 @@ body.html {
   footer#section-footer,
   header#section-header {
     font-size: 75%;
+
+    .nk360-logo {
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .latino-logo {
+      display: none;
+    }
   }
 
   #zone-content #messages {
@@ -109,6 +125,7 @@ body.html {
                 padding-right: 4% !important;
                 text-align: left;
 
+
                 a:after {
                   display: none;
                 }
@@ -149,7 +166,7 @@ body.html {
 
                   a {
                     background-position: 49% bottom;
-                    padding-bottom: 32px !important;
+                    padding-bottom: 32px;
                   }
                 }
                 &.menu-597 {
@@ -192,7 +209,15 @@ body.html {
             max-width: ~"calc(100% - 80px)";
             width: 100%;
 
+
+            @media (max-width: 500px) {
+              max-width: ~"calc(100% - 40px)";
+            }
+
             .menu-block-wrapper.menu-level-1 > ul.menu {
+              li .menu-block-1-desc a {
+                // font-size: 20px;
+              }
             }
           }
           & > #block-menu-block-1 .menu-block-wrapper.menu-level-1 > ul.menu > li.expanded > ul.menu {
@@ -257,7 +282,12 @@ body.html {
 
           	a {
           		background: none;
+              display: block;
+              padding-bottom: 0 !important;
           	}
+            // &.menu-595 a, &.menu-596 a {
+            //   padding-bottom: 0 !important;
+            // }
 
           	&.last {
           		margin-left: 0 !important;
@@ -293,6 +323,17 @@ body.html {
           max-width: 100% !important;
           width: 100%;
 
+          &.active-trail > .menu-block-1-desc a:after {
+            content: "\2304";
+            display: inline-block;
+            font-size: 30px;
+            height: 20px;
+            position: absolute;                right: 5px;
+            top: 0;
+            transform: translateY(-100%);
+            width: 20px;
+          }
+
           &.menu-mlid-595 {
             bottom: 0;
           }
@@ -309,6 +350,7 @@ body.html {
             a {
               background: none;
               color: #552911;
+              display: block;
               font-weight: normal;
               font-size: 18px;
               text-decoration: none;
@@ -366,6 +408,9 @@ body.html {
 
                   .menu-desc, a.learn-more, br {
                     display: none;
+                  }
+                  & > a:not(.learn-more) {
+                    display: block;
                   }
                 }
                 a:not(.learn-more):after {
@@ -527,6 +572,15 @@ body.html {
       }
 
       #zone-user {
+        @media (max-width: 500px) {
+          ul.language-switcher-locale-url li a {
+            background: none;
+
+            &.active {
+              cursor: initial;
+            }
+          }
+        }
         .content h4 {
           @media (max-width: 600px) {
             font-size: 1.5em;
@@ -535,10 +589,25 @@ body.html {
             font-size: 1.25em;
             padding-top: 2px;
           }
+          @media (max-width: 500px) {
+            font-size: 1em;
+            padding-top: 5px;
+          }
         }
       }
       // @media (Max-width: )
-      // }
+      //
+      #zone-menu-wrapper {
+        @media (max-width: 765px) {
+          padding-top: 70px;
+        }
+        @media (max-width: 550px) {
+          padding-top: 85px;
+        }
+        @media (max-width: 450px) {
+          padding-top: 0px;
+        }
+      }
     }
 
     #section-content {
@@ -609,6 +678,10 @@ body.html {
         padding: 0 40px;
         width: 100%;
 
+        @media (max-width: @secondary-breakpoint) {
+          padding: 0 20px;
+        }
+
         .grid-12#region-content {
           max-width: 100%;
         }
@@ -623,7 +696,6 @@ body.html {
 
     footer#section-footer {
       min-height: 0;
-
       #zone-footer-wrapper {
         background-size: cover;
         min-height: 0;
@@ -720,7 +792,7 @@ body.html {
         width: 100% !important;
 
         .region-inner {
-          max-width: 650px;
+          // max-width: 650px;
           margin: 0 auto;
 
           .block-menu-block {
@@ -732,9 +804,13 @@ body.html {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
+          // padding-bottom: 0 !important;
 
           li {
-            margin: 0 5px 15px !important;
+            margin: 0 5px 20px !important;
+          }
+          li.corn-and-calendar-traditions, li.the-meaning-of- {
+            padding-bottom: 100px !important;
           }
         }
       }
@@ -751,6 +827,10 @@ body.html {
         display: flex;
         flex-wrap: wrap;
         width: ~"calc(100% - 80px)" !important;
+
+        @media (max-width: @secondary-breakpoint) {
+          width: ~"calc(100% - 40px)" !important;
+        }
       }
     }
   }
@@ -2078,30 +2158,39 @@ body.html {
 }
 // menu tests
 
-@media (min-width: @menu-mobile-breakpoint) {
-  .page-node-23, .page-node-24, .page-node-25, .page-node-26,
-  .page-node-27, .page-node-28, .page-node-29, .page-node-30,
-  .page-node-31, .page-node-32, .page-node-35, .page-node-36,
-  .page-node-37, .page-node-39, .page-node-38, .page-node-40,
-  .page-node-43, .page-node-44, .page-node-45, .page-node-46,
-  .page-node-47, .page-node-48, .page-node-49, .page-node-50  {
+// @media (min-width: @menu-mobile-breakpoint) {
+  // border: 2px solid yellow;
+.page-node-23, .page-node-24, .page-node-25, .page-node-26,
+.page-node-27, .page-node-28, .page-node-29, .page-node-30,
+.page-node-31, .page-node-32, .page-node-35, .page-node-36,
+.page-node-37, .page-node-39, .page-node-38, .page-node-40,
+.page-node-43, .page-node-44, .page-node-45, .page-node-46,
+.page-node-47, .page-node-48, .page-node-49, .page-node-50 {
+  aside#region-sidebar-second #block-menu-block-2 .menu-level-2 {
+    display: none;
+  }
+  @media (min-width: @menu-mobile-breakpoint) {
     section#section-content #zone-content-wrapper {
       padding-top: 100px;
     }
-    aside#region-sidebar-second #block-menu-block-2 .menu-level-2 {
-      display: none;
-    }
   }
-  .page-node-33, .page-node-34, .page-node-41, .page-node-42,
-  .page-node-43, .page-node-45 {
+}
+.page-node-33, .page-node-34, .page-node-41, .page-node-42,
+.page-node-43, .page-node-45 {
+  @media (min-width: @menu-mobile-breakpoint) {
+
     section#section-content #zone-content-wrapper {
       padding-top: 80px;
     }
-    aside#region-sidebar-second #block-menu-block-2 .menu-level-2 {
-      display: none;
-    }
+  }
+  aside#region-sidebar-second #block-menu-block-2 .menu-level-2 {
+    display: none;
   }
 }
+
+aside#region-sidebar-second #block-menu-block-2 .menu-level-2 {
+}
+// }
 // @media (max-width: @primary-breakpoint) {
 //   .page-node-31,
 //   .page-node-32 {
@@ -2189,6 +2278,10 @@ body.html {
         left: 30px;
         position: relative;
         top: 0;
+
+        .photo-gallery-teaser-preview {
+          top: 0;
+        }
       }
     }
     @media (min-width: @primary-breakpoint) {
@@ -2254,14 +2347,16 @@ body.html {
         top: 30px;
         left: 0;
 
-        article.node-photo-gallery div.photo-gallery-teaser-preview {
-          // position: static;
-          top: -60px;
+        @media (max-width: 500px) {
+          article#node-photo-gallery-379 {
+            // display: none;
+          }
 
         }
         .field-name-body  {
           line-height: 1.2;
           padding-top: 5px;
+          top: 0;
         }
       }
     }
@@ -2309,12 +2404,47 @@ body.html {
 #colorbox,
 #cboxContent,
 #cboxLoadedContent,
-iframe
- {
-  max-width: 100%;
+iframe {
   box-sizing: border-box;
+  max-width: 100%;
+  width: 100%;
+}
 
-  // border: 2px solid pink;
+// these styles fix mobile display on chrome dev tools, but NOT actual phones
+// #colorbox {
+//   max-width: 100vw !important;
+//   width: 100vw !important;
+//
+//   @media (max-width: 500px) {
+//     #cboxWrapper {
+//       width: 100vw !important;
+//
+//       #cboxMiddleLeft {
+//         height: 0 !important;
+//       }
+//     }
+//   }
+// }
+
+.mobile-gallery-widget {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+
+  img {
+    border: 2px solid #3F1D0E;
+    margin-bottom: 5px;
+  }
+
+  p {
+    line-height: 1.2;
+    margin: 0 auto;
+    max-width: 189px;
+    padding-top: 5px;
+  }
+  @media (max-width: 500px) {
+    // display: block;
+  }
 }
 // popups
 .template-3 article {
@@ -2330,7 +2460,36 @@ iframe
       width: 650px;
 
       .galleria-container {
-        border: 2px solid green;
+        max-width: 100% !important;
+
+        @media (max-width: 700px) {
+          height: 80vw !important;
+        }
+
+        @media (max-width: 600px) {
+          height: 85vw !important;
+        }
+
+        @media (max-width: 550px) {
+          height: 90vw !important;
+        }
+
+        @media (max-width: 500px) {
+          height: 95vw !important;
+        }
+
+        @media (max-width: 450px) {
+          height: 100vw !important;
+        }
+        .galleria-stage .galleria-image {
+          width: 100% !important;
+
+          img {
+            box-sizing: border-box;
+            max-width: 100% !important;
+            height: auto !Important;
+          }
+        }
       }
     }
   }
@@ -2338,10 +2497,51 @@ iframe
     width: 100%;
   }
 }
-// mobile
-// @media (max-width: 500px) {
-//   body { font-size: 20px; }
-//   p {
-//     font-size: 1em !important;
-//   }
-// }
+
+// Resources and Glossary pages
+.page-glossary, .page-node-17, .page-node-18 {
+  section#section-content #zone-content {
+    aside.grid-3 #block-views-glossary-terms-block .block-inner {
+      height: 1000px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      padding-left: 15px;
+    }
+    @media (max-width: @primary-breakpoint) {
+      .grid-9, aside.grid-3 {
+        width: 100%;
+        border-right: none;
+        padding-left: 0;
+        padding-right: 0;
+
+        #block-views-glossary-terms-block .block-inner {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.page-node-15, .page-node-16 {
+  section#section-content #zone-content #for-teachers-main {
+    // align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .grid-3, .grid-3.alpha, .grid-3.omega {
+      margin: 0 20px 20px 0;
+
+      @media (max-width: 800px) {
+        width: ~"calc(50% - 20px)"
+      }
+      @media (max-width: 575px) {
+        margin-right: 0;
+        width: 100%;
+      }
+    }
+    .grid-3-omega {
+      margin-right: 0;
+    }
+  }
+}
